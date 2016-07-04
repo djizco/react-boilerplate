@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack -p",
+    "postprod": "npm run start",
+    "prod": "webpack -p --config webpack.prod.config.js",
     "start": "nodemon server/index.js",
     "test": "NODE_ENV=test ./scripts/test"
   },
@@ -43,7 +44,9 @@
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.21.0",
+    "image-webpack-loader": "^1.8.0",
     "mocha": "^2.5.3",
     "nodemon": "^1.9.2",
     "style-loader": "^0.13.1",

@@ -1,10 +1,11 @@
-import React from 'react';
-import Home  from '../components/Home.js';
+import React     from 'react';
+import Home      from '../components/Home.js';
+import bgTexture from '../images/bg-texture.jpg';
 
 const styles = {
   container: {
     backgroundSize: 'cover',
-    backgroundImage: "url('client/images/bg-texture.jpg')",
+    backgroundImage: `url(${bgTexture})`,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
