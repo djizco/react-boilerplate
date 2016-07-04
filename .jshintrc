@@ -1,0 +1,15 @@
+{
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esversion": 6,
+  "forin": true,
+  "freeze": true,
+  "latedef": "nofunc",
+  "node": true,
+  "shadow": true,
+  "strict": false,
+  "undef": true,
+  "unused": false,
+  "noyield": true
+}
