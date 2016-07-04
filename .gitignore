@@ -6,6 +6,9 @@ client/lib
 # App packaged
 dist/
 
+# Miscellaneous
+client/images
+
 # OSX
 .DS_Store
 

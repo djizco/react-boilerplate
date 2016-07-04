@@ -9,7 +9,7 @@
   "node": true,
   "shadow": true,
   "strict": false,
-  "undef": true,
+  "undef": false,
   "unused": false,
   "noyield": true
 }

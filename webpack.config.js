@@ -1,18 +1,18 @@
-import path              from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+const Path              = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/app/index.html',
+  template: Path.join(__dirname, 'client/index.html'),
   filename: 'index.html',
   inject: 'body'
 });
 
-export default {
+module.exports = {
   entry: [
-    './app/index.js'
+    './client/index.js'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: Path.join(__dirname, 'dist'),
     filename: 'index_bundle.js'
   },
   module: {

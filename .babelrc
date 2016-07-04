@@ -1,5 +1,6 @@
 {
   "presets": ["es2015", "react", "stage-0"],
+  "plugins": ["transform-runtime"],
   "env": {
     "production": {
       "presets": ["react-optimize"],
@@ -7,8 +8,6 @@
         "babel-plugin-transform-remove-console",
         "babel-plugin-transform-remove-debugger"
       ]
-    },
-    "development": {
-      "presets": ["react-hmre"]
-    },
+    }
+  }
 }
