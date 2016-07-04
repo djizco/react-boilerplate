@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "prod": "webpack -p",
-    "start": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/index.js",
+    "test": "NODE_ENV=test ./scripts/test"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,12 @@
   },
   "homepage": "https://github.com/djizco/boilerplate-react#readme",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
     "react": "^15.1.0",
     "react-addons-css-transition-group": "^15.1.0",
+    "react-addons-test-utils": "^15.2.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.5.1"
   },
@@ -38,9 +39,15 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "enzyme": "^2.3.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.21.0",
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2",
     "style-loader": "^0.13.1",
+    "supertest": "^1.2.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
