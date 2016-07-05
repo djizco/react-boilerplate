@@ -58,3 +58,13 @@ export default function Page(props){
     </div>
   );
 }
+
+Page.propTypes = {
+  counter: React.PropTypes.number,
+  onDecrement: React.PropTypes.func.isRequired,
+  onIncrement: React.PropTypes.func.isRequired
+}
+
+Page.defaultProps = {
+  counter: 0
+}

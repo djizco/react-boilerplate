@@ -41,3 +41,7 @@ export default function Home(props){
     </div>
   );
 }
+
+Home.propTypes = {
+  onContinue: React.PropTypes.func.isRequired
+}
