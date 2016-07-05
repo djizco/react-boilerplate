@@ -1,15 +1,8 @@
-import React     from 'react';
-import Home      from '../components/Home.js';
-import bgTexture from '../images/bg-texture.jpg';
+import React from 'react';
+import Home  from '../components/Home.js';
 
 const styles = {
   container: {
-    backgroundSize: 'cover',
-    backgroundImage: `url(${bgTexture})`,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
     height: '100%',
     width: '100%'
   }
@@ -20,10 +13,22 @@ export default class HomeContainer extends React.Component{
     super(props);
   }
 
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  }
+
+  handleContinue = (e) => {
+    e.preventDefault();
+
+    this.context.router.push({
+      pathname: '/page'
+    });
+  }
+
   render(){
     return (
       <div style={styles.container}>
-        <Home />
+        <Home onContinue={this.handleContinue} />
       </div>
     );
   }

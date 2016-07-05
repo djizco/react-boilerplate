@@ -29,7 +29,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader")
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
         loaders: [
             'file?name=[name].[ext]',
             'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'

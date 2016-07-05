@@ -6,7 +6,9 @@ const styles = {
     display: 'flex', 
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 5
+    padding: 5,
+    background: '#66F',
+    color: 'white',
   },
   logo: {
     margin: 0,
@@ -17,7 +19,7 @@ const styles = {
   }
 };
 
-export default function Main(){
+export default function Main(props){
   return (
     <div style={styles.header}>
       <Link to='/' activeStyle={styles.link}>

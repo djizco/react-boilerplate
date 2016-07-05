@@ -1,12 +1,13 @@
-import React from 'react';
-import Main  from '../components/Main.js';
+import React                   from 'react';
+import Main                    from '../components/Main.js';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const styles = {
   container: {
     width: '100%',
     height: '92%',
-    background: '#66F',
-    color: 'white',
+    background: 'white',
+    color: 'black'
   }
 };
 
@@ -18,8 +19,13 @@ export default class MainContainer extends React.Component{
   render(){
     return (
       <div style={styles.container}>
-        <Main />
-        {this.props.children}
+        <ReactCSSTransitionGroup
+          transitionName='appear'
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}>
+          <Main />
+          {React.cloneElement(this.props.children, {key: this.props.location.pathname})}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
