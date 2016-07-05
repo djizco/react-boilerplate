@@ -14,13 +14,20 @@ const styles = {
     fontSize: '65px',
     color: '#333',
     textAlign: 'center',
+    width: '100%',
     fontWeight: 100
   },
   counter: {
-    fontSize: '120px'
+    textAlign: 'center',
+    fontSize: '120px',
+    width: '200px',
+    margin: '0 auto'
   },
   button: {
-    margin: 10
+    margin: '10px'
+  },
+  buttonWrapper: {
+    textAlign: 'center'
   }
 };
 
@@ -37,14 +44,14 @@ function Button(props){
 
 export default function Page(props){
   return (
-    <div style={styles.container} className='text-center'>
+    <div style={styles.container}>
+      <div className='col-sm-12'>
       <h1 style={styles.header}>Counter:</h1>
       <div style={styles.counter}>{props.counter}</div>
-      <div className='col-sm-12'>
-        <div className='col-sm-offset-4 col-sm-2'>
+        <div className='col-sm-offset-3 col-sm-3' style={styles.buttonWrapper}>
           <Button className='btn btn-lg btn-success' handleClick={props.onIncrement}>Increment</Button>
         </div>
-        <div className='col-sm-2'>
+        <div className='col-sm-3' style={styles.buttonWrapper}>
           <Button className='btn btn-lg btn-danger' handleClick={props.onDecrement}>Decrement</Button>
         </div>
       </div>
