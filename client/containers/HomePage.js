@@ -9,7 +9,7 @@ const styles = {
   }
 };
 
-export default class HomeContainer extends Component {
+export default class HomePage extends Component {
   constructor(props) {
     super(props);
   }
