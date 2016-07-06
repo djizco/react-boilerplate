@@ -1,6 +1,7 @@
-import React                   from 'react';
-import Main                    from '../components/Main.js';
+import React, { Component }    from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+import Main from '../components/Main.js';
 
 const styles = {
   container: {
@@ -11,12 +12,12 @@ const styles = {
   }
 };
 
-export default class MainContainer extends React.Component{
+export default class MainContainer extends Component {
   constructor(props) {
     super(props);
   }
 
-  render(){
+  render() {
     return (
       <div style={styles.container}>
         <ReactCSSTransitionGroup

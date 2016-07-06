@@ -1,5 +1,6 @@
-import React from 'react';
-import Home  from '../components/Home.js';
+import React, { Component } from 'react';
+
+import Home from '../components/Home.js';
 
 const styles = {
   container: {
@@ -8,7 +9,7 @@ const styles = {
   }
 };
 
-export default class HomeContainer extends React.Component{
+export default class HomeContainer extends Component {
   constructor(props) {
     super(props);
   }
@@ -25,7 +26,7 @@ export default class HomeContainer extends React.Component{
     });
   }
 
-  render(){
+  render() {
     return (
       <div style={styles.container}>
         <Home onContinue={this.handleContinue} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const styles = {
   container: {
@@ -42,7 +42,7 @@ function Button(props){
   );
 }
 
-export default function Page(props){
+export default function Page(props) {
   return (
     <div style={styles.container}>
       <div className='col-sm-12'>
@@ -60,9 +60,9 @@ export default function Page(props){
 }
 
 Page.propTypes = {
-  counter: React.PropTypes.number,
-  onDecrement: React.PropTypes.func.isRequired,
-  onIncrement: React.PropTypes.func.isRequired
+  counter: PropTypes.number,
+  onDecrement: PropTypes.func.isRequired,
+  onIncrement: PropTypes.func.isRequired
 }
 
 Page.defaultProps = {

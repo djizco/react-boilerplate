@@ -1,5 +1,6 @@
-import React from 'react';
-import Page  from '../components/Page.js';
+import React, { Component } from 'react';
+
+import Page from '../components/Page.js';
 
 const styles = {
   container: {
@@ -8,7 +9,7 @@ const styles = {
   }
 };
 
-export default class PageContainer extends React.Component{
+export default class PageContainer extends Component {
   constructor(props) {
     super(props);
   }
@@ -33,7 +34,7 @@ export default class PageContainer extends React.Component{
     });
   }
 
-  render(){
+  render() {
     return (
       <div style={styles.container}>
         <Page 

@@ -1,5 +1,5 @@
-import React     from 'react';
-import bgTexture from '../assets/images/bg-texture.jpg';
+import React, { PropTypes } from 'react';
+import bgTexture            from '../assets/images/bg-texture.jpg';
 
 const styles = {
   container: {
@@ -43,5 +43,5 @@ export default function Home(props){
 }
 
 Home.propTypes = {
-  onContinue: React.PropTypes.func.isRequired
+  onContinue: PropTypes.func.isRequired
 }
