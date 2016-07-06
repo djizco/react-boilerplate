@@ -1,15 +1,15 @@
 import React         from 'react';
-import MainContainer from '../containers/MainContainer.js';
+import Main from '../components/Main.js';
 import HomeContainer from '../containers/HomeContainer.js';
-import PageContainer from '../containers/PageContainer.js';
+import CounterContainer from '../containers/CounterContainer.js';
 
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
 export default (
   <Router history={hashHistory}>
-    <Route path='/' component={MainContainer}>
+    <Route path='/' component={Main}>
       <IndexRoute component={HomeContainer} />
-      <Route path='/page' component={PageContainer}/>
+      <Route path='/counter' component={CounterContainer}/>
     </Route>
   </Router>
 );

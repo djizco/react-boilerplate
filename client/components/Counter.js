@@ -42,7 +42,7 @@ function Button(props){
   );
 }
 
-export default function Page(props) {
+export default function Counter(props) {
   return (
     <div style={styles.container}>
       <div className='col-sm-12'>
@@ -59,12 +59,12 @@ export default function Page(props) {
   );
 }
 
-Page.propTypes = {
+Counter.propTypes = {
   counter: PropTypes.number,
   onDecrement: PropTypes.func.isRequired,
   onIncrement: PropTypes.func.isRequired
 }
 
-Page.defaultProps = {
+Counter.defaultProps = {
   counter: 0
 }

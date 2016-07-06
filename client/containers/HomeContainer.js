@@ -22,7 +22,7 @@ export default class HomeContainer extends Component {
     e.preventDefault();
 
     this.context.router.push({
-      pathname: '/page'
+      pathname: '/counter'
     });
   }
 

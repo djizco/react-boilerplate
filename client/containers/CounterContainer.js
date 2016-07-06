@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Page from '../components/Page.js';
+import Counter from '../components/Counter.js';
 
 const styles = {
   container: {
@@ -9,7 +9,7 @@ const styles = {
   }
 };
 
-export default class PageContainer extends Component {
+export default class CounterContainer extends Component {
   constructor(props) {
     super(props);
   }
@@ -37,7 +37,7 @@ export default class PageContainer extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <Page 
+        <Counter 
           counter={this.state.counter}
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement}
