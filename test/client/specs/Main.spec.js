@@ -1,6 +1,6 @@
-import React       from "react";
-import Main        from "../../../client/containers/Main.js";
-import { shallow } from "enzyme";
+import React         from "react";
+import { shallow }   from "enzyme";
+import Main from "../../../client/containers/Main.js";
 
 const wrapper = shallow( <div/>);
 

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
-import Counter from '../components/Counter.js';
+import { connect }              from 'react-redux';
+import { increment, decrement } from '../actions/index.js';
+
+import Counter    from '../components/Counter.js';
 
 const styles = {
   container: {
@@ -9,40 +12,38 @@ const styles = {
   }
 };
 
-export default class CounterPage extends Component {
+class CounterPage extends Component {
   constructor(props) {
     super(props);
   }
-
-  state = {
-    counter: 0
-  }
-
+  
   handleIncrement = (e) => {
     e.preventDefault();
-
-    this.setState({
-      counter: this.state.counter + 1
-    });
+    this.props.dispatch( increment() );
   }
 
   handleDecrement = (e) => {
     e.preventDefault();
-
-    this.setState({
-      counter: this.state.counter - 1
-    });
+    this.props.dispatch( decrement() );
   }
 
   render() {
     return (
       <div style={styles.container}>
         <Counter 
-          counter={this.state.counter}
+          counter={this.props.counter}
           onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement}
-          />
+          onDecrement={this.handleDecrement} />
+        }
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    counter: state.counter
+  }
+}
+
+export default connect(mapStateToProps)(CounterPage)
