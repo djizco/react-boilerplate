@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { connect }              from 'react-redux';
-import { increment, decrement } from '../actions/actions.js';
+import { increment, decrement } from '../actions/index.js';
 
 import Counter    from '../components/Counter.js';
 
@@ -16,19 +16,15 @@ class CounterPage extends Component {
   constructor(props) {
     super(props);
   }
-
-  state = {
-    counter: 0
-  }
-
+  
   handleIncrement = (e) => {
     e.preventDefault();
-    return this.props.dispatch( increment() );
+    this.props.dispatch( increment() );
   }
 
   handleDecrement = (e) => {
     e.preventDefault();
-    return this.props.dispatch( decrement() );
+    this.props.dispatch( decrement() );
   }
 
   render() {
@@ -44,10 +40,10 @@ class CounterPage extends Component {
   }
 }
 
-function select(state) {
+function mapStateToProps(state) {
   return {
     counter: state.counter
   }
 }
 
-export default connect(select)(CounterPage)
+export default connect(mapStateToProps)(CounterPage)

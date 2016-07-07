@@ -5,12 +5,19 @@ import { Router }   from 'react-router';
 import DevTools     from './DevTools.js';
 import routes       from '../config/routes';
 
+var styles = {
+  container: {
+    width: '100%',
+    height: '100%'
+  }
+};
+
 export default class Root extends Component {
   render() {
     const { store, history } = this.props;
     return (
       <Provider store={store}>
-        <div>
+        <div style={styles.container}>
           <Router history={history} routes={routes} />
           <DevTools />
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from 'react-dom';
 import { createStore } from 'redux';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import Root           from './containers/Root.js';
@@ -11,7 +11,7 @@ import favicon        from './assets/icons/favicon.ico';
 import configureStore from './store/configureStore';
 
 let store = configureStore();
-let history = syncHistoryWithStore(browserHistory, store);
+let history = syncHistoryWithStore(hashHistory, store);
 
 render(
   <Root store={store} history={history} />,
