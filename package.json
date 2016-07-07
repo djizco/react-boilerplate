@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "build": "webpack -p --config webpack.prod.config.js",
+    "build-dev": "webpack --config webpack.dev.config.js",
     "dev": "webpack-dev-server",
     "postprod": "npm run start",
     "predev": "NODE_ENV=development",

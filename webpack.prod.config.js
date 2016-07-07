@@ -1,5 +1,5 @@
-const config = require('./webpack.config.js');
 const webpack = require('webpack');
+const config = require('./webpack.config.js');
 
 config.plugins.push(
   new webpack.DefinePlugin({
@@ -12,6 +12,7 @@ config.plugins.push(
 config.plugins.push(
   new webpack.optimize.UglifyJsPlugin({
     compress: {
+      drop_console: true,
       warnings: false
     }
   })
