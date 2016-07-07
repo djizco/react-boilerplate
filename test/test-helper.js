@@ -1,5 +1,3 @@
-/* jshint undef: false, unused: false */
-
 process.env.NODE_ENV = 'test';
 
 // The following allows you to require files independent of

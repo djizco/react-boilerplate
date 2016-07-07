@@ -4,11 +4,15 @@
   "description": "My Personal React Boilerplate",
   "main": "server/index.js",
   "scripts": {
+    "build": "webpack -p --config webpack.prod.config.js",
     "dev": "webpack-dev-server",
     "postprod": "npm run start",
-    "prod": "webpack -p --config webpack.prod.config.js",
+    "predev": "NODE_ENV=development",
+    "preprod": "NODE_ENV=production",
+    "pretest": "NODE_ENV=test",
+    "prod": "npm run build",
     "start": "nodemon server/index.js",
-    "test": "NODE_ENV=test ./scripts/test"
+    "test": "./scripts/test"
   },
   "repository": {
     "type": "git",
