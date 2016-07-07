@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { render }      from 'react-dom';
+import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import Root       from './containers/Root.js';
-import styles     from './main.css';
+import Root           from './containers/Root.js';
+import styles         from './main.css';
+import favicon        from './assets/icons/favicon.ico';
 import configureStore from './store/configureStore';
 
 let store = configureStore();

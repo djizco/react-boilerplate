@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "postprod": "cp client/assets/icons/favicon.ico dist/ && npm run start",
+    "postprod": "npm run start",
     "prod": "webpack -p --config webpack.prod.config.js",
     "start": "nodemon server/index.js",
     "test": "NODE_ENV=test ./scripts/test"
