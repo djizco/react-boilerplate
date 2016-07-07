@@ -9,7 +9,7 @@ const styles = {
   }
 };
 
-export default class CounterContainer extends Component {
+export default class CounterPage extends Component {
   constructor(props) {
     super(props);
   }
