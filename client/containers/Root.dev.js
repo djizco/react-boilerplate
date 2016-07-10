@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router }   from 'react-router';
 import DevTools     from './DevTools.js';
-import routes       from '../config/routes';
+import routes       from '../routes';
 
 var styles = {
   container: {

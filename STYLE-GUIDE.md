@@ -1,3 +1,5 @@
+# Style Guide
+
 ### Indentation
 
 When writing any block of code that is logically subordinate to the line immediately before and after it, that block should be indented two spaces more than the surrounding lines
@@ -379,3 +381,20 @@ When writing any block of code that is logically subordinate to the line immedia
     <!-- bad -->
     <script src="a.js" type="text/javascript"></script>
     ```
+    
+### Guidelines
+
+1. Uphold the current code standard:
+    - Keep your code [DRY][].
+    - Apply the [boy scout rule][].
+    - Follow STYLE GUIDE (at the bottom)
+2. Run the tests before submitting a pull request.
+3. Tests are very, very important. Submit tests if your pull request contains
+   new, testable behavior.
+4. Your pull request is comprised of a single [squashed][] commit (encouraged).
+
+<!-- Links -->
+[pull request]: https://help.github.com/articles/using-pull-requests/
+[DRY]: http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[boy scout rule]: http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule
+[squashed]: http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
