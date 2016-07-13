@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import bgTexture            from '../assets/images/bg-texture.jpg';
 
-function Button(props){
+const Button = (props) => {
   return (
     <button type='button'
       className='btn btn-lg btn-border margin-sm'
@@ -11,7 +11,7 @@ function Button(props){
   );
 }
 
-export default function Home(props){
+export default function Home(props) {
   return (
     <div style={{backgroundImage: `url(${bgTexture})`}} className='home-container full-size'>
       <h1 className='home-header'>My New App</h1>
