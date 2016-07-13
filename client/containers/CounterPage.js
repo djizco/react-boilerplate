@@ -5,13 +5,6 @@ import { increment, decrement } from '../actions/index.js';
 
 import Counter    from '../components/Counter.js';
 
-const styles = {
-  container: {
-    height: '100%',
-    width: '100%'
-  }
-};
-
 class CounterPage extends Component {
   constructor(props) {
     super(props);
@@ -29,12 +22,11 @@ class CounterPage extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
+      <div className='full-size'>
         <Counter 
           counter={this.props.counter}
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement} />
-        }
       </div>
     );
   }

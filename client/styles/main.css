@@ -19,3 +19,75 @@ html, body, .app {
 .appear-leave {
   opacity: 0;
 }
+
+.full-size {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  height: 90%;
+  background: white;
+  color: black;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: #66F;
+  color: white;
+}
+
+.margin-sm {
+  margin: 10px;
+}
+
+.home-button {
+  text-decoration: none;
+  color: #DDD;
+}
+
+.home-container {
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-header {
+  font-size: 64px;
+  color: #333;
+  font-weight: 100;
+}
+
+.btn-border {
+  border: 1px solid #333;
+}
+
+.counter {
+  text-align: center;
+  font-size: 120px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.counter-container {
+  background-color: #EEE;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.counter-header {
+  font-size: 64px;
+  color: #333;
+  text-align: center;
+  font-weight: 100;
+  width: 100%;
+}

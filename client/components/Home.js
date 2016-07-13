@@ -1,32 +1,10 @@
 import React, { PropTypes } from 'react';
 import bgTexture            from '../assets/images/bg-texture.jpg';
 
-const styles = {
-  container: {
-    backgroundSize: 'cover',
-    backgroundImage: `url(${bgTexture})`,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '100%'
-  },
-  header: {
-    fontSize: 64,
-    color: '#333',
-    fontWeight: 100,
-  },
-  button: {
-    margin: 10
-  }
-};
-
 function Button(props){
   return (
     <button type='button'
-      style={styles.button}
-      className='btn btn-lg'
+      className='btn btn-lg btn-border margin-sm'
       onClick={props.onContinue}>
       {props.children}
     </button>
@@ -35,8 +13,8 @@ function Button(props){
 
 export default function Home(props){
   return (
-    <div style={styles.container}>
-      <h1 style={styles.header}>My New App</h1>
+    <div style={{backgroundImage: `url(${bgTexture})`}} className='home-container full-size'>
+      <h1 className='home-header'>My New App</h1>
       <Button onContinue={props.onContinue}>Continue to App</Button>
     </div>
   );
