@@ -1,11 +1,16 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers/index.js';
+import createLogger from 'redux-logger';
 import DevTools from '../containers/DevTools.js';
 
 export default function configureStore(preloadedState) {
-  return createStore(
+  const store = createStore(
     rootReducer,
     preloadedState,
-    DevTools.instrument()
+    compose(
+      applyMiddleware( createLogger() ),
+      DevTools.instrument()
+    )
   );
+  return store;
 }

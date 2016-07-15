@@ -1,7 +1,7 @@
 import { combineReducers }      from 'redux';
 import { routerReducer }        from 'react-router-redux';
 import { INCREMENT, DECREMENT } from '../actions/index.js';
-
+import update from 'react-addons-update';
 
 function counter(state = 0, action) {
   switch (action.type) {
