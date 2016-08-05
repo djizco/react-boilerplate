@@ -1,5 +1,8 @@
+import prod from './Root.prod.js';
+import dev from './Root.dev.js';
+
 if (process.env.NODE_ENV === 'production') {
-  module.exports = require('./Root.prod.js');
+  module.exports = prod;
 } else {
-  module.exports = require('./Root.dev.js');
+  module.exports = dev;
 }

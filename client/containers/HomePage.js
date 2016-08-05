@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import Home from '../components/Home.js';
 
@@ -8,14 +8,14 @@ export default class HomePage extends Component {
   }
 
   static contextTypes = {
-    router: React.PropTypes.object.isRequired
+    router: PropTypes.object.isRequired
   }
 
   handleContinue = (e) => {
     e.preventDefault();
 
     this.context.router.push({
-      pathname: '/counter'
+      pathname: '/counter',
     });
   }
 

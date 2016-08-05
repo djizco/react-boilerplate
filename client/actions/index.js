@@ -1,14 +1,14 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 
-export function increment(){
+export function increment() {
   return {
-    type: INCREMENT
+    type: INCREMENT,
   };
 }
 
-export function decrement(){
+export function decrement() {
   return {
-    type: DECREMENT
+    type: DECREMENT,
   };
 }

@@ -1,13 +1,12 @@
-import { combineReducers }      from 'redux';
-import { routerReducer }        from 'react-router-redux';
+import { combineReducers } from 'redux';
+import { routerReducer } from 'react-router-redux';
 import { INCREMENT, DECREMENT } from '../actions/index.js';
-import update from 'react-addons-update';
 
 function counter(state = 0, action) {
   switch (action.type) {
-    case 'INCREMENT':
+    case INCREMENT:
       return state + 1;
-    case 'DECREMENT':
+    case DECREMENT:
       return state - 1;
     default:
       return state;
@@ -16,7 +15,7 @@ function counter(state = 0, action) {
 
 const rootReducer = combineReducers({
   counter,
-  routing: routerReducer
+  routing: routerReducer,
 });
 
 export default rootReducer;

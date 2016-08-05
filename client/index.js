@@ -1,19 +1,19 @@
 import React from 'react';
 
 import { render } from 'react-dom';
-import { createStore } from 'redux';
+import { browserHistory, hashHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import Root           from './containers/Root.js';
-import styles         from './styles/main.css';
-import scss           from './styles/main.scss';
+import Root from './containers/Root.js';
+import styles from './styles/main.css';
+import scss from './styles/main.scss';
 import configureStore from './store/configureStore';
 
 let historyType;
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development'){
-  historyType = require('react-router').browserHistory;
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
+  historyType = browserHistory;
 } else {
-  historyType = require('react-router').hashHistory;
+  historyType = hashHistory;
 }
 
 let store = configureStore();
