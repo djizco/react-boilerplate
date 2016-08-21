@@ -1,27 +1,23 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 import Home from '../components/Home.js';
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
-  }
-
-  static contextTypes = {
-    router: PropTypes.object.isRequired
+    this.props = props;
   }
 
   handleContinue = (e) => {
     e.preventDefault();
 
-    this.context.router.push({
-      pathname: '/counter',
-    });
+    browserHistory.push('counter');
   }
 
   render() {
     return (
-      <div className='full-size'>
+      <div className="full-size">
         <Home onContinue={this.handleContinue} />
       </div>
     );

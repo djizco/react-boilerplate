@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
-import DevTools from './DevTools.js';
+import DevTools from './DevTools';
 import routes from '../routes';
 
 function Root(props) {

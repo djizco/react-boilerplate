@@ -11,6 +11,12 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 const ExtractTextPluginConfig = new ExtractTextPlugin("bundle.css");
 
 module.exports = {
+  devServer: {
+    contentBase: "./dist",
+    colors: true,
+    historyApiFallback: true,
+    inline: true
+  },
   entry: [
     './client/index.js'
   ],

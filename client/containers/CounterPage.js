@@ -1,29 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { connect }              from 'react-redux';
-import { increment, decrement } from '../actions/index.js';
+import { increment, decrement } from '../actions/index';
 
-import Counter    from '../components/Counter.js';
+import Counter    from '../components/Counter';
 
 class CounterPage extends Component {
   constructor(props) {
     super(props);
+    this.props = props;
   }
-  
+
   handleIncrement = (e) => {
     e.preventDefault();
-    this.props.dispatch( increment() );
+    this.props.dispatch(increment());
   }
 
   handleDecrement = (e) => {
     e.preventDefault();
-    this.props.dispatch( decrement() );
+    this.props.dispatch(decrement());
   }
 
   render() {
     return (
-      <div className='full-size'>
-        <Counter 
+      <div className="full-size">
+        <Counter
           counter={this.props.counter}
           onIncrement={this.handleIncrement}
           onDecrement={this.handleDecrement} />
@@ -32,10 +33,15 @@ class CounterPage extends Component {
   }
 }
 
+CounterPage.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  counter: PropTypes.number.isRequired,
+};
+
 function mapStateToProps(state) {
   return {
-    counter: state.counter
-  }
+    counter: state.counter,
+  };
 }
 
-export default connect(mapStateToProps)(CounterPage)
+export default connect(mapStateToProps)(CounterPage);
