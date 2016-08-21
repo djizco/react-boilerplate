@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import bgTexture from '../assets/images/bg-texture.jpg';
-
 function Button(props) {
   return (
     <button
@@ -20,7 +18,7 @@ Button.propTypes = {
 
 export default function Home(props) {
   return (
-    <div style={{ backgroundImage: `url(${bgTexture})` }} className="home-container full-size">
+    <div className="home-container full-size">
       <h1 className="home-header">My New App</h1>
       <Button onContinue={props.onContinue}>Continue to App</Button>
     </div>

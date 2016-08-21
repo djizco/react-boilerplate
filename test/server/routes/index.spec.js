@@ -1,20 +1,21 @@
-require(TEST_HELPER); // <--- This must be at the top of every test file.
+import { expect } from 'code';
+import Lab from 'lab';
+import express from 'express';
+import request from 'supertest';
+import routes from '../../../server/routes/index.js';
 
-const request = require('supertest');
-const routes  = require(__server + '/routes/index.js');
+const lab = exports.lab = Lab.script();
+const { experiment, test } = lab;
 
-describe('The Server', function() {
-
-  const app = TestHelper.createApp();
+experiment('The Server', () => {
+  const app = express();
   app.use('/', routes);
-  app.testReady();
 
-  it_("serves an example endpoint", function * () {
-    yield request(app)
+  test("serves an example endpoint", done => {
+    request(app)
       .get('/api/tags')
       .expect(200)
-      .expect(function(response) {
-        expect(response.body).to.include('node');
-      });
+      .expect(response => expect(response.body).to.include('node'))
+      .then(() => done());
   });
 });

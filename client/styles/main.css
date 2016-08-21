@@ -52,6 +52,7 @@ html, body, .app {
 }
 
 .home-container {
+  background-image: url(/bg-texture.jpg);
   background-size: cover;
   display: flex;
   flex-direction: column;
