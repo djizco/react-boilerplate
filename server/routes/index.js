@@ -1,12 +1,13 @@
 const express = require('express');
-const router  = express.Router();
-const Path = require('path');
+const Path    = require('path');
 
-router.get('/api/tags', function(req, res) {
+const router  = express.Router();
+
+router.get('/api/tags', (req, res) => {
   res.send(['node', 'express', 'webpack', 'react']);
 });
 
-router.get('/*', function(req, res){
+router.get('/*', (req, res) => {
   res.sendFile(Path.resolve(__dirname, '../../dist', 'index.html'));
 });
 
