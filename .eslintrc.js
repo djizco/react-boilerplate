@@ -12,6 +12,7 @@ module.exports = {
   "plugins": ["react"],
   "rules": {
     // enable additional rules
+    "import/extensions": 2,
 
     // override default options for rules from base configurations
     "eqeqeq": [2, "smart"],
@@ -28,6 +29,7 @@ module.exports = {
     "react/jsx-closing-bracket-location": [2, { selfClosing: 'after-props', nonEmpty: 'after-props' }],
 
     // disable rules from base configurations
-    "react/jsx-boolean-value": 0,
+    "react/require-extension": 0, // depracated
+    "react/jsx-boolean-value": 0
   }
 };

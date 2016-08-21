@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
-import Home from '../components/Home.js';
+import Home from '../components/Home';
 
 export default class HomePage extends Component {
   constructor(props) {
