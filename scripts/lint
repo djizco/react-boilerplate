@@ -1,1 +1,1 @@
-./node_modules/eslint/bin/eslint.js client test server
+./node_modules/eslint/bin/eslint.js client test server webpack.*

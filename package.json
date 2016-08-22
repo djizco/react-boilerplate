@@ -8,6 +8,7 @@
     "build-dev": "webpack --config webpack.dev.config.js",
     "dev": "webpack-dev-server",
     "lint": "./scripts/lint",
+    "lint-fix": "./scripts/lint-fix",
     "postprod": "npm run start",
     "predev": "NODE_ENV=development",
     "preprod": "NODE_ENV=production",

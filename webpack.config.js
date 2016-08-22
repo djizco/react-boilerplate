@@ -1,6 +1,6 @@
 const Path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: Path.join(__dirname, 'client/index.html'),
@@ -8,11 +8,11 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body',
   favicon: Path.join(__dirname, 'client/assets/icons/favicon.ico')
 });
-const ExtractTextPluginConfig = new ExtractTextPlugin("bundle.css");
+const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 
 module.exports = {
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist',
     colors: true,
     historyApiFallback: true,
     inline: true
