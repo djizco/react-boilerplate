@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import Lab from 'lab';
 import { expect } from 'code';
-import { shallow } from "enzyme";
+import { shallow } from 'enzyme';
 
-import HomePage from "../../client/containers/HomePage";
+import HomePage from '../../../client/containers/HomePage';
 
 const lab = exports.lab = Lab.script();
 const { experiment, test } = lab;

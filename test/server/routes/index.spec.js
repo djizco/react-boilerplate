@@ -11,7 +11,7 @@ experiment('The Server', () => {
   const app = express();
   app.use('/', routes);
 
-  test("serves an example endpoint", done => {
+  test('serves an example endpoint', done => {
     request(app)
       .get('/api/tags')
       .expect(200)
