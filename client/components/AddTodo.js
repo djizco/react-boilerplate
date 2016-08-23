@@ -4,16 +4,17 @@ export default class AddTodo extends Component {
   handleClick = (e) => {
     e.preventDefault();
     const text = this.input.value;
-
-    this.props.onAddClick(text);
-    this.input.value = '';
+    if (text) {
+      this.props.onAddClick(text);
+      this.input.value = '';
+    }
   }
 
   render() {
     return (
-      <div>
+      <div className="add-todo">
         <input type="text" ref={c => { this.input = c; }} />
-        <button onClick={this.handleClick}>Add</button>
+        <button className="btn btn-sm btn-border btn-success" onClick={this.handleClick}>Add</button>
       </div>
     );
   }

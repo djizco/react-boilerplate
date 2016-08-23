@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 
 import { addTodo } from '../actions/todo';
 
-import AddTodo from '../components/AddTodo';
-import TodoList from '../components/TodoList';
+import Todo from '../components/Todo';
 
 class TodoPage extends Component {
   static propTypes = {
@@ -21,10 +20,7 @@ class TodoPage extends Component {
 
   render() {
     return (
-      <div>
-        <AddTodo onAddClick={this.handleAddClick} />
-        <TodoList todos={this.props.todos} />
-      </div>
+      <Todo handleAddClick={this.handleAddClick} todos={this.props.todos} />
     );
   }
 }

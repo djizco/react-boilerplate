@@ -28,12 +28,10 @@ class CounterPage extends Component {
 
   render() {
     return (
-      <div className="full-size">
-        <Counter
-          counter={this.props.counter}
-          onIncrement={this.handleIncrement}
-          onDecrement={this.handleDecrement} />
-      </div>
+      <Counter
+        counter={this.props.counter}
+        onIncrement={this.handleIncrement}
+        onDecrement={this.handleDecrement} />
     );
   }
 }

@@ -1,3 +1,5 @@
+/* Main App */
+
 html, body, .app {
   width: 100%;
   height: 100%;
@@ -5,26 +7,19 @@ html, body, .app {
   padding: 0;
 }
 
-.appear-enter {
-  transition-duration: .7s;
-  transition-property: opacity;
-  transition-timing-function: ease-out;
-  opacity: 0;
-}
-
-.appear-enter.appear-enter-active {
-  opacity: 1;
-}
-
-.appear-leave {
-  opacity: 0;
-}
-
 .full-size {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+.margin-sm {
+  margin: 10px;
+}
+
+.btn-border {
+  border: 1px solid #333;
 }
 
 .main-container {
@@ -42,9 +37,24 @@ html, body, .app {
   color: white;
 }
 
-.margin-sm {
-  margin: 10px;
+/* CSS Transitions */
+
+.appear-enter {
+  transition-duration: .7s;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  opacity: 0;
 }
+
+.appear-enter.appear-enter-active {
+  opacity: 1;
+}
+
+.appear-leave {
+  opacity: 0;
+}
+
+/* Home Page */
 
 .home-button {
   text-decoration: none;
@@ -56,7 +66,6 @@ html, body, .app {
   background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -66,18 +75,9 @@ html, body, .app {
   font-weight: 100;
 }
 
-.btn-border {
-  border: 1px solid #333;
-}
+/* General App */
 
-.counter {
-  text-align: center;
-  font-size: 120px;
-  width: 200px;
-  margin: 0 auto;
-}
-
-.counter-container {
+.app-container {
   background-color: #EEE;
   display: flex;
   align-items: center;
@@ -85,10 +85,38 @@ html, body, .app {
   flex-wrap: wrap;
 }
 
-.counter-header {
-  font-size: 64px;
+.app-header {
+  font-size: 4em;
   color: #333;
   text-align: center;
   font-weight: 100;
   width: 100%;
 }
+
+/* Counter Page */
+
+.counter {
+  text-align: center;
+  font-size: 8em;
+  width: 200px;
+  margin: 0 auto;
+}
+
+/* Todo Page */
+
+.add-todo button {
+
+}
+
+.add-todo input {
+
+}
+
+.todo-app li {
+  margin-top: 10px;
+  font-size: 1.4em;
+  font-weight: 200;
+  color: #333;
+  text-decoration: none;
+}
+
