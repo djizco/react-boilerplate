@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import Counter    from '../components/Counter';
 
 import { connect }              from 'react-redux';
 import { increment, decrement } from '../actions/counter';
 
-import Counter    from '../components/Counter';
 
 class CounterPage extends Component {
   static propTypes = {
