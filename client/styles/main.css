@@ -104,14 +104,6 @@ html, body, .app {
 
 /* Todo Page */
 
-.add-todo button {
-
-}
-
-.add-todo input {
-
-}
-
 .todo-app li {
   margin-top: 10px;
   font-size: 1.4em;
