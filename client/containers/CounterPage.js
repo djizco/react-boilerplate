@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import Counter    from '../components/Counter';
+import { connect } from 'react-redux';
 
-import { connect }              from 'react-redux';
+import Counter from '../components/Counter';
 import { increment, decrement } from '../actions/counter';
 
 

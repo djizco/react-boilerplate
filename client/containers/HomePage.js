@@ -9,16 +9,22 @@ export default class HomePage extends Component {
     this.props = props;
   }
 
-  handleContinue = (e) => {
+  handleToCounter = (e) => {
     e.preventDefault();
 
     browserHistory.push('counter');
   }
 
+  handleToTodo = (e) => {
+    e.preventDefault();
+
+    browserHistory.push('todo');
+  }
+
   render() {
     return (
       <div className="full-size">
-        <Home onContinue={this.handleContinue} />
+        <Home toTodo={this.handleToTodo} toCounter={this.handleToCounter} />
       </div>
     );
   }
