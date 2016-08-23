@@ -1,17 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { INCREMENT, DECREMENT } from '../actions/index';
 
-function counter(state = 0, action) {
-  switch (action.type) {
-    case INCREMENT:
-      return state + 1;
-    case DECREMENT:
-      return state - 1;
-    default:
-      return state;
-  }
-}
+import counter from './counter';
 
 const rootReducer = combineReducers({
   counter,
