@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-function Button(props) {
+export function Button(props) {
   return (
     <button
       type="button"

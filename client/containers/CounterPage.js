@@ -1,11 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 
 import { connect }              from 'react-redux';
-import { increment, decrement } from '../actions/index';
+import { increment, decrement } from '../actions/counter';
 
 import Counter    from '../components/Counter';
 
 class CounterPage extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    counter: PropTypes.number.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.props = props;
@@ -32,11 +37,6 @@ class CounterPage extends Component {
     );
   }
 }
-
-CounterPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  counter: PropTypes.number.isRequired,
-};
 
 function mapStateToProps(state) {
   return {
