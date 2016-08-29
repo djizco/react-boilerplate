@@ -5,7 +5,7 @@ import { addTodo } from '../actions/todo';
 
 import Todo from '../components/Todo';
 
-class TodoPage extends Component {
+export class TodoPage extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     todos: PropTypes.array.isRequired,

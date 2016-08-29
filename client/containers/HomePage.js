@@ -23,9 +23,7 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <div className="full-size">
-        <Home toTodo={this.handleToTodo} toCounter={this.handleToCounter} />
-      </div>
+      <Home toTodo={this.handleToTodo} toCounter={this.handleToCounter} />
     );
   }
 }

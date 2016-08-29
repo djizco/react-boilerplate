@@ -19,7 +19,7 @@ Button.propTypes = {
 
 export default function Counter(props) {
   return (
-    <div className="counter-app app-container full-size">
+    <div className="counter-app app-container">
       <div className="col-sm-12">
         <h1 className="app-header">Counter:</h1>
         <div className="counter">{props.counter}</div>

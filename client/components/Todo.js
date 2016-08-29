@@ -4,7 +4,7 @@ import TodoList from './TodoList';
 
 export default function Todo(props) {
   return (
-    <div className="todo-app app-container full-size">
+    <div className="todo-app app-container">
       <div className="col-sm-12">
         <h1 className="app-header">Todo List:</h1>
         <div className="col-sm-8 col-sm-offset-2 text-center">

@@ -18,7 +18,7 @@ Button.propTypes = {
 
 export default function Home(props) {
   return (
-    <div className="home-container full-size">
+    <div className="home-container">
       <h1 className="home-header">My New App</h1>
       <Button onContinue={props.toCounter}>Continue to Counter App</Button>
       <Button onContinue={props.toTodo}>Continue to Todo App</Button>

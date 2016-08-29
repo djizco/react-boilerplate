@@ -1,15 +1,6 @@
 /* Main App */
 
-html, body, .app {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.full-size {
-  height: 100%;
-  width: 100%;
+html, body, #app {
   margin: 0;
   padding: 0;
 }
@@ -23,16 +14,14 @@ html, body, .app {
 }
 
 .main-container {
-  height: 90%;
-  background: white;
-  color: black;
+  background: #EEE;
+  color: #333;
 }
 
 .main-header {
+  height: 10vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 5px;
   background: #66F;
   color: white;
 }
@@ -40,7 +29,7 @@ html, body, .app {
 /* CSS Transitions */
 
 .appear-enter {
-  transition-duration: .7s;
+  transition-duration: .5s;
   transition-property: opacity;
   transition-timing-function: ease-out;
   opacity: 0;
@@ -67,6 +56,7 @@ html, body, .app {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 90vh;
 }
 
 .home-header {
@@ -79,6 +69,7 @@ html, body, .app {
 
 .app-container {
   background-color: #EEE;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   flex-direction: column;

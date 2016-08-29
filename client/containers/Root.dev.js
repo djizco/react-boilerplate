@@ -5,10 +5,10 @@ import { Router } from 'react-router';
 import DevTools from './DevTools';
 import routes from '../routes';
 
-function Root(props) {
+export default function Root(props) {
   return (
     <Provider store={props.store}>
-      <div className="full-size">
+      <div>
         <Router history={props.history} routes={routes} />
         <DevTools />
       </div>
@@ -20,5 +20,3 @@ Root.propTypes = {
   store: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
 };
-
-export default Root;
