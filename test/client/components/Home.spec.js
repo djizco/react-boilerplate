@@ -3,14 +3,14 @@ import Lab from 'lab';
 import { expect } from 'code';
 import { shallow } from 'enzyme';
 
-import HomePage from '../../../client/containers/HomePage';
+import Home from '../../../client/components/Home';
 
 const lab = exports.lab = Lab.script();
 const { experiment, test } = lab;
 
-const wrapper = shallow(<HomePage />);
+const wrapper = shallow(<Home toTodo={c => c} toCounter={c => c} />);
 
-experiment('<HomePage />', () => {
+experiment('<Home />', () => {
   test('renders as a <div> element', done => {
     expect(wrapper.type()).to.equal('div');
     done();
