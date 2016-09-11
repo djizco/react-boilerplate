@@ -29,18 +29,21 @@ html, body, #app {
 /* CSS Transitions */
 
 .appear-enter {
-  transition-duration: .5s;
-  transition-property: opacity;
-  transition-timing-function: ease-out;
-  opacity: 0;
+  opacity: 0.01;
 }
 
 .appear-enter.appear-enter-active {
   opacity: 1;
+  transition: opacity 500ms ease-in;
 }
 
 .appear-leave {
-  opacity: 0;
+  opacity: 1;
+}
+
+.appear-leave.appear-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
 
 /* Home Page */
