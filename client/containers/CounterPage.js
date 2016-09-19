@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import R from 'ramda';
 import Counter from '../components/Counter';
 import { increment, decrement } from '../actions/counter';
 
@@ -36,10 +36,6 @@ export class CounterPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    counter: state.counter,
-  };
-}
+const mapStateToProps = R.pick(['counter']);
 
 export default connect(mapStateToProps)(CounterPage);

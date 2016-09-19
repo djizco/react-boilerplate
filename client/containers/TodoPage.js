@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
+import R from 'ramda';
 import { addTodo } from '../actions/todos';
-
 import Todo from '../components/Todo';
 
 export class TodoPage extends Component {
@@ -25,10 +24,6 @@ export class TodoPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    todos: state.todos,
-  };
-}
+const mapStateToProps = R.pick(['todos']);
 
 export default connect(mapStateToProps)(TodoPage);
