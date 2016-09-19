@@ -29,6 +29,7 @@ module.exports = {
     "react/jsx-closing-bracket-location": [2, { selfClosing: 'after-props', nonEmpty: 'after-props' }],
 
     // disable rules from base configurations
+    "import/no-named-as-default": 0, // causes error with redux testing
     "react/require-extension": 0, // depracated
     "react/jsx-boolean-value": 0
   }

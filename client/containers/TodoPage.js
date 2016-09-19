@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { addTodo } from '../actions/todo';
+import { addTodo } from '../actions/todos';
 
 import Todo from '../components/Todo';
 
@@ -27,7 +27,7 @@ export class TodoPage extends Component {
 
 function mapStateToProps(state) {
   return {
-    todos: state.todo,
+    todos: state.todos,
   };
 }
 
