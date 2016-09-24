@@ -18,7 +18,6 @@ export class CounterPage extends Component {
 
   handleIncrement = (e) => {
     e.preventDefault();
-    console.log('increment counter');
     this.props.dispatch(increment());
   }
 
