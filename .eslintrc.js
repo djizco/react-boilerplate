@@ -11,7 +11,7 @@ module.exports = {
     "allowImportExportEverywhere": false
   },
   "rules": {
-    //enable rules
+    // enable rules
     "no-var": 2,
 
     // redeclare defaults
