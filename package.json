@@ -20,11 +20,29 @@
     "type": "git",
     "url": "git+https://github.com/djizco/boilerplate-react.git"
   },
-  "author": "Rico Rojas <djizco@yahoo.com>",
+  "author": {
+    "name": "Rico Rojas",
+    "email": "djizco@yahoo.com",
+    "url": "https://github.com/djizco"
+  },
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/djizco/boilerplate-react/issues"
   },
+  "keywords": [
+    "react",
+    "redux",
+    "webpack",
+    "express",
+    "bulma",
+    "material-ui",
+    "fontawesome",
+    "ramda",
+    "eslint",
+    "code",
+    "lab",
+    "enzyme"
+  ],
   "homepage": "https://github.com/djizco/boilerplate-react#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
