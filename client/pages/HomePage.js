@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
-import Home from '../components/Home';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -21,9 +21,17 @@ export default class HomePage extends Component {
     browserHistory.push('todo');
   }
 
+  styles = {
+    button: { margin: '10px' },
+  };
+
   render() {
     return (
-      <Home toTodo={this.handleToTodo} toCounter={this.handleToCounter} />
+      <div className="home-container app-flex">
+        <h1 className="title is-1">React App</h1>
+        <RaisedButton label="Counter App" style={this.styles.button} onClick={this.handleToCounter} />
+        <RaisedButton label="Todo App" style={this.styles.button} onClick={this.handleToTodo} />
+      </div>
     );
   }
 }

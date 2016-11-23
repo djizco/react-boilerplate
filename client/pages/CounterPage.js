@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import R from 'ramda';
-import Counter from '../components/Counter';
+
 import { increment, decrement } from '../actions/counter';
+import Button from '../components/Button';
 
 
 export class CounterPage extends Component {
@@ -28,10 +29,24 @@ export class CounterPage extends Component {
 
   render() {
     return (
-      <Counter
-        counter={this.props.counter}
-        onIncrement={this.handleIncrement}
-        onDecrement={this.handleDecrement} />
+      <div className="counter-app app-flex">
+        <h1 className="title is-1 has-text-centered">Counter:</h1>
+        <div className="counter">{this.props.counter}</div>
+        <div className="columns">
+          <div className="column is-6 text-center">
+            <Button
+              success={true}
+              handleClick={this.handleIncrement}
+              label="Increment" />
+          </div>
+          <div className="column is-6 text-center">
+            <Button
+              danger={true}
+              handleClick={this.handleDecrement}
+              label="Decrement" />
+          </div>
+        </div>
+      </div>
     );
   }
 }

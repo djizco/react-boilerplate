@@ -1,0 +1,80 @@
+/* Main App */
+html, body, #app {
+  margin: 0;
+  padding: 0;
+}
+
+/* General Styles */
+.app-flex {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* CSS Transitions */
+.appear-enter {
+  opacity: 0.01;
+}
+.appear-enter.appear-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.appear-leave {
+  opacity: 1;
+}
+.appear-leave.appear-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+/* Home Page */
+.home-container {
+  h1.title.is-1 {
+    margin-top: 20px;
+    color: #333;
+    font-weight: 100;
+  }
+  .button {
+    margin: 10px;
+  }
+}
+
+/* Counter Page */
+.counter-app {
+  width: 200px;
+  margin: 0 auto;
+  h1.title.is-1 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #333;
+    font-weight: 100;
+  }
+  .counter {
+    text-align: center;
+    font-size: 8em;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+/* Todo Page */
+.todo-app {
+  min-height: 90vh;
+  h1.title.is-1 {
+    margin: 20px;
+    color: #333;
+    font-weight: 100;
+  }
+  li {
+    margin-top: 10px;
+    font-size: 1.4em;
+    font-weight: 200;
+    color: #333;
+    text-decoration: none;
+  }
+}

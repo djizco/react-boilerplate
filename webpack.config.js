@@ -8,6 +8,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body',
   favicon: Path.join(__dirname, 'client/assets/icons/favicon.ico')
 });
+
 const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 
 module.exports = {
@@ -33,11 +34,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader', 'sass-loader')
+        test: /\.scss$/i,
+        loader: ExtractTextPlugin.extract(['css', 'sass'])
+      },
+      {
+        test: /\.less$/i,
+        loader: ExtractTextPlugin.extract(['css', 'less'])
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
@@ -45,11 +50,19 @@ module.exports = {
           'file?name=[name].[ext]',
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'file-loader'
       }
     ]
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    ExtractTextPluginConfig
+    ExtractTextPluginConfig,
   ]
 };

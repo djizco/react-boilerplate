@@ -1,6 +1,16 @@
 import React, { Component, PropTypes } from 'react';
+import Button from './Button';
 
 export default class AddTodo extends Component {
+  static propTypes = {
+    onAddClick: PropTypes.func.isRequired,
+  }
+
+  constructor(props) {
+    super(props);
+    this.props = props;
+  }
+
   handleClick = (e) => {
     e.preventDefault();
     const text = this.input.value;
@@ -12,18 +22,14 @@ export default class AddTodo extends Component {
 
   render() {
     return (
-      <div className="add-todo col-sm-12">
-        <input className="col-sm-10" type="text" ref={c => { this.input = c; }} />
-        <button
-          className="btn btn-sm btn-border btn-success col-sm-1 col-sm-offset-1"
-          onClick={this.handleClick} >
-          Add
-        </button>
+      <div className="add-todo columns is-gapless">
+        <div className="column is-10">
+          <input className="input" type="text" ref={c => { this.input = c; }} />
+        </div>
+        <div className="column is-2">
+          <Button handleClick={this.handleClick} label="Add" success={true} />
+        </div>
       </div>
     );
   }
 }
-
-AddTodo.propTypes = {
-  onAddClick: PropTypes.func.isRequired,
-};

@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import Main from './containers/Main';
-import HomePage from './containers/HomePage';
-import CounterPage from './containers/CounterPage';
-import TodoPage from './containers/TodoPage';
+import HomePage from './pages/HomePage';
+import CounterPage from './pages/CounterPage';
+import TodoPage from './pages/TodoPage';
 
 export default (
   <Route path="/" component={Main}>

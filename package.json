@@ -1,12 +1,11 @@
 {
   "name": "boilerplate-react",
   "version": "1.0.0",
-  "description": "My Personal React Boilerplate",
+  "description": "React Boilerplate",
   "main": "server/index.js",
   "scripts": {
     "build": "webpack -p --config webpack.prod.config.js",
-    "build-dev": "webpack --config webpack.dev.config.js",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --config webpack.dev.config.js",
     "lint": "./scripts/lint",
     "lint-fix": "./scripts/lint-fix",
     "postprod": "npm run start",
@@ -22,7 +21,7 @@
     "url": "git+https://github.com/djizco/boilerplate-react.git"
   },
   "author": "Rico Rojas <djizco@yahoo.com>",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/djizco/boilerplate-react/issues"
   },
@@ -44,6 +43,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.5",
+    "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.5.2",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
@@ -60,6 +60,8 @@
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "bulma": "^0.2.3",
+    "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "eslint": "^3.3.1",
     "eslint-config-airbnb": "^10.0.1",
@@ -72,13 +74,19 @@
     "eslint-plugin-standard": "^2.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "font-awesome": "^4.7.0",
+    "font-awesome-webpack": "0.0.4",
     "html-webpack-plugin": "^2.21.0",
     "image-webpack-loader": "^2.0.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "material-ui": "^0.16.4",
     "node-sass": "^3.8.0",
     "nodemon": "^1.9.2",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "supertest": "^2.0.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1"
   }
