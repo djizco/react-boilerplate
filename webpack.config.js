@@ -1,12 +1,12 @@
-const Path              = require('path');
+const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: Path.join(__dirname, 'client/index.html'),
+  template: path.join(__dirname, 'client/index.html'),
   filename: 'index.html',
   inject: 'body',
-  favicon: Path.join(__dirname, 'client/assets/icons/favicon.ico')
+  favicon: path.join(__dirname, 'client/assets/icons/favicon.ico')
 });
 
 const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
@@ -22,7 +22,7 @@ module.exports = {
     './client/index.js'
   ],
   output: {
-    path: Path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
