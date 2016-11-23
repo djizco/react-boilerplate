@@ -1,80 +1,86 @@
-/* Main App */
-html, body, #app {
-  margin: 0;
-  padding: 0;
-}
+// Variables
+$darkgray: #333;
 
-/* General Styles */
+// General Styles
 .app-flex {
-  min-height: 90vh;
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  min-height: 90vh;
 }
 
-/* CSS Transitions */
+// CSS Transitions
 .appear-enter {
-  opacity: 0.01;
+  opacity: .01;
+
+  &.appear-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
 }
-.appear-enter.appear-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
+
 .appear-leave {
   opacity: 1;
-}
-.appear-leave.appear-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+
+  &.appear-leave-active {
+    opacity: .01;
+    transition: opacity 300ms ease-in;
+  }
 }
 
-/* Home Page */
+// Home Page
 .home-container {
-  h1.title.is-1 {
-    margin-top: 20px;
-    color: #333;
+  .title.is-1 {
+    color: $darkgray;
     font-weight: 100;
+    margin-top: 20px;
   }
+
   .button {
     margin: 10px;
   }
 }
 
-/* Counter Page */
+// Counter Page
 .counter-app {
-  width: 200px;
   margin: 0 auto;
-  h1.title.is-1 {
-    margin-top: 20px;
-    margin-bottom: 0;
-    color: #333;
+  width: 200px;
+
+  .title.is-1 {
+    color: $darkgray;
     font-weight: 100;
+    margin-bottom: 0;
+    margin-top: 20px;
   }
+
   .counter {
-    text-align: center;
     font-size: 8em;
-    width: 100%;
     margin: 0 auto;
+    text-align: center;
+    width: 100%;
   }
+
   .button {
     width: 100%;
   }
 }
 
-/* Todo Page */
+// Todo Page
 .todo-app {
   min-height: 90vh;
-  h1.title.is-1 {
-    margin: 20px;
-    color: #333;
+
+  .title.is-1 {
+    color: $darkgray;
     font-weight: 100;
+    margin: 20px;
   }
+
   li {
-    margin-top: 10px;
+    color: $darkgray;
     font-size: 1.4em;
     font-weight: 200;
-    color: #333;
+    margin-top: 10px;
     text-decoration: none;
   }
 }
