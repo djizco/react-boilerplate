@@ -1,5 +1,5 @@
 const express = require('express');
-const Path    = require('path');
+const path    = require('path');
 
 const router  = express.Router();
 
@@ -8,7 +8,7 @@ router.get('/api/tags', (req, res) => {
 });
 
 router.get('/*', (req, res) => {
-  res.sendFile(Path.resolve(__dirname, '../../dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../../dist', 'index.html'));
 });
 
 module.exports = router;
