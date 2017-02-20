@@ -51,7 +51,6 @@
     "express": "^4.14.0",
     "lab": "^11.0.0",
     "lab-babel": "^1.1.1",
-    "nodemon": "^1.10.2",
     "ramda": "^0.22.1",
     "react": "^15.2.1",
     "react-addons-css-transition-group": "^15.3.1",
