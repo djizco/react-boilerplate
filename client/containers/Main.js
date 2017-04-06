@@ -20,8 +20,8 @@ export default function Main(props) {
 }
 
 Main.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.element.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string,
-  }),
+  }).isRequired,
 };

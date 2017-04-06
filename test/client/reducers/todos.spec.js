@@ -4,7 +4,8 @@ import { expect } from 'code';
 import { addTodo } from '../../../client/actions/todos';
 import reducer from '../../../client/reducers/todos';
 
-const lab = exports.lab = Lab.script();
+exports.lab = Lab.script();
+const lab = exports.lab;
 const { experiment, test } = lab;
 
 experiment('Todos Reducer:', () => {

@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import DevTools from '../containers/DevTools';
@@ -11,7 +11,7 @@ export default function configureStore(preloadedState) {
     preloadedState,
     compose(
       applyMiddleware(createLogger(), thunk),
-      DevTools.instrument()
-    )
+      DevTools.instrument(),
+    ),
   );
 }

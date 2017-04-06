@@ -5,7 +5,8 @@ import { increment, decrement } from '../../../client/actions/counter';
 import reducer from '../../../client/reducers/counter';
 
 
-const lab = exports.lab = Lab.script();
+exports.lab = Lab.script();
+const lab = exports.lab;
 const { experiment, test } = lab;
 
 experiment('Counter Reducer:', () => {

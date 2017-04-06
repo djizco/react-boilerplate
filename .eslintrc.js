@@ -47,9 +47,9 @@ module.exports = {
     "spaced-comment": [1, "always"],
 
     // disable defaults
-    "standard/object-curly-even-spacing": 0,
     "brace-style": 0,
     "keyword-spacing": 0,
+    "standard/object-curly-even-spacing": 0,
     "padded-blocks": 0
   }
 };

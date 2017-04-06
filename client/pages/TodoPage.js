@@ -9,7 +9,7 @@ import TodoList from '../components/TodoList';
 export class TodoPage extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    todos: PropTypes.array.isRequired,
+    todos: PropTypes.arrayOf(PropTypes.Object).isRequired,
   };
 
   constructor(props) {
