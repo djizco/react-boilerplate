@@ -23,6 +23,11 @@ npm run lint
 npm run lint-fix
 ```
 
+## Updates
+
+* Add Webpack 2
+* Update to reducers to use immutability-helper
+
 ## Technologies
 
 [React](https://facebook.github.io/react/) - View Library
