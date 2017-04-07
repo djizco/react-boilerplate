@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <nav className="nav has-shadow">
       <div className="nav-left">
-        <Link to="/" className="nav-item is-brand">
+        <Link to="/" className="nav-item">
           <h3 className="title is-3">React</h3>
         </Link>
       </div>

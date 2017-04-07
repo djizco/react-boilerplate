@@ -21,7 +21,7 @@ export class TodoPage extends Component {
 
   render() {
     return (
-      <div className="todo-app">
+      <div className="todo-app container">
         <h1 className="title is-1 has-text-centered">Todo List:</h1>
         <div className="columns">
           <div className="column is-8 is-offset-2 text-center">

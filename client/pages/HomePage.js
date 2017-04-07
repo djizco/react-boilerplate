@@ -9,13 +9,13 @@ export default class HomePage extends Component {
     this.props = props;
   }
 
-  handleToCounter = (e) => {
+  handleToCounter = e => {
     e.preventDefault();
 
     browserHistory.push('counter');
   }
 
-  handleToTodo = (e) => {
+  handleToTodo = e => {
     e.preventDefault();
 
     browserHistory.push('todo');

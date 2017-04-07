@@ -1,3 +1,9 @@
 // Override bulma variables here
 
 @import '~bulma';
+
+.container {
+  @media (max-width: 768px) {
+    margin: 0 20px;
+  }
+}

@@ -20,6 +20,12 @@ export default class AddTodoContainer extends Component {
     }
   }
 
+  styles = {
+    button: {
+      width: '100%',
+    },
+  }
+
   render() {
     return (
       <div className="add-todo columns is-gapless">
@@ -27,7 +33,7 @@ export default class AddTodoContainer extends Component {
           <input className="input" type="text" ref={c => { this.input = c; }} />
         </div>
         <div className="column is-2">
-          <Button handleClick={this.handleClick} label="Add" success={true} />
+          <Button style={this.styles.button} handleClick={this.handleClick} label="Add" success={true} />
         </div>
       </div>
     );

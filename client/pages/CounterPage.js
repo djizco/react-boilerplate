@@ -17,12 +17,12 @@ export class CounterPage extends Component {
     this.props = props;
   }
 
-  handleIncrement = (e) => {
+  handleIncrement = e => {
     e.preventDefault();
     this.props.dispatch(increment());
   }
 
-  handleDecrement = (e) => {
+  handleDecrement = e => {
     e.preventDefault();
     this.props.dispatch(decrement());
   }

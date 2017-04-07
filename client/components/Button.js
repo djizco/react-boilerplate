@@ -2,10 +2,11 @@ import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 
 export default function Button(props) {
-  const { success, danger, handleClick, label } = props;
+  const { success, danger, handleClick, label, style } = props;
   const classes = classNames({ button: true, 'is-success': success, 'is-danger': danger });
   return (
     <button
+      style={style}
       type="button"
       className={classes}
       onClick={handleClick} >
@@ -15,6 +16,7 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
+  style: PropTypes.object,
   success: PropTypes.bool,
   danger: PropTypes.bool,
   handleClick: PropTypes.func,
@@ -22,6 +24,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  style: {},
   label: '',
   success: false,
   danger: false,
