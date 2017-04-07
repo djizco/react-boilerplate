@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import TransitionGroup from 'react-addons-css-transition-group';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Navigation from '../components/Navigation';
+import Navigation from './Navigation';
 
 export default function Main(props) {
   return (

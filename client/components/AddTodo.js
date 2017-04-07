@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Button from './Button';
 
-export default class AddTodo extends Component {
+export default class AddTodoContainer extends Component {
   static propTypes = {
     onAddClick: PropTypes.func.isRequired,
   }

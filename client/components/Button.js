@@ -17,7 +17,7 @@ export default function Button(props) {
 Button.propTypes = {
   success: PropTypes.bool,
   danger: PropTypes.bool,
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
   label: PropTypes.string,
 };
 
@@ -25,5 +25,5 @@ Button.defaultProps = {
   label: '',
   success: false,
   danger: false,
-  onClick: () => {},
+  handleClick: () => {},
 };

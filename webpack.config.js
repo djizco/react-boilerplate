@@ -35,21 +35,21 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css'),
+        loader: ExtractTextPlugin.extract(['style-loader', 'css-loader']),
       },
       {
         test: /\.scss$/i,
-        loader: ExtractTextPlugin.extract(['css', 'sass']),
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
       {
         test: /\.less$/i,
-        loader: ExtractTextPlugin.extract(['css', 'less']),
+        loader: ExtractTextPlugin.extract(['css-loader', 'less-loader']),
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
         loaders: [
-          'file?name=[name].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false',
+          'file-loader?name=[name].[ext]',
+          'image-webpack-loader?bypassOnDebug&&gifsicle.interlaced=false&optipng.optimizationLevel=7',
         ],
       },
       {
