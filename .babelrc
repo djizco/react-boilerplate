@@ -1,4 +1,16 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
+  "presets": [
+    [
+      "es2015",
+      {
+        "es2015": {
+          "loose": true,
+          "modules": false
+        }
+      }
+    ],
+    "stage-0",
+    "react"
+  ],
   "plugins": ["transform-runtime"]
 }

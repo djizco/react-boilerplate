@@ -13,8 +13,14 @@ config.plugins.push(
   new webpack.optimize.UglifyJsPlugin({
     compress: {
       drop_console: true,
-      warnings: false
-    }
+    },
+    sourceMap: true,
+  })
+);
+
+config.plugins.push(
+  new webpack.LoaderOptionsPlugin({
+    minimize: true,
   })
 );
 

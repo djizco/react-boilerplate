@@ -14,7 +14,6 @@ const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 module.exports = {
   devServer: {
     contentBase: './dist',
-    colors: true,
     historyApiFallback: true,
     inline: true,
   },
@@ -27,11 +26,11 @@ module.exports = {
     publicPath: '/',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         loader: 'babel-loader',
+        include: [path.join(__dirname, 'client')],
       },
       {
         test: /\.css$/,
@@ -47,9 +46,31 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
-        loaders: [
-          'file-loader?name=[name].[ext]',
-          'image-webpack-loader?bypassOnDebug&&gifsicle.interlaced=false&optipng.optimizationLevel=7',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+          {
+            loader: 'image-webpack-loader',
+            query: {
+              optipng: {
+                optimizationLevel: 7,
+              },
+              mozjpeg: {
+                progressive: true,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              pngquant: {
+                quality: '75-90',
+                speed: 3,
+              },
+            },
+          },
         ],
       },
       {
