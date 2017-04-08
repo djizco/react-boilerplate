@@ -50,6 +50,7 @@
     "enzyme": "^2.8.0",
     "express": "^4.15.2",
     "immutability-helper": "^2.1.2",
+    "jquery": "^3.2.1",
     "lab": "^13.0.1",
     "lab-babel": "^1.1.1",
     "ramda": "^0.23.0",

@@ -1,5 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
+import $ from 'jquery';
+
+function toggleActive() {
+  $('#nav-toggle').toggleClass('is-active');
+  $('#nav-menu').toggleClass('is-active');
+}
 
 export default function Navigation() {
   return (
@@ -18,14 +24,14 @@ export default function Navigation() {
         </Link>
       </div>
 
-      <span className="nav-toggle">
+      <span id="nav-toggle" className="nav-toggle" onClick={toggleActive}>
         <span />
         <span />
         <span />
       </span>
 
-      <div className="nav-right nav-menu">
-        <Link to="/" className="nav-item">
+      <div id="nav-menu" className="nav-right nav-menu">
+        <Link to="/" className="nav-item" onClick={toggleActive}>
           <h6 className="title is-6">Home</h6>
         </Link>
       </div>
