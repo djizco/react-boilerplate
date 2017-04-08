@@ -1,4 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Button from './Button';
 
 export default class AddTodoContainer extends Component {
@@ -11,19 +13,35 @@ export default class AddTodoContainer extends Component {
     this.props = props;
   }
 
-  handleClick = (e) => {
-    e.preventDefault();
-    const text = this.input.value;
-    if (text) {
-      this.props.onAddClick(text);
-      this.input.value = '';
-    }
+  componentWillMount() {
+    window.addEventListener('keypress', this.keypress);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keypress', this.keypress);
   }
 
   styles = {
     button: {
       width: '100%',
     },
+  }
+
+  keypress = e => {
+    if (e.key === 'Enter') { this.addTodo(); }
+  }
+
+  handleClick = (e) => {
+    e.preventDefault();
+    this.addTodo();
+  }
+
+  addTodo() {
+    const text = this.input.value;
+    if (text) {
+      this.props.onAddClick(text);
+      this.input.value = '';
+    }
   }
 
   render() {
