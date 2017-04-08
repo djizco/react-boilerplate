@@ -3,6 +3,7 @@
 ## Quick Start for Development
 
 ```
+brew install libpng (needed for .jpg images)
 npm install
 npm run dev
 ```

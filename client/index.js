@@ -7,7 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import 'font-awesome-webpack';
 import './styles/main.scss';
-import './assets/icons/favicon.ico';
+import './assets';
 
 import Root from './components/Root/Root';
 import configureStore from './store/configureStore';
