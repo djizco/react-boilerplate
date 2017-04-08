@@ -21,16 +21,20 @@ export class TodoPage extends Component {
 
   render() {
     return (
-      <div className="todo-app container">
-        <h1 className="title is-1 has-text-centered">Todo List:</h1>
-        <div className="columns">
-          <div className="column is-8 is-offset-2 text-center">
-            <AddTodo onAddClick={this.handleAddClick} />
-          </div>
-        </div>
-        <div className="columns">
-          <div className="column is-8 is-offset-2 text-left">
-            <TodoList todos={this.props.todos} />
+      <div className="todo-app">
+        <div className="container">
+          <div className="section full-page">
+            <h1 className="title is-1 has-text-centered">Todo List:</h1>
+            <div className="columns">
+              <div className="column is-8 is-offset-2 text-center">
+                <AddTodo onAddClick={this.handleAddClick} />
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-8 is-offset-2 text-left">
+                <TodoList todos={this.props.todos} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ function toggleActive() {
 
 export default function Navigation() {
   return (
-    <nav className="nav has-shadow">
+    <nav className="nav has-shadow is-fixed">
       <div className="nav-left">
         <Link to="/" className="nav-item">
           <h3 className="title is-3">React</h3>
@@ -34,7 +34,14 @@ export default function Navigation() {
         <Link to="/" className="nav-item" onClick={toggleActive}>
           <h6 className="title is-6">Home</h6>
         </Link>
+        <Link to="counter" className="nav-item" onClick={toggleActive}>
+          <h6 className="title is-6">Counter</h6>
+        </Link>
+        <Link to="todo" className="nav-item" onClick={toggleActive}>
+          <h6 className="title is-6">Todo</h6>
+        </Link>
       </div>
+
     </nav>
   );
 }

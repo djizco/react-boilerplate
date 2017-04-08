@@ -1,18 +1,7 @@
-// Variables
-$darkgray: #333;
-$whitesmoke: #f5f5f5;
-
-// General Styles
-html {
-  background-color: $whitesmoke;
-}
-
-.app-flex {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  min-height: 92vh;
+// Main
+.main {
+  margin-top: 52px;
+  min-height: calc(100vh - 156px);
 }
 
 // CSS Transitions
@@ -32,6 +21,29 @@ html {
     opacity: .01;
     transition: opacity 300ms ease-in;
   }
+}
+
+// Navigation
+.nav {
+  &.is-fixed {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1030;
+  }
+}
+
+// Footer
+.footer {
+  background-color: $lightgrey;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+// Lost Page
+.lost-page {
+  text-align: center;
 }
 
 // Home Page
@@ -73,8 +85,7 @@ html {
 
 // Todo Page
 .todo-app {
-  min-height: 92vh;
-
+  margin-top: -48px;
   .title.is-1 {
     color: $darkgray;
     font-weight: 100;
