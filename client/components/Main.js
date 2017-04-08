@@ -1,24 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransitionGroup } from 'react-transition-group';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Navigation from './Navigation';
-import Footer from './Footer';
 
 export default function Main(props) {
   return (
     <MuiThemeProvider>
       <div>
         <Navigation />
-        <TransitionGroup
+        <CSSTransitionGroup
           transitionName="appear"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
-          <div className="main">
-            {React.cloneElement(props.children, { key: props.location.pathname })}
-          </div>
-        </TransitionGroup>
-        <Footer />
+          {React.cloneElement(props.children, { key: props.location.pathname })}
+        </CSSTransitionGroup>
       </div>
     </MuiThemeProvider>
   );

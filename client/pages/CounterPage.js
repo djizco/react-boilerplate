@@ -30,7 +30,7 @@ export class CounterPage extends Component {
 
   render() {
     return (
-      <div className="counter-app app-flex">
+      <div className="page counter-page full-page app-flex">
         <h1 className="title is-1 has-text-centered">Counter:</h1>
         <div className="counter">{this.props.counter}</div>
         <div className="columns">

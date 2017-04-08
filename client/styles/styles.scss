@@ -1,9 +1,3 @@
-// Main
-.main {
-  margin-top: 52px;
-  min-height: calc(100vh - 156px);
-}
-
 // CSS Transitions
 .appear-enter {
   opacity: .01;
@@ -47,7 +41,9 @@
 }
 
 // Home Page
-.home-container {
+.home-page {
+  min-height: calc(100vh - 156px);
+
   .title.is-1 {
     color: $darkgray;
     font-weight: 100;
@@ -60,8 +56,8 @@
 }
 
 // Counter Page
-.counter-app {
-  margin: 0 auto;
+.counter-page {
+  margin: 52px auto 0;
   width: 200px;
 
   .title.is-1 {
@@ -84,7 +80,7 @@
 }
 
 // Todo Page
-.todo-app {
+.todo-page {
   .title.is-1 {
     color: $darkgray;
     font-weight: 100;
