@@ -30,9 +30,11 @@ module.exports = {
 
     // disable rules from base configurations
     "arrow-parens": 0,
-    "no-plusplus": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-named-as-default": 0, // causes error with redux testing
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-plusplus": 0,
+    "no-confusing-arrow": 0,
     "react/require-extension": 0, // depracated
     "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": 0
