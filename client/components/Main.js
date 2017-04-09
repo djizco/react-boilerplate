@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Navigation from './Navigation';
 
 export default function Main(props) {
+  const { children, location } = props;
   return (
     <MuiThemeProvider>
       <div>
@@ -13,7 +14,7 @@ export default function Main(props) {
           transitionName="appear"
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
-          {React.cloneElement(props.children, { key: props.location.pathname })}
+          {cloneElement(children, { key: location.pathname })}
         </CSSTransitionGroup>
       </div>
     </MuiThemeProvider>
