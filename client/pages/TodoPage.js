@@ -22,7 +22,7 @@ export class TodoPage extends Component {
 
   render() {
     return (
-      <div className="page todo-page">
+      <div className="todo-page">
         <div className="container">
           <div className="section full-page">
             <h1 className="title is-1 has-text-centered">Todo List:</h1>

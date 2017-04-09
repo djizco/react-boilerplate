@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NotFoundPage() {
   return (
-    <div className="page lost-page">
+    <div className="lost-page">
       <div className="container">
         <div className="section full-page">
           <h1 className="app-title title is-1">404</h1>

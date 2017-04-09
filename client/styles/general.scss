@@ -11,16 +11,12 @@ a {
   margin: 0 -20px 20px;
 }
 
-.page {
-  margin-top: 52px;
-}
-
 .full-screen {
   min-height: 100vh;
 }
 
 .full-page {
-  min-height: calc(100vh - 52px);
+  min-height: calc(100vh - 156px);
 }
 
 .app-flex {

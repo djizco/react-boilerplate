@@ -1,20 +1,7 @@
-// CSS Transitions
-.appear-enter {
-  opacity: .01;
-
-  &.appear-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-}
-
-.appear-leave {
-  opacity: 1;
-
-  &.appear-leave-active {
-    opacity: .01;
-    transition: opacity 300ms ease-in;
-  }
+// Main
+.main {
+  margin-top: 52px;
+  min-height: calc(100vh - 156px);
 }
 
 // Navigation
@@ -42,8 +29,6 @@
 
 // Home Page
 .home-page {
-  min-height: calc(100vh - 156px);
-
   .title.is-1 {
     color: $darkgray;
     font-weight: 100;
@@ -56,9 +41,8 @@
 }
 
 // Counter Page
-.counter-page {
-  margin: 52px auto 0;
-  width: 200px;
+.counter-page .section {
+  margin: 0 auto;
 
   .title.is-1 {
     color: $darkgray;
@@ -75,6 +59,11 @@
   }
 
   .button {
+    width: 100%;
+  }
+
+  .columns {
+    max-width: 400px;
     width: 100%;
   }
 }

@@ -30,21 +30,25 @@ export class CounterPage extends Component {
 
   render() {
     return (
-      <div className="page counter-page full-page app-flex">
-        <h1 className="title is-1 has-text-centered">Counter:</h1>
-        <div className="counter">{this.props.counter}</div>
-        <div className="columns">
-          <div className="column is-6 text-center">
-            <Button
-              success={true}
-              handleClick={this.handleIncrement}
-              label="Increment" />
-          </div>
-          <div className="column is-6 text-center">
-            <Button
-              danger={true}
-              handleClick={this.handleDecrement}
-              label="Decrement" />
+      <div className="counter-page">
+        <div className="container">
+          <div className="section full-page app-flex">
+            <h1 className="title is-1 has-text-centered">Counter:</h1>
+            <div className="counter">{this.props.counter}</div>
+            <div className="columns">
+              <div className="column is-6 text-center">
+                <Button
+                  success={true}
+                  handleClick={this.handleIncrement}
+                  label="Increment" />
+              </div>
+              <div className="column is-6 text-center">
+                <Button
+                  danger={true}
+                  handleClick={this.handleDecrement}
+                  label="Decrement" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
