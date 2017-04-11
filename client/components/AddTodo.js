@@ -13,7 +13,7 @@ export default class AddTodoContainer extends Component {
     this.props = props;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener('keypress', this.keypress);
   }
 
