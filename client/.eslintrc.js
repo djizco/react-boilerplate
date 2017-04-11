@@ -35,7 +35,7 @@ module.exports = {
     "jsx-a11y/no-static-element-interactions": 0,
     "no-plusplus": 0,
     "no-confusing-arrow": 0,
-    "react/require-extension": 0, // depracated
+    "react/require-extension": 0, // deprecated
     "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": 0
   }
