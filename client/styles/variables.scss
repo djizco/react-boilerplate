@@ -1,4 +1,26 @@
-// Variables
-$darkgray: #333;
+// Colors
+$white: #fff;
 $whitesmoke: #f5f5f5;
-$lightgrey: #e5e5e5;
+$lightest-grey: #e5e5e5;
+$lighter-grey: #d5d5d5;
+$light-grey: #c5c5c5;
+$dark-grey: #353535;
+$black: #000;
+$lightblue: #add8e6;
+
+$navshadow: rgba(10, 10, 10, .2);
+
+// Primary Colors
+$primary: $turquoise;
+$info: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$dark: $grey-darker;
+$text: $grey-dark;
+
+// Font Weight
+$weight-light: 200;
+$weight-normal: 400;
+$weight-semibold: 600;
+$weight-bold: 800;

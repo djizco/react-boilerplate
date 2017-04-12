@@ -8,9 +8,21 @@ export default class Navigation extends Component {
     this.props = props;
   }
 
-  state = { active: false }
+  state = {
+    active: false,
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.deactivate);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.deactivate);
+  }
 
   toggleActive = () => this.setState({ active: !this.state.active })
+
+  deactivate = () => this.setState({ active: false })
 
   render() {
     const { active } = this.state;
@@ -18,40 +30,45 @@ export default class Navigation extends Component {
     const menuClasses = classNames({ 'nav-menu': true, 'nav-right': true, 'is-active': active });
 
     return (
-      <nav className="nav has-shadow is-fixed">
-        <div className="nav-left">
-          <Link to="/" className="nav-item">
-            <h3 className="title is-3">React</h3>
-          </Link>
-        </div>
+      <div className="nav-container is-fixed has-shadow">
+        <div className="container">
+          <nav className="nav">
 
-        <div className="nav-center">
-          <Link to="/" className="nav-item">
-            <span className="icon is-medium">
-              <i className="fa fa-home" />
+            <div className="nav-left">
+              <Link to="/" className="nav-item">
+                <h3 className="title is-3">React</h3>
+              </Link>
+            </div>
+
+            <div className="nav-center">
+              <Link to="/" className="nav-item">
+                <span className="icon is-medium">
+                  <i className="fa fa-home" />
+                </span>
+              </Link>
+            </div>
+
+            <span className={toggleClasses} onClick={this.toggleActive}>
+              <span />
+              <span />
+              <span />
             </span>
-          </Link>
+
+            <div className={menuClasses}>
+              <Link to="/" className="nav-item" onClick={this.toggleActive}>
+                <h6 className="title is-6">Home</h6>
+              </Link>
+              <Link to="counter" className="nav-item" onClick={this.toggleActive}>
+                <h6 className="title is-6">Counter</h6>
+              </Link>
+              <Link to="todo" className="nav-item" onClick={this.toggleActive}>
+                <h6 className="title is-6">Todo</h6>
+              </Link>
+            </div>
+
+          </nav>
         </div>
-
-        <span className={toggleClasses} onClick={this.toggleActive}>
-          <span />
-          <span />
-          <span />
-        </span>
-
-        <div className={menuClasses}>
-          <Link to="/" className="nav-item" onClick={this.toggleActive}>
-            <h6 className="title is-6">Home</h6>
-          </Link>
-          <Link to="counter" className="nav-item" onClick={this.toggleActive}>
-            <h6 className="title is-6">Counter</h6>
-          </Link>
-          <Link to="todo" className="nav-item" onClick={this.toggleActive}>
-            <h6 className="title is-6">Todo</h6>
-          </Link>
-        </div>
-
-      </nav>
+      </div>
     );
   }
 }

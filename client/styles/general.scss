@@ -1,6 +1,7 @@
 // General Styles
 html {
   background-color: $whitesmoke;
+  font-size: 14px;
 }
 
 a {
@@ -16,7 +17,7 @@ a {
 }
 
 .full-page {
-  min-height: calc(100vh - 156px);
+  min-height: calc(100vh - 146.5px);
 }
 
 .app-flex {

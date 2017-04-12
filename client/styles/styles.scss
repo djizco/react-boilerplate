@@ -1,23 +1,33 @@
 // Main
 .main {
-  margin-top: 52px;
-  min-height: calc(100vh - 156px);
+  margin-top: 45.5px;
+  min-height: calc(100vh - 146.5px);
 }
 
 // Navigation
-.nav {
+.nav-container {
+  background-color: $whitesmoke;
+
   &.is-fixed {
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 1030;
+
+    &.has-shadow {
+      box-shadow: 0 2px 3px $navshadow;
+    }
   }
+}
+
+.nav {
+  background-color: $whitesmoke;
 }
 
 // Footer
 .footer {
-  background-color: $lightgrey;
+  background-color: $lightest-grey;
   padding: 40px 20px;
   text-align: center;
 }
@@ -30,7 +40,7 @@
 // Home Page
 .home-page {
   .title.is-1 {
-    color: $darkgray;
+    color: $dark-grey;
     font-weight: 100;
     margin-top: 20px;
   }
@@ -45,7 +55,7 @@
   margin: 0 auto;
 
   .title.is-1 {
-    color: $darkgray;
+    color: $dark-grey;
     font-weight: 100;
     margin-bottom: 0;
     margin-top: 20px;
@@ -71,13 +81,13 @@
 // Todo Page
 .todo-page {
   .title.is-1 {
-    color: $darkgray;
+    color: $dark-grey;
     font-weight: 100;
     margin: 20px;
   }
 
   li {
-    color: $darkgray;
+    color: $dark-grey;
     font-size: 1.4em;
     font-weight: 200;
     margin-top: 10px;
