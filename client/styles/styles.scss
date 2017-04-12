@@ -93,4 +93,18 @@
     margin-top: 10px;
     text-decoration: none;
   }
+
+  .icon {
+    margin-right: 1rem;
+    vertical-align: middle;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .fa {
+      text-align: left;
+      width: 21px;
+    }
+  }
 }
