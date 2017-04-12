@@ -9,8 +9,8 @@ import TodoList from '../components/TodoList';
 
 export class TodoPage extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
     todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+    addTodo: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -18,7 +18,7 @@ export class TodoPage extends Component {
     this.props = props;
   }
 
-  handleAddClick = text => this.props.dispatch(addTodo(text))
+  handleAddClick = text => this.props.addTodo(text);
 
   render() {
     return (
@@ -45,4 +45,10 @@ export class TodoPage extends Component {
 
 const mapStateToProps = R.pick(['todos']);
 
-export default connect(mapStateToProps)(TodoPage);
+const mapDispatchToProps = dispatch => {
+  return {
+    addTodo: text => dispatch(addTodo(text)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoPage);

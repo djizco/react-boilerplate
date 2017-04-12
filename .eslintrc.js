@@ -18,6 +18,7 @@ module.exports = {
     "comma-spacing": [1, { "before": false, "after": true }],
 
     // override defaults
+    "arrow-body-style": [1, "as-needed", { "requireReturnForObjectLiteral": true }],
     "array-bracket-spacing": [1, "never"],
     "block-spacing": [1, "always"],
     "comma-dangle": [1, "only-multiline"],

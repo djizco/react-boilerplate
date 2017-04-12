@@ -31,7 +31,7 @@ export default class AddTodoContainer extends Component {
     if (e.key === 'Enter') { this.addTodo(); }
   }
 
-  handleClick = (e) => {
+  handleClick = e => {
     e.preventDefault();
     this.addTodo();
   }

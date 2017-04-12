@@ -9,8 +9,9 @@ import Button from '../components/Button';
 
 export class CounterPage extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
     counter: PropTypes.number.isRequired,
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -20,12 +21,12 @@ export class CounterPage extends Component {
 
   handleIncrement = e => {
     e.preventDefault();
-    this.props.dispatch(increment());
+    this.props.increment();
   }
 
   handleDecrement = e => {
     e.preventDefault();
-    this.props.dispatch(decrement());
+    this.props.decrement();
   }
 
   render() {
@@ -58,4 +59,11 @@ export class CounterPage extends Component {
 
 const mapStateToProps = R.pick(['counter']);
 
-export default connect(mapStateToProps)(CounterPage);
+const mapDispatchToProps = dispatch => {
+  return {
+    increment: () => dispatch(increment()),
+    decrement: () => dispatch(decrement()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterPage);
