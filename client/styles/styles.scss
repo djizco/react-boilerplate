@@ -80,6 +80,12 @@
 
 // Todo Page
 .todo-page {
+  .todo {
+    border: 1px solid $light-grey;
+    border-radius: 2px;
+    padding: 10px;
+  }
+
   .title.is-1 {
     color: $dark-grey;
     font-weight: 100;

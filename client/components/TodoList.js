@@ -10,11 +10,19 @@ export function Todo({ text, index, completed, toggleComplete }) {
   });
 
   return (
-    <li>
+    <li className="todo">
       <span className="icon" onClick={() => toggleComplete(index)}>
         <i className={iconClasses} />
       </span>
-      {text}
+      <span>{text}</span>
+      <div className="has-text-right">
+        <span className="icon">
+          <i className="fa fa-pencil" />
+        </span>
+        <span className="icon">
+          <i className="fa fa-trash" />
+        </span>
+      </div>
     </li>
   );
 }
@@ -28,7 +36,7 @@ Todo.propTypes = {
 
 export default function TodoList(props) {
   return (
-    <ul>
+    <ul className="todo-list">
       {props.todos.map((todo, index) =>
         <Todo key={todo.id} index={index} toggleComplete={props.toggleComplete} {...todo} />)}
     </ul>

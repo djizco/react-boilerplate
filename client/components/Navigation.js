@@ -20,7 +20,11 @@ export default class Navigation extends Component {
     window.removeEventListener('resize', this.deactivate);
   }
 
-  toggleActive = () => this.setState({ active: !this.state.active })
+  toggleActive = () => {
+    if (window.innerWidth <= 768) {
+      this.setState({ active: !this.state.active });
+    }
+  }
 
   deactivate = () => this.setState({ active: false })
 
