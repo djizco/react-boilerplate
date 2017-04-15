@@ -59,8 +59,10 @@ export default class Todo extends Component {
   toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id);
 
   updateTodo = () => {
-    this.setState({ edit: false });
-    this.props.updateTodo(this.props.id, this.state.text);
+    if (this.state.text) {
+      this.setState({ edit: false });
+      this.props.updateTodo(this.props.id, this.state.text);
+    }
   }
 
   render() {
