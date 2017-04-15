@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import moment from 'moment';
 
 export default class Todo extends Component {
   static propTypes = {
@@ -42,6 +43,9 @@ export default class Todo extends Component {
       deleted ?
         null :
         <li className="todo">
+          <div className="create-text">
+            created {moment(createdAt).fromNow()}
+          </div>
           {edit ?
             null :
             <span className="icon" onClick={() => toggleComplete(id)}>
@@ -62,7 +66,9 @@ export default class Todo extends Component {
           }
           <div className="has-text-right">
             {updatedAt ?
-              <span className="edit-text is-pulled-left">edited on {updatedAt}</span> : null
+              <span className="edit-text is-pulled-left">
+                edited {moment(updatedAt).fromNow()}
+              </span> : null
             }
             {edit ?
               <span className="icon" onClick={() => updateTodo(id, this.state.text)}>
