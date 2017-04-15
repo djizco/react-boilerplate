@@ -7,7 +7,7 @@ export default class Todo extends Component {
   static propTypes = {
     id: PropTypes.number.isRequired,
     createdAt: PropTypes.number.isRequired,
-    updatedAt: PropTypes.number.isRequired,
+    updatedAt: PropTypes.number,
     deleted: PropTypes.bool.isRequired,
     completed: PropTypes.bool.isRequired,
     edit: PropTypes.bool.isRequired,
@@ -18,6 +18,10 @@ export default class Todo extends Component {
     deleteTodo: PropTypes.func.isRequired,
   };
 
+  static defaultProps = {
+    updatedAt: 0,
+  }
+
   constructor(props) {
     super(props);
     this.props = props;
@@ -25,12 +29,34 @@ export default class Todo extends Component {
 
   state = {
     text: this.props.text,
+    updateMessage: '',
+    createMessage: '',
+  }
+
+  componentDidMount() {
+    this.updateMessages();
+    this.interval = window.setInterval(this.updateMessages, 1000);
+  }
+
+  componentWillReceiveProps(props) {
+    this.setState({ updatedMessage: moment(props.updatedAt).fromNow() });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  updateMessages = () => {
+    this.setState({
+      updatedMessage: this.props.updatedAt ? moment(this.props.updatedAt).fromNow() : '',
+      createdMessage: moment(this.props.createdAt).fromNow(),
+    });
   }
 
   updateText = e => this.setState({ text: e.target.value })
 
   render() {
-    const { id, text, createdAt, updatedAt, deleted, completed, edit,
+    const { id, text, updatedAt, deleted, completed, edit,
       toggleComplete, editTodo, updateTodo, deleteTodo } = this.props;
 
     const iconClasses = classNames({
@@ -44,7 +70,7 @@ export default class Todo extends Component {
         null :
         <li className="todo">
           <div className="create-text">
-            created {moment(createdAt).fromNow()}
+            created {this.state.createdMessage}
           </div>
           {edit ?
             null :
@@ -67,7 +93,7 @@ export default class Todo extends Component {
           <div className="has-text-right">
             {updatedAt ?
               <span className="edit-text is-pulled-left">
-                edited {moment(updatedAt).fromNow()}
+                edited {this.state.updatedMessage}
               </span> : null
             }
             {edit ?
