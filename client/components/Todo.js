@@ -106,7 +106,7 @@ export default class Todo extends Component {
                 }
                 {edit ?
                   <span className="icon" onClick={() => updateTodo(id, this.state.text)}>
-                    <i className="fa fa-clipboard" />
+                    <i className="fa fa-floppy-o" />
                   </span>
                   :
                   <span className="icon" onClick={() => editTodo(id)}>
