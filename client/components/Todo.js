@@ -103,11 +103,6 @@ export default class Todo extends Component {
               </span> : null
             }
             {edit ?
-              <span className="icon" onClick={() => this.handleCancelEdit(id)}>
-                <i className="fa fa-ban" />
-              </span> : null
-            }
-            {edit ?
               <span className="icon" onClick={() => updateTodo(id, this.state.text)}>
                 <i className="fa fa-clipboard" />
               </span>
@@ -116,9 +111,15 @@ export default class Todo extends Component {
                 <i className="fa fa-pencil" />
               </span>
             }
-            <span className="icon" onClick={() => deleteTodo(id)}>
-              <i className="fa fa-trash" />
-            </span>
+            {edit ?
+              <span className="icon" onClick={() => this.handleCancelEdit(id)}>
+                <i className="fa fa-ban" />
+              </span>
+              :
+              <span className="icon" onClick={() => deleteTodo(id)}>
+                <i className="fa fa-trash" />
+              </span>
+            }
           </div>
         </li>
     );

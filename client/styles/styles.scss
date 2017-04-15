@@ -115,6 +115,20 @@
     margin-right: 1rem;
     vertical-align: middle;
 
+    .fa-pencil {
+      color: green;
+    }
+    .fa-clipboard {
+      color: green;
+    }
+    .fa-ban {
+      color: red;
+    }
+    .fa-trash {
+      color: red;
+    }
+
+
     &:hover {
       cursor: pointer;
     }
