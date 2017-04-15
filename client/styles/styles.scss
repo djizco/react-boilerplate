@@ -80,24 +80,26 @@
 
 // Todo Page
 .todo-page {
+  .todo-section {
+    background-color: $whitesmoke;
+  }
+
   .todo {
+    background-color: $white;
     border: 1px solid $light-grey;
     border-radius: 2px;
+    color: $dark-grey;
+    font-size: 1.4em;
+    font-weight: 200;
+    margin-top: 10px;
     padding: 10px;
+    text-decoration: none;
   }
 
   .title.is-1 {
     color: $dark-grey;
     font-weight: 100;
     margin: 20px;
-  }
-
-  li {
-    color: $dark-grey;
-    font-size: 1.4em;
-    font-weight: 200;
-    margin-top: 10px;
-    text-decoration: none;
   }
 
   .icon {
