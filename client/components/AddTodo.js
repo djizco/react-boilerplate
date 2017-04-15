@@ -5,7 +5,7 @@ import Button from './Button';
 
 export default class AddTodoContainer extends Component {
   static propTypes = {
-    onAddClick: PropTypes.func.isRequired,
+    addTodo: PropTypes.func.isRequired,
   }
 
   constructor(props) {
@@ -45,7 +45,7 @@ export default class AddTodoContainer extends Component {
   addTodo = () => {
     const text = this.state.text;
     if (text) {
-      this.props.onAddClick(text);
+      this.props.addTodo(text);
       this.setState({ text: '' });
     }
   }

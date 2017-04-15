@@ -6,21 +6,18 @@ import moment from 'moment';
 export default class Todo extends Component {
   static propTypes = {
     id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+    deleted: PropTypes.bool.isRequired,
     createdAt: PropTypes.number.isRequired,
     updatedAt: PropTypes.number,
-    deleted: PropTypes.bool.isRequired,
-    completed: PropTypes.bool.isRequired,
-    edit: PropTypes.bool.isRequired,
-    text: PropTypes.string.isRequired,
-    toggleComplete: PropTypes.func.isRequired,
-    editTodo: PropTypes.func.isRequired,
-    cancelEdit: PropTypes.func.isRequired,
+    toggleCompleteTodo: PropTypes.func.isRequired,
     updateTodo: PropTypes.func.isRequired,
     deleteTodo: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
-    updatedAt: 0,
+    updatedAt: undefined,
   }
 
   constructor(props) {
@@ -30,6 +27,7 @@ export default class Todo extends Component {
 
   state = {
     text: this.props.text,
+    edit: false,
     updateMessage: '',
     createMessage: '',
   }
@@ -54,16 +52,20 @@ export default class Todo extends Component {
     });
   }
 
-  updateText = e => this.setState({ text: e.target.value })
+  updateText = e => this.setState({ text: e.target.value });
+  editTodo = () => this.setState({ edit: true });
+  cancelEdit = () => this.setState({ text: this.props.text, edit: false });
+  deleteTodo = () => this.props.deleteTodo(this.props.id);
+  toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id);
 
-  handleCancelEdit = id => {
-    this.setState({ text: this.props.text });
-    this.props.cancelEdit(id);
+  updateTodo = () => {
+    this.setState({ edit: false });
+    this.props.updateTodo(this.props.id, this.state.text);
   }
 
   render() {
-    const { id, text, updatedAt, deleted, completed, edit,
-      toggleComplete, editTodo, updateTodo, deleteTodo } = this.props;
+    const { text, updatedAt, deleted, completed } = this.props;
+    const { edit } = this.state;
 
     const toggleIconClasses = classNames({
       fa: true,
@@ -78,7 +80,7 @@ export default class Todo extends Component {
           <article className="media">
 
             <figure className="media-left">
-              <span className="icon" onClick={() => toggleComplete(id)}>
+              <span className="icon" onClick={this.toggleCompleteTodo}>
                 <i className={toggleIconClasses} />
               </span>
             </figure>
@@ -105,20 +107,20 @@ export default class Todo extends Component {
                   </small> : null
                 }
                 {edit ?
-                  <span className="icon" onClick={() => updateTodo(id, this.state.text)}>
+                  <span className="icon" onClick={this.updateTodo}>
                     <i className="fa fa-floppy-o" />
                   </span>
                   :
-                  <span className="icon" onClick={() => editTodo(id)}>
+                  <span className="icon" onClick={this.editTodo}>
                     <i className="fa fa-pencil" />
                   </span>
                 }
                 {edit ?
-                  <span className="icon" onClick={() => this.handleCancelEdit(id)}>
+                  <span className="icon" onClick={this.cancelEdit}>
                     <i className="fa fa-ban" />
                   </span>
                   :
-                  <span className="icon" onClick={() => deleteTodo(id)}>
+                  <span className="icon" onClick={this.deleteTodo}>
                     <i className="fa fa-trash" />
                   </span>
                 }
