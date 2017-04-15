@@ -13,6 +13,10 @@ export default class AddTodoContainer extends Component {
     this.props = props;
   }
 
+  state = {
+    text: '',
+  }
+
   componentDidMount() {
     window.addEventListener('keypress', this.keypress);
   }
@@ -27,6 +31,8 @@ export default class AddTodoContainer extends Component {
     },
   }
 
+  updateText = e => this.setState({ text: e.target.value });
+
   keypress = e => {
     if (e.key === 'Enter') { this.addTodo(); }
   }
@@ -36,11 +42,11 @@ export default class AddTodoContainer extends Component {
     this.addTodo();
   }
 
-  addTodo() {
-    const text = this.input.value;
+  addTodo = () => {
+    const text = this.state.text;
     if (text) {
       this.props.onAddClick(text);
-      this.input.value = '';
+      this.setState({ text: '' });
     }
   }
 
@@ -48,7 +54,7 @@ export default class AddTodoContainer extends Component {
     return (
       <div className="add-todo columns is-gapless">
         <div className="column is-10">
-          <input className="input" type="text" ref={c => { this.input = c; }} />
+          <input className="input" type="text" value={this.state.text} onChange={this.updateText} />
         </div>
         <div className="column is-2">
           <Button style={this.styles.button} handleClick={this.handleClick} label="Add" success={true} />

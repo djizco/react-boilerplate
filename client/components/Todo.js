@@ -89,14 +89,10 @@ export default class Todo extends Component {
                   <small>created {this.state.createdMessage}</small>
                 </p>
                 {edit ?
-                  <div className="field">
-                    <p className="control">
-                      <textarea
-                        className="textarea"
-                        value={this.state.text}
-                        onChange={this.updateText} />
-                    </p>
-                  </div>
+                  <textarea
+                    className="textarea"
+                    value={this.state.text}
+                    onChange={this.updateText} />
                   :
                   <span>{text}</span>
                 }
@@ -127,8 +123,8 @@ export default class Todo extends Component {
                   </span>
                 }
               </div>
-
             </div>
+
           </article>
         </li>
     );
