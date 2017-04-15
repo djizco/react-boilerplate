@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import R from 'ramda';
 
-import { addTodo, toggleCompleteTodo, updateTodo, deleteTodo } from '../actions/todos';
+import { addTodo, toggleCompleteTodo, editTodo, updateTodo, deleteTodo } from '../actions/todos';
 import AddTodo from '../components/AddTodo';
 import TodoList from '../components/TodoList';
 
@@ -12,6 +12,7 @@ export class TodoPage extends Component {
     todos: PropTypes.arrayOf(PropTypes.object).isRequired,
     addTodo: PropTypes.func.isRequired,
     toggleCompleteTodo: PropTypes.func.isRequired,
+    editTodo: PropTypes.func.isRequired,
     updateTodo: PropTypes.func.isRequired,
     deleteTodo: PropTypes.func.isRequired,
   };
@@ -24,6 +25,8 @@ export class TodoPage extends Component {
   addTodo = text => this.props.addTodo(text);
 
   toggleCompleteTodo = id => this.props.toggleCompleteTodo(id);
+
+  editTodo = id => this.props.editTodo(id);
 
   updateTodo = (text, id) => this.props.updateTodo(text, id);
 
@@ -45,6 +48,7 @@ export class TodoPage extends Component {
                 <TodoList
                   todos={this.props.todos}
                   toggleComplete={this.toggleCompleteTodo}
+                  editTodo={this.editTodo}
                   updateTodo={this.updateTodo}
                   deleteTodo={this.deleteTodo} />
               </div>
@@ -62,6 +66,7 @@ const mapDispatchToProps = dispatch => {
   return {
     addTodo: text => dispatch(addTodo(text)),
     toggleCompleteTodo: id => dispatch(toggleCompleteTodo(id)),
+    editTodo: id => dispatch(editTodo(id)),
     updateTodo: (text, id) => dispatch(updateTodo(text, id)),
     deleteTodo: id => dispatch(deleteTodo(id)),
   };

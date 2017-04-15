@@ -1,5 +1,6 @@
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_COMPLETE_TODO = 'TOGGLE_COMPLETE_TODO';
+export const EDIT_TODO = 'EDIT_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 
@@ -10,7 +11,6 @@ export function addTodo(text) {
     type: ADD_TODO,
     id: nextToDoId++,
     createdAt: Date.now(),
-    updatedAt: Date.now(),
     text,
   };
 }
@@ -22,7 +22,14 @@ export function toggleCompleteTodo(id) {
   };
 }
 
-export function updateTodo(text, id) {
+export function editTodo(id) {
+  return {
+    type: EDIT_TODO,
+    id,
+  };
+}
+
+export function updateTodo(id, text) {
   return {
     type: UPDATE_TODO,
     updatedAt: Date.now(),
