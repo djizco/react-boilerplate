@@ -66,8 +66,8 @@ export default class Todo extends Component {
   }
 
   render() {
-    const { text, updatedAt, deleted, completed } = this.props;
-    const { edit } = this.state;
+    const { updatedAt, deleted, completed } = this.props;
+    const { edit, createdMessage, updatedMessage } = this.state;
 
     const toggleIconClasses = classNames({
       fa: true,
@@ -90,7 +90,7 @@ export default class Todo extends Component {
             <div className="media-content">
               <div className="content">
                 <p>
-                  <small>created {this.state.createdMessage}</small>
+                  <small>created {createdMessage}</small>
                 </p>
                 {edit ?
                   <textarea
@@ -98,14 +98,14 @@ export default class Todo extends Component {
                     value={this.state.text}
                     onChange={this.updateText} />
                   :
-                  <span>{text}</span>
+                  <span>{this.props.text}</span>
                 }
               </div>
 
               <div className="has-text-right">
                 {updatedAt ?
                   <small className="is-pulled-left">
-                    edited {this.state.updatedMessage}
+                    edited {updatedMessage}
                   </small> : null
                 }
                 {edit ?
