@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import R from 'ramda';
 
-export function Todo({ text, index, completed, toggleComplete }) {
+export function Todo(props) {
+  const { id, text, createdAt, updatedAt, deleted, completed,
+    toggleComplete, updateTodo, deleteTodo } = props;
+
   const iconClasses = classNames({
     fa: true,
     'fa-square-o': !completed,
@@ -10,35 +14,47 @@ export function Todo({ text, index, completed, toggleComplete }) {
   });
 
   return (
-    <li className="todo">
-      <span className="icon" onClick={() => toggleComplete(index)}>
-        <i className={iconClasses} />
-      </span>
-      <span>{text}</span>
-      <div className="has-text-right">
-        <span className="icon">
-          <i className="fa fa-pencil" />
+    deleted ?
+      null :
+      <li className="todo">
+        <span className="icon" onClick={() => toggleComplete(id)}>
+          <i className={iconClasses} />
         </span>
-        <span className="icon">
-          <i className="fa fa-trash" />
-        </span>
-      </div>
-    </li>
+        <span>{text}</span>
+        <div className="has-text-right">
+          <span className="icon">
+            <i className="fa fa-pencil" />
+          </span>
+          <span className="icon" onClick={() => deleteTodo(id)}>
+            <i className="fa fa-trash" />
+          </span>
+        </div>
+      </li>
   );
 }
 
 Todo.propTypes = {
+  id: PropTypes.number.isRequired,
+  createdAt: PropTypes.number.isRequired,
+  updatedAt: PropTypes.number.isRequired,
+  deleted: PropTypes.bool.isRequired,
   completed: PropTypes.bool.isRequired,
-  index: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
   toggleComplete: PropTypes.func.isRequired,
+  updateTodo: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
 };
 
 export default function TodoList(props) {
   return (
     <ul className="todo-list">
-      {props.todos.map((todo, index) =>
-        <Todo key={todo.id} index={index} toggleComplete={props.toggleComplete} {...todo} />)}
+      {R.reverse(props.todos).map(todo =>
+        <Todo
+          key={todo.id}
+          toggleComplete={props.toggleComplete}
+          updateTodo={props.updateTodo}
+          deleteTodo={props.deleteTodo}
+          {...todo} />)}
     </ul>
   );
 }
@@ -46,4 +62,6 @@ export default function TodoList(props) {
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.object).isRequired,
   toggleComplete: PropTypes.func.isRequired,
+  updateTodo: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
 };
