@@ -1,6 +1,7 @@
 import update from 'immutability-helper';
 import R from 'ramda';
-import { ADD_TODO, TOGGLE_COMPLETE_TODO, EDIT_TODO, UPDATE_TODO, DELETE_TODO } from '../actions/todos';
+import { ADD_TODO, TOGGLE_COMPLETE_TODO, EDIT_TODO, CANCEL_EDIT_TODO,
+  UPDATE_TODO, DELETE_TODO } from '../actions/todos';
 
 export function todo(state = { completed: false, deleted: false, edit: false, updatedAt: undefined }, action) {
   switch (action.type) {
@@ -34,6 +35,14 @@ export default function todos(state = [], action) {
         index,
         update(todoItem, {
           edit: { $set: true },
+        }),
+        state,
+      );
+    case CANCEL_EDIT_TODO:
+      return R.update(
+        index,
+        update(todoItem, {
+          edit: { $set: false },
         }),
         state,
       );

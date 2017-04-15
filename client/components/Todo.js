@@ -14,6 +14,7 @@ export default class Todo extends Component {
     text: PropTypes.string.isRequired,
     toggleComplete: PropTypes.func.isRequired,
     editTodo: PropTypes.func.isRequired,
+    cancelEdit: PropTypes.func.isRequired,
     updateTodo: PropTypes.func.isRequired,
     deleteTodo: PropTypes.func.isRequired,
   };
@@ -55,6 +56,11 @@ export default class Todo extends Component {
 
   updateText = e => this.setState({ text: e.target.value })
 
+  handleCancelEdit = id => {
+    this.setState({ text: this.props.text });
+    this.props.cancelEdit(id);
+  }
+
   render() {
     const { id, text, updatedAt, deleted, completed, edit,
       toggleComplete, editTodo, updateTodo, deleteTodo } = this.props;
@@ -94,6 +100,11 @@ export default class Todo extends Component {
             {updatedAt ?
               <span className="edit-text is-pulled-left">
                 edited {this.state.updatedMessage}
+              </span> : null
+            }
+            {edit ?
+              <span className="icon" onClick={() => this.handleCancelEdit(id)}>
+                <i className="fa fa-ban" />
               </span> : null
             }
             {edit ?
