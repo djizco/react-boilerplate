@@ -19,52 +19,33 @@ export function todo(state = { completed: false, deleted: false, edit: false, up
 export default function todos(state = [], action) {
   const index = R.findIndex(R.propEq('id', action.id), state);
   const todoItem = state[index];
+
   switch (action.type) {
     case ADD_TODO:
       return update(state, { $push: [todo(undefined, action)]});
     case TOGGLE_COMPLETE_TODO:
-      return R.update(
-        index,
-        update(todoItem, {
-          completed: { $set: !todoItem.completed },
-        }),
-        state,
-      );
+      return update(state, { $splice: [[index, 1, update(todoItem, {
+        completed: { $apply: x => !x },
+      })]]});
     case EDIT_TODO:
-      return R.update(
-        index,
-        update(todoItem, {
-          edit: { $set: true },
-        }),
-        state,
-      );
+      return update(state, { $splice: [[index, 1, update(todoItem, {
+        edit: { $set: true },
+      })]]});
     case CANCEL_EDIT_TODO:
-      return R.update(
-        index,
-        update(todoItem, {
-          edit: { $set: false },
-        }),
-        state,
-      );
+      return update(state, { $splice: [[index, 1, update(todoItem, {
+        edit: { $set: false },
+      })]]});
     case UPDATE_TODO:
-      return R.update(
-        index,
-        update(todoItem, {
-          edit: { $set: false },
-          text: { $set: action.text },
-          updatedAt: { $set: Date.now() },
-        }),
-        state,
-      );
+      return update(state, { $splice: [[index, 1, update(todoItem, {
+        edit: { $set: false },
+        text: { $set: action.text },
+        updatedAt: { $set: Date.now() },
+      })]]});
     case DELETE_TODO:
-      return R.update(
-        index,
-        update(todoItem, {
-          deleted: { $set: true },
-          edit: { $set: false },
-        }),
-        state,
-      );
+      return update(state, { $splice: [[index, 1, update(todoItem, {
+        deleted: { $set: true },
+        edit: { $set: false },
+      })]]});
     default:
       return state;
   }
