@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import moment from 'moment';
+import ConfirmModal from './ConfirmModal';
 
 export default class Todo extends Component {
   static propTypes = {
@@ -28,6 +29,7 @@ export default class Todo extends Component {
   state = {
     text: this.props.text,
     edit: false,
+    confirm: false,
     updateMessage: '',
     createMessage: '',
   }
@@ -57,6 +59,8 @@ export default class Todo extends Component {
   cancelEdit = () => this.setState({ text: this.props.text, edit: false });
   deleteTodo = () => this.props.deleteTodo(this.props.id);
   toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id);
+  openModal = () => this.setState({ confirm: true });
+  closeModal = () => this.setState({ confirm: false });
 
   updateTodo = () => {
     if (this.state.text) {
@@ -67,7 +71,7 @@ export default class Todo extends Component {
 
   render() {
     const { updatedAt, deleted, completed } = this.props;
-    const { edit, createdMessage, updatedMessage } = this.state;
+    const { edit, confirm, createdMessage, updatedMessage } = this.state;
 
     const toggleIconClasses = classNames({
       fa: true,
@@ -80,13 +84,11 @@ export default class Todo extends Component {
         null :
         <li className="todo box">
           <article className="media">
-
             <figure className="media-left">
               <span className="icon" onClick={this.toggleCompleteTodo}>
                 <i className={toggleIconClasses} />
               </span>
             </figure>
-
             <div className="media-content">
               <div className="content">
                 <p>
@@ -101,7 +103,6 @@ export default class Todo extends Component {
                   <span>{this.props.text}</span>
                 }
               </div>
-
               <div className="has-text-right">
                 {updatedAt ?
                   <small className="is-pulled-left">
@@ -122,14 +123,17 @@ export default class Todo extends Component {
                     <i className="fa fa-ban" />
                   </span>
                   :
-                  <span className="icon" onClick={this.deleteTodo}>
+                  <span className="icon" onClick={this.openModal}>
                     <i className="fa fa-trash" />
                   </span>
                 }
               </div>
             </div>
-
           </article>
+          <ConfirmModal
+            confirm={confirm}
+            closeModal={this.closeModal}
+            deleteTodo={this.deleteTodo} />
         </li>
     );
   }
