@@ -39,6 +39,10 @@
 
 // Home Page
 .home-page {
+  .link-section {
+    background-color: $whitesmoke;
+  }
+
   .title.is-1 {
     color: $dark-grey;
     font-weight: 100;
@@ -51,8 +55,11 @@
 }
 
 // Counter Page
-.counter-page .section {
-  margin: 0 auto;
+.counter-page {
+  .counter-section {
+    background-color: $whitesmoke;
+    margin: 0 auto;
+  }
 
   .title.is-1 {
     color: $dark-grey;
@@ -85,23 +92,9 @@
   }
 
   .todo {
-    background-color: $white;
-    border: 1px solid $light-grey;
-    border-radius: 2px;
-    color: $dark-grey;
-    font-size: 1.4rem;
-    font-weight: 200;
-    margin-top: 10px;
-    padding: 10px;
-    text-decoration: none;
-
     .edit-text {
       font-size: .75rem;
       padding-top: 1rem;
-    }
-
-    .create-text {
-      font-size: .75rem;
     }
   }
 

@@ -33,7 +33,7 @@ export class CounterPage extends Component {
     return (
       <div className="counter-page">
         <div className="container">
-          <div className="section full-page app-flex">
+          <div className="section counter-section app-flex">
             <h1 className="title is-1 has-text-centered">Counter:</h1>
             <div className="counter">{this.props.counter}</div>
             <div className="columns">

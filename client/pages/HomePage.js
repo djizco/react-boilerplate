@@ -30,7 +30,7 @@ export default class HomePage extends Component {
     return (
       <div className="home-page">
         <div className="container">
-          <div className="section full-page app-flex">
+          <div className="section link-section app-flex">
             <h1 className="title is-1">React App</h1>
             <RaisedButton label="Counter App" style={this.styles.button} onClick={this.handleToCounter} />
             <RaisedButton label="Todo App" style={this.styles.button} onClick={this.handleToTodo} />

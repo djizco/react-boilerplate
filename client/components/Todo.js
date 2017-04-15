@@ -65,7 +65,7 @@ export default class Todo extends Component {
     const { id, text, updatedAt, deleted, completed, edit,
       toggleComplete, editTodo, updateTodo, deleteTodo } = this.props;
 
-    const iconClasses = classNames({
+    const toggleIconClasses = classNames({
       fa: true,
       'fa-square-o': !completed,
       'fa-check-square-o': completed,
@@ -74,53 +74,62 @@ export default class Todo extends Component {
     return (
       deleted ?
         null :
-        <li className="todo">
-          <div className="create-text">
-            created {this.state.createdMessage}
-          </div>
-          {edit ?
-            null :
-            <span className="icon" onClick={() => toggleComplete(id)}>
-              <i className={iconClasses} />
-            </span>
-          }
-          {edit ?
-            <div className="field">
-              <p className="control">
-                <textarea
-                  className="textarea"
-                  value={this.state.text}
-                  onChange={this.updateText} />
-              </p>
+        <li className="todo box">
+          <article className="media">
+
+            <figure className="media-left">
+              <span className="icon" onClick={() => toggleComplete(id)}>
+                <i className={toggleIconClasses} />
+              </span>
+            </figure>
+
+            <div className="media-content">
+              <div className="content">
+                <p>
+                  <small>created {this.state.createdMessage}</small>
+                </p>
+                {edit ?
+                  <div className="field">
+                    <p className="control">
+                      <textarea
+                        className="textarea"
+                        value={this.state.text}
+                        onChange={this.updateText} />
+                    </p>
+                  </div>
+                  :
+                  <span>{text}</span>
+                }
+              </div>
+
+              <div className="has-text-right">
+                {updatedAt ?
+                  <small className="is-pulled-left">
+                    edited {this.state.updatedMessage}
+                  </small> : null
+                }
+                {edit ?
+                  <span className="icon" onClick={() => updateTodo(id, this.state.text)}>
+                    <i className="fa fa-clipboard" />
+                  </span>
+                  :
+                  <span className="icon" onClick={() => editTodo(id)}>
+                    <i className="fa fa-pencil" />
+                  </span>
+                }
+                {edit ?
+                  <span className="icon" onClick={() => this.handleCancelEdit(id)}>
+                    <i className="fa fa-ban" />
+                  </span>
+                  :
+                  <span className="icon" onClick={() => deleteTodo(id)}>
+                    <i className="fa fa-trash" />
+                  </span>
+                }
+              </div>
+
             </div>
-            :
-            <span>{text}</span>
-          }
-          <div className="has-text-right">
-            {updatedAt ?
-              <span className="edit-text is-pulled-left">
-                edited {this.state.updatedMessage}
-              </span> : null
-            }
-            {edit ?
-              <span className="icon" onClick={() => updateTodo(id, this.state.text)}>
-                <i className="fa fa-clipboard" />
-              </span>
-              :
-              <span className="icon" onClick={() => editTodo(id)}>
-                <i className="fa fa-pencil" />
-              </span>
-            }
-            {edit ?
-              <span className="icon" onClick={() => this.handleCancelEdit(id)}>
-                <i className="fa fa-ban" />
-              </span>
-              :
-              <span className="icon" onClick={() => deleteTodo(id)}>
-                <i className="fa fa-trash" />
-              </span>
-            }
-          </div>
+          </article>
         </li>
     );
   }
