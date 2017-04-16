@@ -9,7 +9,7 @@ export default class Todo extends Component {
     id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
-    deleted: PropTypes.bool.isRequired,
+    hidden: PropTypes.bool.isRequired,
     createdAt: PropTypes.number.isRequired,
     updatedAt: PropTypes.number,
     toggleCompleteTodo: PropTypes.func.isRequired,
@@ -70,7 +70,7 @@ export default class Todo extends Component {
   }
 
   render() {
-    const { updatedAt, deleted, completed } = this.props;
+    const { updatedAt, hidden, completed } = this.props;
     const { edit, confirm, createdMessage, updatedMessage } = this.state;
 
     const toggleIconClasses = classNames({
@@ -80,7 +80,7 @@ export default class Todo extends Component {
     });
 
     return (
-      deleted ?
+      hidden ?
         null :
         <li className="todo box">
           <article className="media">
