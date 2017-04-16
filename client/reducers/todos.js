@@ -29,7 +29,7 @@ export default function todos(state = [], action) {
     case UPDATE_TODO:
       return update(state, { $splice: [[index, 1, update(todoItem, {
         text: { $set: action.text },
-        updatedAt: { $set: Date.now() },
+        updatedAt: { $set: action.updatedAt },
       })]]});
     case DELETE_TODO:
       return update(state, { $splice: [[index, 1, update(todoItem, {
