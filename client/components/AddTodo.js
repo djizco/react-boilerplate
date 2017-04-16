@@ -6,7 +6,7 @@ import Button from './Button';
 export default class AddTodoContainer extends Component {
   static propTypes = {
     addTodo: PropTypes.func.isRequired,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -31,7 +31,7 @@ export default class AddTodoContainer extends Component {
     },
   }
 
-  updateText = e => this.setState({ text: e.target.value });
+  updateText = e => this.setState({ text: e.target.value })
 
   keypress = e => {
     if (e.key === 'Enter') { this.addTodo(); }

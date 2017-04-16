@@ -105,33 +105,20 @@
   }
 
   .icon {
-    margin-right: 1rem;
     vertical-align: middle;
 
-    .fa-pencil {
-      color: $green;
-    }
-
+    .fa-pencil,
     .fa-floppy-o {
       color: $green;
     }
 
-    .fa-ban {
-      color: $red;
-    }
-
+    .fa-ban,
     .fa-trash {
       color: $red;
     }
 
-
     &:hover {
       cursor: pointer;
-    }
-
-    .fa {
-      text-align: left;
-      width: 21px;
     }
   }
 

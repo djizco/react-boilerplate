@@ -14,12 +14,13 @@ export default class Todo extends Component {
     updatedAt: PropTypes.number,
     toggleCompleteTodo: PropTypes.func.isRequired,
     updateTodo: PropTypes.func.isRequired,
+    hideTodo: PropTypes.func.isRequired,
     deleteTodo: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     updatedAt: undefined,
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -54,13 +55,14 @@ export default class Todo extends Component {
     });
   }
 
-  updateText = e => this.setState({ text: e.target.value });
-  editTodo = () => this.setState({ edit: true });
-  cancelEdit = () => this.setState({ text: this.props.text, edit: false });
-  deleteTodo = () => this.props.deleteTodo(this.props.id);
-  toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id);
-  openModal = () => this.setState({ confirm: true });
-  closeModal = () => this.setState({ confirm: false });
+  updateText = e => this.setState({ text: e.target.value })
+  editTodo = () => this.setState({ edit: true })
+  cancelEdit = () => this.setState({ text: this.props.text, edit: false })
+  hideTodo = () => this.props.hideTodo(this.props.id)
+  deleteTodo = () => this.props.deleteTodo(this.props.id)
+  toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id)
+  openModal = () => this.setState({ confirm: true })
+  closeModal = () => this.setState({ confirm: false })
 
   updateTodo = () => {
     if (this.state.text) {
@@ -103,31 +105,46 @@ export default class Todo extends Component {
                   <span>{this.props.text}</span>
                 }
               </div>
-              <div className="has-text-right">
-                {updatedAt ?
-                  <small className="is-pulled-left">
-                    edited {updatedMessage}
-                  </small> : null
-                }
-                {edit ?
-                  <span className="icon" onClick={this.updateTodo}>
-                    <i className="fa fa-floppy-o" />
-                  </span>
-                  :
-                  <span className="icon" onClick={this.editTodo}>
-                    <i className="fa fa-pencil" />
-                  </span>
-                }
-                {edit ?
-                  <span className="icon" onClick={this.cancelEdit}>
-                    <i className="fa fa-ban" />
-                  </span>
-                  :
-                  <span className="icon" onClick={this.openModal}>
-                    <i className="fa fa-trash" />
-                  </span>
-                }
-              </div>
+
+              <nav className="level">
+                <div className="level-left">
+                  {updatedAt ?
+                    <div className="level-item">
+                      <small className="is-pulled-left">
+                        edited {updatedMessage}
+                      </small></div> : null
+                  }
+                </div>
+                <div className="level-right">
+                  {edit ?
+                    <div className="level-item">
+                      <span className="icon" onClick={this.updateTodo}>
+                        <i className="fa fa-floppy-o" />
+                      </span>
+                    </div>
+                    :
+                    <div className="level-item">
+                      <span className="icon" onClick={this.editTodo}>
+                        <i className="fa fa-pencil" />
+                      </span>
+                    </div>
+                  }
+                  {edit ?
+                    <div className="level-item">
+                      <span className="icon" onClick={this.cancelEdit}>
+                        <i className="fa fa-ban" />
+                      </span>
+                    </div>
+                    :
+                    <div className="level-item">
+                      <span className="icon" onClick={this.openModal}>
+                        <i className="fa fa-trash" />
+                      </span>
+                    </div>
+                  }
+                </div>
+              </nav>
+
             </div>
           </article>
           <ConfirmModal
