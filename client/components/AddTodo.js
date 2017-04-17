@@ -57,7 +57,7 @@ export default class AddTodoContainer extends Component {
           <input className="input" type="text" value={this.state.text} onChange={this.updateText} />
         </div>
         <div className="column is-2">
-          <Button style={this.styles.button} handleClick={this.handleClick} label="Add" success={true} />
+          <Button style={this.styles.button} handleClick={this.handleClick} label="Add" type="success" />
         </div>
       </div>
     );
