@@ -1,7 +1,7 @@
 import Lab from 'lab';
 import { expect } from 'code';
 
-import { addTodo } from '../../../client/actions/todos';
+import { addTodo, toggleCompleteTodo, updateTodo, hideTodo, deleteTodo } from '../../../client/actions/todos';
 import reducer from '../../../client/reducers/todos';
 
 exports.lab = Lab.script();
@@ -9,17 +9,92 @@ const lab = exports.lab;
 const { experiment, test } = lab;
 
 experiment('Todos Reducer:', () => {
+  let state = reducer(undefined, {});
+
   test('Add Todo', done => {
-    const action = addTodo('Example Todo');
-    const state = reducer([], action);
-    const todo = state[0];
+    state = reducer(state, addTodo('Study for exams.'));
 
     expect(state).to.be.an.array();
     expect(state).to.have.length(1);
 
+    state = reducer(state, addTodo('Take out the trash.'));
+    expect(state).to.have.length(2);
+
+    state = reducer(state, addTodo('Clean up room.'));
+    expect(state).to.have.length(3);
+
+    const todo = state[1];
+
     expect(todo).to.be.an.object();
-    expect(todo.id).to.equal(1);
-    expect(todo.text).to.equal('Example Todo');
+    expect(todo.id).to.equal(2);
+    expect(todo.completed).to.equal(false);
+    expect(todo.hidden).to.equal(false);
+    expect(todo.createdAt).to.be.a.number();
+    expect(todo.updatedAt).to.be.undefined();
+    expect(todo.text).to.equal('Take out the trash.');
+
+    done();
+  });
+
+  test('Toggle Complete Todo', done => {
+    state = reducer(state, toggleCompleteTodo(2));
+    let todo = state[1];
+
+    expect(state).to.be.an.array();
+    expect(state).to.have.length(3);
+
+    expect(todo.id).to.equal(2);
+    expect(todo.completed).to.equal(true);
+
+    state = reducer(state, toggleCompleteTodo(2));
+    todo = state[1];
+
+    expect(todo.id).to.equal(2);
+    expect(todo.completed).to.equal(false);
+
+    done();
+  });
+
+  test('Update Todo', done => {
+    const action = updateTodo(2, 'Take out the trash and recycle.');
+    state = reducer(state, action);
+    const todo = state[1];
+
+    expect(state).to.be.an.array();
+    expect(state).to.have.length(3);
+
+    expect(todo.id).to.equal(2);
+    expect(todo.updatedAt).to.be.a.number();
+    expect(todo.text).to.equal('Take out the trash and recycle.');
+
+    done();
+  });
+
+  test('Hide Todo', done => {
+    const action = hideTodo(2);
+    state = reducer(state, action);
+    const todo = state[1];
+
+    expect(state).to.be.an.array();
+    expect(state).to.have.length(3);
+    expect(state[0].id).to.equal(1);
+    expect(state[1].id).to.equal(2);
+
+    expect(todo.id).to.equal(2);
+    expect(todo.hidden).to.equal(true);
+
+    done();
+  });
+
+  test('Delete Todo', done => {
+    const action = deleteTodo(2);
+    state = reducer(state, action);
+
+    expect(state).to.be.an.array();
+    expect(state).to.have.length(2);
+    expect(state[0].id).to.equal(1);
+    expect(state[1].id).to.equal(3);
+
     done();
   });
 });
