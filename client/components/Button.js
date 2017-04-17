@@ -1,15 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 export default function Button(props) {
-  const { success, danger, handleClick, label, style } = props;
-  const classes = classNames({ button: true, 'is-success': success, 'is-danger': danger });
+  const { handleClick, label, type, style } = props;
+
+  const typeMap = {
+    info: 'is-info',
+    primary: 'is-primary',
+    success: 'is-success',
+    warning: 'is-warning',
+    danger: 'is-danger',
+  };
+
+  const isType = typeMap[type];
+
   return (
     <button
       style={style}
       type="button"
-      className={classes}
+      className={`button ${isType}`}
       onClick={handleClick} >
       {label}
     </button>
@@ -18,8 +27,7 @@ export default function Button(props) {
 
 Button.propTypes = {
   style: PropTypes.object,
-  success: PropTypes.bool,
-  danger: PropTypes.bool,
+  type: PropTypes.string,
   handleClick: PropTypes.func,
   label: PropTypes.string,
 };
@@ -27,7 +35,6 @@ Button.propTypes = {
 Button.defaultProps = {
   style: {},
   label: '',
-  success: false,
-  danger: false,
+  type: 'info',
   handleClick: () => {},
 };

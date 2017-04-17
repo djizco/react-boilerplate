@@ -10,13 +10,13 @@ export default function Counter({ counter, increment, decrement }) {
       <div className="columns">
         <div className="column is-6 text-center">
           <Button
-            success={true}
+            type="success"
             handleClick={increment}
             label="Increment" />
         </div>
         <div className="column is-6 text-center">
           <Button
-            danger={true}
+            type="danger"
             handleClick={decrement}
             label="Decrement" />
         </div>
