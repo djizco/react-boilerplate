@@ -31,8 +31,8 @@ export default class Todo extends Component {
     text: this.props.text,
     edit: false,
     confirm: false,
-    updateMessage: '',
-    createMessage: '',
+    updatedMessage: '',
+    createdMessage: '',
   }
 
   componentDidMount() {
