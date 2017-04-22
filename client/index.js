@@ -9,7 +9,7 @@ import 'font-awesome-webpack';
 import './styles/main.scss';
 import './assets';
 
-import Root from './components/Root/Root';
+import Root from './components/Root';
 import configureStore from './store/configureStore';
 
 injectTapEventPlugin();

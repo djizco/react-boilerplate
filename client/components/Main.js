@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Navigation from './Navigation';
-import Footer from '../components/Footer';
+import Navigation from './Navigation/index';
+import Footer from './Footer';
 
 export default function Main(props) {
   return (

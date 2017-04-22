@@ -1,7 +1,7 @@
 import R from 'ramda';
 import { connect } from 'react-redux';
-import { toggleCompleteTodo, updateTodo, hideTodo, deleteTodo } from '../actions/todos';
-import Todo from './Todo';
+import { toggleCompleteTodo, updateTodo, hideTodo, deleteTodo } from '../../actions/todos';
+import TodoContainer from './TodoContainer';
 
 const mapStateToProps = R.pick([]);
 
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todo);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoContainer);

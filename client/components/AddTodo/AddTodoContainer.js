@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Button from './Button';
+import AddTodo from './AddTodo';
 
 export default class AddTodoContainer extends Component {
   static propTypes = {
@@ -25,22 +25,13 @@ export default class AddTodoContainer extends Component {
     window.removeEventListener('keypress', this.keypress);
   }
 
-  styles = {
-    button: {
-      width: '100%',
-    },
-  }
-
   updateText = e => this.setState({ text: e.target.value })
 
   keypress = e => {
     if (e.key === 'Enter') { this.addTodo(); }
   }
 
-  handleClick = e => {
-    e.preventDefault();
-    this.addTodo();
-  }
+  handleClick = () => this.addTodo()
 
   addTodo = () => {
     const text = this.state.text;
@@ -52,14 +43,10 @@ export default class AddTodoContainer extends Component {
 
   render() {
     return (
-      <div className="add-todo columns is-gapless">
-        <div className="column is-10">
-          <input className="input" type="text" value={this.state.text} onChange={this.updateText} />
-        </div>
-        <div className="column is-2">
-          <Button style={this.styles.button} handleClick={this.handleClick} label="Add" type="success" />
-        </div>
-      </div>
+      <AddTodo
+        text={this.state.text}
+        updateText={this.updateText}
+        handleClick={this.handleClick} />
     );
   }
 }
