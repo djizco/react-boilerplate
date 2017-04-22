@@ -45,6 +45,7 @@
   ],
   "homepage": "https://github.com/djizco/boilerplate-react#readme",
   "dependencies": {
+    "babel-eslint": "^7.2.3",
     "body-parser": "^1.17.1",
     "code": "^4.0.0",
     "enzyme": "^2.8.2",
@@ -70,8 +71,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.2",
-    "babel-loader": "^6.4.1",
+    "babel-loader": "^7.0.0",
     "babel-plugin-webpack-loaders": "^0.9.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
