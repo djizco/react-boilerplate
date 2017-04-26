@@ -2,9 +2,10 @@ import { expect } from 'code';
 import Lab from 'lab';
 import express from 'express';
 import request from 'supertest';
-import routes from '../../../server/routes/index.js';
+import routes from '../../../server/routes/index';
 
-const lab = exports.lab = Lab.script();
+exports.lab = Lab.script();
+const lab = exports.lab;
 const { experiment, test } = lab;
 
 experiment('The Server', () => {

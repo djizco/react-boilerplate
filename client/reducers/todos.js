@@ -33,15 +33,15 @@ export default function todos(state = [], action) {
 
   switch (action.type) {
     case ADD_TODO:
-      return update(state, { $push: [todo(undefined, action)]});
+      return update(state, { $push: [todo(undefined, action)] });
     case TOGGLE_COMPLETE_TODO:
-      return update(state, { $splice: [[index, 1, todo(state[index], action)]]});
+      return update(state, { $splice: [[index, 1, todo(state[index], action)]] });
     case UPDATE_TODO:
-      return update(state, { $splice: [[index, 1, todo(state[index], action)]]});
+      return update(state, { $splice: [[index, 1, todo(state[index], action)]] });
     case HIDE_TODO:
-      return update(state, { $splice: [[index, 1, todo(state[index], action)]]});
+      return update(state, { $splice: [[index, 1, todo(state[index], action)]] });
     case DELETE_TODO:
-      return update(state, { $splice: [[index, 1]]});
+      return update(state, { $splice: [[index, 1]] });
     default:
       return state;
   }
