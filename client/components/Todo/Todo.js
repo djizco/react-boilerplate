@@ -39,44 +39,32 @@ export default function Todo(props) {
             }
           </div>
 
-          <nav className="level">
-            <div className="level-left">
-              {updated ?
-                <div className="level-item">
-                  <small className="is-pulled-left">
-                    edited {updatedMessage}
-                  </small></div> : null
-              }
-            </div>
-            <div className="level-right">
-              {edit ?
-                <div className="level-item">
-                  <span className="icon" onClick={updateTodo}>
-                    <i className="fa fa-floppy-o" />
-                  </span>
-                </div>
-                :
-                <div className="level-item">
-                  <span className="icon" onClick={editTodo}>
-                    <i className="fa fa-pencil" />
-                  </span>
-                </div>
-              }
-              {edit ?
-                <div className="level-item">
-                  <span className="icon" onClick={cancelEdit}>
-                    <i className="fa fa-ban" />
-                  </span>
-                </div>
-                :
-                <div className="level-item">
-                  <span className="icon" onClick={openModal}>
-                    <i className="fa fa-trash" />
-                  </span>
-                </div>
-              }
-            </div>
-          </nav>
+          <div>
+            {updated ?
+              <small className="is-pulled-left">
+                edited {updatedMessage}
+              </small> : null
+            }
+
+            {edit ?
+              <span className="icon is-pulled-right" onClick={cancelEdit}>
+                <i className="fa fa-ban" />
+              </span>
+              :
+              <span className="icon is-pulled-right" onClick={openModal}>
+                <i className="fa fa-trash" />
+              </span>
+            }
+            {edit ?
+              <span className="icon is-pulled-right space-right" onClick={updateTodo}>
+                <i className="fa fa-floppy-o" />
+              </span>
+              :
+              <span className="icon is-pulled-right space-right" onClick={editTodo}>
+                <i className="fa fa-pencil" />
+              </span>
+            }
+          </div>
 
         </div>
       </article>
