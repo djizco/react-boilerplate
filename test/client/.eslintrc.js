@@ -1,13 +1,13 @@
 module.exports = {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
   },
   "extends": "airbnb",
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
-    "allowImportExportEverywhere": false
+    "allowImportExportEverywhere": false,
   },
   "plugins": ["react"],
   "rules": {
@@ -39,6 +39,6 @@ module.exports = {
     "no-shadow": 0,
     "no-underscore-dangle": 0,
     "react/forbid-prop-types": 0,
-    "react/jsx-boolean-value": 0
-  }
+    "react/jsx-boolean-value": 0,
+  },
 };

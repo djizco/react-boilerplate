@@ -1,13 +1,13 @@
 module.exports = {
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
   },
   "extends": "airbnb",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
-    "allowImportExportEverywhere": false
+    "allowImportExportEverywhere": false,
   },
   "rules": {
     // override defaults
@@ -39,5 +39,5 @@ module.exports = {
     "no-shadow": 0,
     "no-underscore-dangle": 0,
     "padded-blocks": 0,
-  }
+  },
 };
