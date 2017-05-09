@@ -11,7 +11,6 @@ module.exports = {
   },
   "rules": {
     // override defaults
-    "arrow-body-style": [2, "as-needed", {"requireReturnForObjectLiteral": true}],
     "comma-dangle": [2, "only-multiline"],
     "eqeqeq": [2, "smart"],
     "max-len": [2, {
