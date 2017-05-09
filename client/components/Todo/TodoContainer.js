@@ -39,20 +39,18 @@ export default class TodoContainer extends Component {
     this.interval = window.setInterval(this.updateMessages, 1000);
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({ updatedMessage: moment(props.updatedAt).fromNow() });
+  componentWillReceiveProps(nextProps) {
+    this.setState({ updatedMessage: moment(nextProps.updatedAt).fromNow() });
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
-  updateMessages = () => {
-    this.setState({
-      updatedMessage: this.props.updatedAt ? moment(this.props.updatedAt).fromNow() : '',
-      createdMessage: moment(this.props.createdAt).fromNow(),
-    });
-  }
+  updateMessages = () => this.setState({
+    updatedMessage: this.props.updatedAt ? moment(this.props.updatedAt).fromNow() : '',
+    createdMessage: moment(this.props.createdAt).fromNow(),
+  })
 
   toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id)
   updateText = e => this.setState({ text: e.target.value })
