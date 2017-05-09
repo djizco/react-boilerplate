@@ -26,7 +26,6 @@ module.exports = {
       "VariableDeclarator": true
     }}],
 
-    // "object-curly-spacing": [2, "always", {"objectsInObjects": false, "arraysInObjects": false}],
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
     "react/jsx-closing-bracket-location": [2, { selfClosing: 'after-props', nonEmpty: 'after-props' }],
 
