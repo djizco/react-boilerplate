@@ -5,11 +5,9 @@ import Counter from './Counter';
 
 const mapStateToProps = R.pick(['counter']);
 
-const mapDispatchToProps = dispatch => {
-  return {
-    increment: () => dispatch(increment()),
-    decrement: () => dispatch(decrement()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  increment: () => dispatch(increment()),
+  decrement: () => dispatch(decrement()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

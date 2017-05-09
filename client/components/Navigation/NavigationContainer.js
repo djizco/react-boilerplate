@@ -21,7 +21,7 @@ export default class NavigationContainer extends Component {
 
   toggleActive = () => {
     if (window.innerWidth <= 768) {
-      this.setState({ active: !this.state.active });
+      this.setState(prevState => ({ active: !prevState.active }));
     }
   }
 

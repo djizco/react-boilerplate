@@ -15,7 +15,6 @@ module.exports = {
     "react/jsx-key": 2,
 
     // override default options for rules from base configurations
-    "arrow-body-style": [2, "as-needed", {"requireReturnForObjectLiteral": true}],
     "eqeqeq": [2, "smart"],
     "max-len": [2, {"code": 120, "tabWidth": 2, "ignoreUrls": true}],
     "newline-per-chained-call": [2, {"ignoreChainWithDepth": 4}],

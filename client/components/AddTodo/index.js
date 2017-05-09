@@ -5,10 +5,8 @@ import AddTodoContainer from './AddTodoContainer';
 
 const mapStateToProps = R.pick([]);
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addTodo: text => dispatch(addTodo(text)),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  addTodo: text => dispatch(addTodo(text)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodoContainer);
