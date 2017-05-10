@@ -4,9 +4,10 @@ import { expect } from 'code';
 import { addTodo, toggleCompleteTodo, updateTodo, hideTodo, deleteTodo } from '../../../client/actions/todos';
 import reducer from '../../../client/reducers/todos';
 
-exports.lab = Lab.script();
-const lab = exports.lab;
+const lab = Lab.script();
 const { experiment, test } = lab;
+
+exports.lab = lab;
 
 experiment('Todos Reducer:', () => {
   let state = reducer(undefined, {});

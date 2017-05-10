@@ -4,9 +4,10 @@ import { expect } from 'code';
 import { increment, decrement } from '../../../client/actions/counter';
 import reducer from '../../../client/reducers/counter';
 
-exports.lab = Lab.script();
-const lab = exports.lab;
+const lab = Lab.script();
 const { experiment, test } = lab;
+
+exports.lab = lab;
 
 experiment('Counter Reducer:', () => {
   test('Increment', done => {

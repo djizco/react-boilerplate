@@ -5,9 +5,10 @@ import { shallow } from 'enzyme';
 
 import Button from '../../../client/components/Button';
 
-exports.lab = Lab.script();
-const lab = exports.lab;
+const lab = Lab.script();
 const { experiment, test } = lab;
+
+exports.lab = lab;
 
 const wrapper = shallow(<Button />);
 

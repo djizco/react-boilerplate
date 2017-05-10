@@ -4,9 +4,10 @@ import express from 'express';
 import request from 'supertest';
 import routes from '../../../server/routes/index';
 
-exports.lab = Lab.script();
-const lab = exports.lab;
+const lab = Lab.script();
 const { experiment, test } = lab;
+
+exports.lab = lab;
 
 experiment('The Server', () => {
   const app = express();
