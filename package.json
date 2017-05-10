@@ -14,7 +14,8 @@
     "pretest": "NODE_ENV=test",
     "prod": "npm run build",
     "start": "nodemon server/index.js",
-    "test": "./scripts/test"
+    "test": "./scripts/test",
+    "test-verbose": "./scripts/test-verbose"
   },
   "repository": {
     "type": "git",

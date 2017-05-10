@@ -1,1 +1,1 @@
-lab -T node_modules/lab-babel -I __core-js_shared__
+lab -T node_modules/lab-babel -I __core-js_shared__ -c
