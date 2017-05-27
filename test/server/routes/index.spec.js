@@ -20,11 +20,4 @@ experiment('The Server', () => {
       .expect(response => expect(response.body).to.include('node'))
       .then(() => done());
   });
-
-  test('sends index.html on unknown endpoint', done => {
-    request(app)
-      .get('/*')
-      .expect(200)
-      .then(() => done());
-  });
 });
