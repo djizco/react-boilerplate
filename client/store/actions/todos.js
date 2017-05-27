@@ -6,6 +6,7 @@ export const DELETE_TODO = 'DELETE_TODO';
 
 let nextToDoId = 1;
 
+// Actions
 export function addTodo(text) {
   return {
     type: ADD_TODO,

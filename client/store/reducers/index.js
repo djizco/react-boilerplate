@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { routerReducer as routing } from 'react-router-redux';
 
 import counter from './counter';
 import todos from './todos';
@@ -7,7 +7,7 @@ import todos from './todos';
 const rootReducer = combineReducers({
   counter,
   todos,
-  routing: routerReducer,
+  routing,
 });
 
 export default rootReducer;
