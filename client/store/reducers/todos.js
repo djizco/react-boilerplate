@@ -1,55 +1,8 @@
 import update from 'immutability-helper';
 import R from 'ramda';
 
-const ADD_TODO = 'ADD_TODO';
-const TOGGLE_COMPLETE_TODO = 'TOGGLE_COMPLETE_TODO';
-const UPDATE_TODO = 'UPDATE_TODO';
-const HIDE_TODO = 'HIDE_TODO';
-const DELETE_TODO = 'DELETE_TODO';
+import { ADD_TODO, TOGGLE_COMPLETE_TODO, UPDATE_TODO, HIDE_TODO, DELETE_TODO } from '../actions/todos';
 
-let nextToDoId = 1;
-
-// Actions
-export function addTodo(text) {
-  return {
-    type: ADD_TODO,
-    id: nextToDoId++,
-    createdAt: Date.now(),
-    text,
-  };
-}
-
-export function toggleCompleteTodo(id) {
-  return {
-    type: TOGGLE_COMPLETE_TODO,
-    id,
-  };
-}
-
-export function updateTodo(id, text) {
-  return {
-    type: UPDATE_TODO,
-    updatedAt: Date.now(),
-    text,
-    id,
-  };
-}
-
-export function hideTodo(id) {
-  return {
-    type: HIDE_TODO,
-    id,
-  };
-}
-
-export function deleteTodo(id) {
-  return {
-    type: DELETE_TODO,
-    id,
-  };
-}
-
-// Reducers
 export function todo(state = { completed: false, hidden: false }, action) {
   switch (action.type) {
     case ADD_TODO:
