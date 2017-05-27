@@ -1,8 +1,8 @@
 import Lab from 'lab';
 import { expect } from 'code';
 
-import { addTodo, toggleCompleteTodo, updateTodo, hideTodo, deleteTodo } from '../../../client/actions/todos';
-import reducer from '../../../client/reducers/todos';
+import { addTodo, toggleCompleteTodo, updateTodo, hideTodo, deleteTodo } from '../../../../client/store/actions/todos';
+import reducer from '../../../../client/store/reducers/todos';
 
 const lab = Lab.script();
 const { experiment, test } = lab;
@@ -11,6 +11,12 @@ exports.lab = lab;
 
 experiment('Todos Reducer:', () => {
   let state = reducer(undefined, {});
+
+  test('Is an empty array by default', done => {
+    expect(state).to.be.an.array();
+    expect(state).to.have.length(0);
+    done();
+  });
 
   test('Add Todo', done => {
     state = reducer(state, addTodo('Study for exams.'));
