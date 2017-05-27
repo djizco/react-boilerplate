@@ -57,7 +57,7 @@
     "lab-babel": "^1.1.1",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
-    "ramda": "^0.23.0",
+    "ramda": "^0.24.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
