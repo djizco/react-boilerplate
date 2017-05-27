@@ -5,7 +5,7 @@ import ConfirmModal from '../ConfirmModal';
 
 export default function Todo(props) {
   const {
-    completed, edit, confirm, text, currentText, updated, createdMessage, updatedMessage,
+    completed, hidden, edit, confirm, text, currentText, updated, createdMessage, updatedMessage,
     toggleCompleteTodo, updateText, updateTodo, editTodo, cancelEdit, deleteTodo,
     openModal, closeModal,
   } = props;
@@ -16,7 +16,7 @@ export default function Todo(props) {
     'fa-check-square-o': completed,
   });
 
-  return (
+  return !hidden && (
     <li className="todo box">
       <article className="media">
         <figure className="media-left">
@@ -40,12 +40,10 @@ export default function Todo(props) {
           </div>
 
           <div>
-            {updated ?
+            {updated &&
               <small className="is-pulled-left">
                 edited {updatedMessage}
-              </small> : null
-            }
-
+              </small>}
             {edit ?
               <span className="icon is-pulled-right" onClick={cancelEdit}>
                 <i className="fa fa-ban" />
@@ -78,6 +76,7 @@ export default function Todo(props) {
 
 Todo.propTypes = {
   completed: PropTypes.bool.isRequired,
+  hidden: PropTypes.bool.isRequired,
   confirm: PropTypes.bool.isRequired,
   edit: PropTypes.bool.isRequired,
   updated: PropTypes.bool.isRequired,

@@ -73,25 +73,24 @@ export default class TodoContainer extends Component {
     const { edit, confirm, createdMessage, updatedMessage } = this.state;
 
     return (
-      hidden ?
-        null :
-        <Todo
-          completed={completed}
-          confirm={confirm}
-          edit={edit}
-          updated={!!updatedAt}
-          currentText={this.state.text}
-          text={this.props.text}
-          createdMessage={createdMessage}
-          updatedMessage={updatedMessage}
-          toggleCompleteTodo={this.toggleCompleteTodo}
-          updateText={this.updateText}
-          updateTodo={this.updateTodo}
-          editTodo={this.editTodo}
-          cancelEdit={this.cancelEdit}
-          deleteTodo={this.deleteTodo}
-          openModal={this.openModal}
-          closeModal={this.closeModal} />
+      <Todo
+        hidden={hidden}
+        completed={completed}
+        confirm={confirm}
+        edit={edit}
+        updated={!!updatedAt}
+        currentText={this.state.text}
+        text={this.props.text}
+        createdMessage={createdMessage}
+        updatedMessage={updatedMessage}
+        toggleCompleteTodo={this.toggleCompleteTodo}
+        updateText={this.updateText}
+        updateTodo={this.updateTodo}
+        editTodo={this.editTodo}
+        cancelEdit={this.cancelEdit}
+        deleteTodo={this.deleteTodo}
+        openModal={this.openModal}
+        closeModal={this.closeModal} />
     );
   }
 }
