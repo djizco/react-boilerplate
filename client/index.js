@@ -6,7 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import 'font-awesome-webpack';
-import './styles/main.scss';
+import './styles/index.scss';
 import './assets';
 
 import Root from './components/Root';

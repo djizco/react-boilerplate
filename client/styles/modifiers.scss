@@ -1,0 +1,18 @@
+.separator {
+  margin: 0 -20px 20px;
+}
+
+.is-full-screen {
+  min-height: 100vh;
+}
+
+.is-full-page {
+  min-height: calc(100vh - 146.5px);
+}
+
+.app-flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
