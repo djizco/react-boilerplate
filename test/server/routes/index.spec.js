@@ -20,4 +20,12 @@ experiment('The Server', () => {
       .expect(response => expect(response.body).to.include('node'))
       .then(() => done());
   });
+
+  test('returns 404 on unknown endpoints', done => {
+    request(app)
+      .get('/*')
+      .expect(404)
+      .expect(response => expect(response.body).to.be.empty())
+      .then(() => done());
+  });
 });
