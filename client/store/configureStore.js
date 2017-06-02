@@ -8,18 +8,18 @@ import DevTools from '../components/DevTools';
 const middlewares = [thunk];
 let middleware;
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
+  middleware = compose(
+    applyMiddleware(...middlewares),
+    autoRehydrate(),
+  );
+} else {
   const logger = createLogger({ collapsed: true, diff: true });
   middlewares.push(logger);
   middleware = compose(
     applyMiddleware(...middlewares),
     autoRehydrate(),
     DevTools.instrument(),
-  );
-} else {
-  middleware = compose(
-    applyMiddleware(...middlewares),
-    autoRehydrate(),
   );
 }
 
