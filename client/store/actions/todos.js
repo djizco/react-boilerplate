@@ -3,19 +3,22 @@ export const TOGGLE_COMPLETE_TODO = 'TOGGLE_COMPLETE_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
 export const HIDE_TODO = 'HIDE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
+export const INCREMENT_TODO_ID = 'INCREMENT_TODO_ID';
 
-let nextToDoId = localStorage.getItem('todoId') || 0;
+export const incrementTodoId = () => ({
+  type: INCREMENT_TODO_ID,
+});
 
-export function addTodo(text) {
-  nextToDoId++;
-  localStorage.setItem('todoId', nextToDoId);
-  return {
+export const addTodo = text => (dispatch, getState) => {
+  const { nextTodoId } = getState();
+  dispatch(incrementTodoId());
+  dispatch({
     type: ADD_TODO,
-    id: nextToDoId,
+    id: nextTodoId,
     createdAt: Date.now(),
     text,
-  };
-}
+  });
+};
 
 export function toggleCompleteTodo(id) {
   return {

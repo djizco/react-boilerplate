@@ -21,7 +21,7 @@ export default class RootContainer extends Component {
 
   componentWillMount() {
     const reduxPersistOptions = {
-      whitelist: ['counter', 'todos'],
+      whitelist: ['counter', 'todos', 'nextTodoId'],
       keyPrefix: '',
     };
 
