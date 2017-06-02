@@ -20,7 +20,6 @@ if (process.env.NODE_ENV !== 'production') {
   middleware = compose(
     applyMiddleware(...middlewares),
     autoRehydrate(),
-    DevTools.instrument(),
   );
 }
 
