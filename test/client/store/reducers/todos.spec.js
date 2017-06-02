@@ -19,15 +19,15 @@ experiment('Todos Reducer:', () => {
   });
 
   test('Add Todo', done => {
-    state = reducer(state, addTodo('Study for exams.'));
+    state = reducer(state, addTodo(1, 'Study for exams.'));
 
     expect(state).to.be.an.array();
     expect(state).to.have.length(1);
 
-    state = reducer(state, addTodo('Take out the trash.'));
+    state = reducer(state, addTodo(2, 'Take out the trash.'));
     expect(state).to.have.length(2);
 
-    state = reducer(state, addTodo('Clean up room.'));
+    state = reducer(state, addTodo(3, 'Clean up room.'));
     expect(state).to.have.length(3);
 
     const todo = state[1];

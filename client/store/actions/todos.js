@@ -9,16 +9,14 @@ export const incrementTodoId = () => ({
   type: INCREMENT_TODO_ID,
 });
 
-export const addTodo = text => (dispatch, getState) => {
-  const { nextTodoId } = getState();
-  dispatch(incrementTodoId());
-  dispatch({
+export function addTodo(id, text) {
+  return {
     type: ADD_TODO,
-    id: nextTodoId,
     createdAt: Date.now(),
+    id,
     text,
-  });
-};
+  };
+}
 
 export function toggleCompleteTodo(id) {
   return {
@@ -49,3 +47,9 @@ export function deleteTodo(id) {
     id,
   };
 }
+
+export const addTodoAndIncrement = text => (dispatch, getState) => {
+  const { nextTodoId } = getState();
+  dispatch(addTodo(nextTodoId, text));
+  dispatch(incrementTodoId());
+};
