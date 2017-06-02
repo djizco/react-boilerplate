@@ -7,7 +7,7 @@
     "build": "webpack -p --config webpack.prod.config.js",
     "dev": "webpack-dev-server --config webpack.dev.config.js",
     "lint": "./scripts/lint",
-    "lint-fix": "./scripts/lint-fix",
+    "lint:fix": "./scripts/lint-fix",
     "postprod": "npm run start",
     "predev": "NODE_ENV=development",
     "preprod": "NODE_ENV=production",
@@ -15,7 +15,7 @@
     "prod": "npm run build",
     "start": "nodemon server/index.js",
     "test": "./scripts/test",
-    "test-verbose": "./scripts/test-verbose"
+    "test:verbose": "./scripts/test-verbose"
   },
   "repository": {
     "type": "git",
