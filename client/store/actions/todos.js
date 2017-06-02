@@ -4,12 +4,14 @@ export const UPDATE_TODO = 'UPDATE_TODO';
 export const HIDE_TODO = 'HIDE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 
-let nextToDoId = 1;
+let nextToDoId = localStorage.getItem('todoId') || 0;
 
 export function addTodo(text) {
+  nextToDoId++;
+  localStorage.setItem('todoId', nextToDoId);
   return {
     type: ADD_TODO,
-    id: nextToDoId++,
+    id: nextToDoId,
     createdAt: Date.now(),
     text,
   };

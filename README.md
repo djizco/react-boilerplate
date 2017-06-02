@@ -35,6 +35,8 @@ npm run lint-fix
 
 [Redux](http://redux.js.org/) - State Manager
 
+[Redux-Persist](https://github.com/rt2zz/redux-persist) - Persistent State
+
 [Webpack](https://webpack.github.io/) - Code Packager for React
 
 [Express](http://expressjs.com/) - Node Framework
