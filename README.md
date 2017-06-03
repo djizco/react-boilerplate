@@ -1,6 +1,11 @@
 # React Boilerplate
 
-## Quick Start for Development
+You can try out this project here
+[Boilerplate-React](http://djizco.boilerplate-react.surge.sh)
+
+## Quick Start
+
+#### for Development
 
 ```
 brew install libpng (needed for .jpg images)
@@ -8,20 +13,20 @@ npm install
 npm run dev
 ```
 
-## Quick Start for Production
+#### for Production
 
 ```
 npm run prod
 ```
 
-## Quick Deploy
+#### for Deploy
 
 ```
 npm install -g surge
 npm run deploy
 ```
 
-## Other Commands
+#### Other Commands
 
 ```
 npm start

@@ -5,15 +5,11 @@
   "main": "server/index.js",
   "scripts": {
     "build": "webpack -p --config webpack.prod.config.js",
-    "deploy": "surge dist djizco.boilerplate-react.surge.sh",
+    "deploy": "npm run build && surge dist djizco.boilerplate-react.surge.sh",
     "dev": "webpack-dev-server --config webpack.dev.config.js",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
-    "postprod": "npm run start",
-    "predev": "NODE_ENV=development",
-    "preprod": "NODE_ENV=production",
-    "pretest": "NODE_ENV=test",
-    "prod": "npm run build",
+    "prod": "npm run build && npm run start",
     "start": "nodemon server/index.js",
     "test": "./scripts/test",
     "test:verbose": "./scripts/test-verbose"
