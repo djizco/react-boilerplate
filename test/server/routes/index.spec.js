@@ -21,11 +21,10 @@ experiment('The Server', () => {
       .then(() => done());
   });
 
-  test('returns 404 on unknown endpoints', done => {
+  test('returns html on unknown endpoint', done => {
     request(app)
       .get('/*')
-      .expect(404)
-      .expect(response => expect(response.body).to.be.empty())
+      .expect(response => expect(response.header['content-type']).to.equal('text/html; charset=UTF-8'))
       .then(() => done());
   });
 });
