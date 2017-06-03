@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "build": "webpack -p --config webpack.prod.config.js",
+    "deploy": "surge dist djizco.boilerplate-react.surge.sh",
     "dev": "webpack-dev-server --config webpack.dev.config.js",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",

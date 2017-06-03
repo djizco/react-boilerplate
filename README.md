@@ -14,18 +14,29 @@ npm run dev
 npm run prod
 ```
 
+## Quick Deploy
+
+```
+npm install -g surge
+npm run deploy
+```
+
 ## Other Commands
 
 ```
-npm run build
 npm start
 npm test
+npm run build
+npm run test:verbose
 npm run lint
-npm run lint-fix
+npm run lint:fix
 ```
 
 ## Updates
 
+* Add Deploy Script
+* Add Redux-Persist
+* Add Capability to Batch Redux Actions
 * Add Webpack 2
 * Update reducers to use immutability-helper
 
