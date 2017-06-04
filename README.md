@@ -1,7 +1,6 @@
 # React Boilerplate
 
-You can try out this project here
-[Boilerplate-React](http://djizco.boilerplate-react.surge.sh)
+You can try out this project [here](http://react-boilerplate.surge.sh)
 
 ## Quick Start
 
@@ -19,11 +18,14 @@ npm run dev
 npm run prod
 ```
 
-#### for Deploy
+#### for Deploy (using surge)
 
 ```
 npm install -g surge
-npm run deploy
+npm run build
+surge dist <custom-url>.surge.sh
+(You may have to create an account)
+
 ```
 
 #### Other Commands
