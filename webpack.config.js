@@ -1,3 +1,4 @@
+const webpack           = require('webpack');
 const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -10,6 +11,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
+const ModuleConcatenationConfig = new webpack.optimize.ModuleConcatenationPlugin();
 
 module.exports = {
   devServer: {
@@ -86,5 +88,6 @@ module.exports = {
   plugins: [
     HtmlWebpackPluginConfig,
     ExtractTextPluginConfig,
+    ModuleConcatenationConfig,
   ],
 };
