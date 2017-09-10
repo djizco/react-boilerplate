@@ -1,3 +1,7 @@
 // Override bulma variables here
 
 @import '~bulma';
+
+.button {
+  line-height: 1;
+}

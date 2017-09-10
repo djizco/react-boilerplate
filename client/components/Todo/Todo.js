@@ -39,31 +39,31 @@ export default function Todo(props) {
             }
           </div>
 
-          <div>
-            {updated &&
-              <small className="is-pulled-left">
-                edited {updatedMessage}
-              </small>}
-            {edit ?
-              <span className="icon is-pulled-right" onClick={cancelEdit}>
-                <i className="fa fa-ban" />
-              </span>
-              :
-              <span className="icon is-pulled-right" onClick={openModal}>
-                <i className="fa fa-trash" />
-              </span>
-            }
-            {edit ?
-              <span className="icon is-pulled-right space-right" onClick={updateTodo}>
-                <i className="fa fa-floppy-o" />
-              </span>
-              :
-              <span className="icon is-pulled-right space-right" onClick={editTodo}>
-                <i className="fa fa-pencil" />
-              </span>
-            }
-          </div>
-
+          <nav className="level is-mobile">
+            <div className="level-left">
+              {updated && <small>edited {updatedMessage}</small>}
+            </div>
+            <div className="level-right">
+              {edit ?
+                <span className="icon space-right" onClick={updateTodo}>
+                  <i className="fa fa-floppy-o" />
+                </span>
+                :
+                <span className="icon space-right" onClick={editTodo}>
+                  <i className="fa fa-pencil" />
+                </span>
+              }
+              {edit ?
+                <span className="icon" onClick={cancelEdit}>
+                  <i className="fa fa-ban" />
+                </span>
+                :
+                <span className="icon" onClick={openModal}>
+                  <i className="fa fa-trash" />
+                </span>
+              }
+            </div>
+          </nav>
         </div>
       </article>
       <ConfirmModal
