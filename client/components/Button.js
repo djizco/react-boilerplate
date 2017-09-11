@@ -12,7 +12,7 @@ export default function Button(props) {
     danger: 'is-danger',
   };
 
-  const isType = typeMap[type];
+  const isType = typeMap[type] || 'is-info';
 
   return (
     <button
