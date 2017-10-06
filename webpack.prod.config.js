@@ -1,5 +1,23 @@
 const webpack = require('webpack');
 const config = require('./webpack.config.js');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
+
+config.module.rules = config.module.rules.concat([
+  {
+    test: /\.css$/,
+    loader: ExtractTextPlugin.extract(['style-loader', 'css-loader']),
+  },
+  {
+    test: /\.scss$/,
+    loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
+  },
+  {
+    test: /\.less$/,
+    loader: ExtractTextPlugin.extract(['css-loader', 'less-loader']),
+  },
+]);
 
 config.plugins.push(
   new webpack.DefinePlugin({
@@ -23,5 +41,7 @@ config.plugins.push(
     minimize: true,
   })
 );
+
+config.plugins.push(ExtractTextPluginConfig);
 
 module.exports = config;

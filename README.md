@@ -41,11 +41,12 @@ npm run lint:fix
 
 ## Updates
 
-* Add Deploy Script
-* Add Redux-Persist
-* Add Capability to Batch Redux Actions
-* Add Webpack 2
-* Update reducers to use immutability-helper
+* Add Webpack 3
+* Add Hot Module Reloader for JS and CSS.
+
+## Todo
+
+* React 16
 
 ## Technologies
 

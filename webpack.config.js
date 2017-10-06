@@ -1,7 +1,6 @@
 const webpack           = require('webpack');
 const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: path.join(__dirname, 'client/index.html'),
@@ -10,7 +9,6 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   favicon: path.join(__dirname, 'client/assets/icons/favicon.ico'),
 });
 
-const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 const ModuleConcatenationConfig = new webpack.optimize.ModuleConcatenationPlugin();
 
 module.exports = {
@@ -33,18 +31,6 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [path.join(__dirname, 'client')],
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract(['style-loader', 'css-loader']),
-      },
-      {
-        test: /\.scss$/i,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
-      },
-      {
-        test: /\.less$/i,
-        loader: ExtractTextPlugin.extract(['css-loader', 'less-loader']),
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,
@@ -87,7 +73,6 @@ module.exports = {
   },
   plugins: [
     HtmlWebpackPluginConfig,
-    ExtractTextPluginConfig,
     ModuleConcatenationConfig,
   ],
 };

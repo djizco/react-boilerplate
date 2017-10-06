@@ -22,7 +22,7 @@ export default function Navigation(props) {
         <div className="nav-center">
           <Link to="/" className="nav-item">
             <span className="icon is-medium">
-              <i className="fa fa-home" />
+              <i className="fa fa-2x fa-home" />
             </span>
           </Link>
         </div>
