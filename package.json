@@ -4,8 +4,8 @@
   "description": "React Boilerplate",
   "main": "server/index.js",
   "scripts": {
-    "build": "webpack -p --config webpack.prod.config.js",
-    "dev": "webpack-dev-server --config webpack.dev.config.js",
+    "build": "webpack -p --progress --config webpack.prod.config.js",
+    "dev": "webpack-dev-server --progress --hot --config webpack.dev.config.js",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
     "prod": "npm run build && npm run start",
@@ -76,6 +76,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
     "bulma": "0.5.3",
     "classnames": "^2.2.5",
