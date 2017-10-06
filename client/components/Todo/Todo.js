@@ -12,6 +12,7 @@ export default function Todo(props) {
 
   const toggleIconClasses = classNames({
     fa: true,
+    'fa-lg': true,
     'fa-square-o': !completed,
     'fa-check-square-o': completed,
   });
@@ -46,20 +47,20 @@ export default function Todo(props) {
             <div className="level-right">
               {edit ?
                 <span className="icon space-right" onClick={updateTodo}>
-                  <i className="fa fa-floppy-o" />
+                  <i className="fa fa-lg fa-floppy-o" />
                 </span>
                 :
                 <span className="icon space-right" onClick={editTodo}>
-                  <i className="fa fa-pencil" />
+                  <i className="fa fa-lg fa-pencil" />
                 </span>
               }
               {edit ?
                 <span className="icon" onClick={cancelEdit}>
-                  <i className="fa fa-ban" />
+                  <i className="fa fa-lg fa-ban" />
                 </span>
                 :
                 <span className="icon" onClick={openModal}>
-                  <i className="fa fa-trash" />
+                  <i className="fa fa-lg fa-trash" />
                 </span>
               }
             </div>

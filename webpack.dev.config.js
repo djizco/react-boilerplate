@@ -44,5 +44,6 @@ config.plugins.push(
 );
 
 config.plugins.push(ExtractTextPluginConfig);
+config.plugins.push(new webpack.NamedModulesPlugin());
 
 module.exports = config;
