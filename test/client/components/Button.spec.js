@@ -1,9 +1,13 @@
 import React from 'react';
 import Lab from 'lab';
 import { expect } from 'code';
-import { shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
 import Button from '../../../client/components/Button';
+
+Enzyme.configure({ adapter: new Adapter() });
+
 
 const lab = Lab.script();
 const { experiment, test } = lab;
