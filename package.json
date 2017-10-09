@@ -49,7 +49,7 @@
     "express": "^4.16.1",
     "extract-text-webpack-plugin": "^3.0.1",
     "immutability-helper": "^2.4.0",
-    "lab": "^13.1.0",
+    "lab": "^14.3.1",
     "lab-babel": "^1.1.1",
     "material-ui": "^0.19.4",
     "moment": "^2.18.1",
