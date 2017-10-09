@@ -54,6 +54,7 @@ experiment('Todos Reducer:', () => {
     expect(todo.completed).to.equal(true);
 
     state = reducer(state, toggleCompleteTodo(2));
+    // eslint-disable-next-line
     todo = state[1];
 
     expect(todo.id).to.equal(2);

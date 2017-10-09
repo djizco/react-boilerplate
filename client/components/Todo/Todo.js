@@ -21,7 +21,7 @@ export default function Todo(props) {
     <li className="todo box">
       <article className="media">
         <figure className="media-left">
-          <span className="icon" onClick={toggleCompleteTodo}>
+          <span className="icon" onClick={toggleCompleteTodo} onKeyPress={toggleCompleteTodo}>
             <i className={toggleIconClasses} />
           </span>
         </figure>
@@ -46,20 +46,20 @@ export default function Todo(props) {
             </div>
             <div className="level-right">
               {edit ?
-                <span className="icon space-right" onClick={updateTodo}>
+                <span className="icon space-right" onClick={updateTodo} onKeyPress={updateTodo}>
                   <i className="fa fa-lg fa-floppy-o" />
                 </span>
                 :
-                <span className="icon space-right" onClick={editTodo}>
+                <span className="icon space-right" onClick={editTodo} onKeyPress={editTodo}>
                   <i className="fa fa-lg fa-pencil" />
                 </span>
               }
               {edit ?
-                <span className="icon" onClick={cancelEdit}>
+                <span className="icon" onClick={cancelEdit} onKeyPress={cancelEdit}>
                   <i className="fa fa-lg fa-ban" />
                 </span>
                 :
-                <span className="icon" onClick={openModal}>
+                <span className="icon" onClick={openModal} onKeyPress={cancelEdit}>
                   <i className="fa fa-lg fa-trash" />
                 </span>
               }

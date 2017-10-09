@@ -21,8 +21,8 @@ export default function ConfirmModal(props) {
             </div>
           </div>
           <footer className="card-footer">
-            <a className="card-footer-item" onClick={closeModal}>Cancel</a>
-            <a className="card-footer-item" onClick={deleteTodo}>Delete</a>
+            <a href="#" className="card-footer-item" onClick={closeModal} onKeyPress={closeModal}>Cancel</a>
+            <a href="#" className="card-footer-item" onClick={deleteTodo} onKeyPress={deleteTodo}>Delete</a>
           </footer>
         </div>
       </div>

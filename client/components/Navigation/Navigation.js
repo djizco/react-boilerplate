@@ -27,7 +27,7 @@ export default function Navigation(props) {
           </Link>
         </div>
 
-        <span className={toggleClasses} onClick={toggleActive}>
+        <span className={toggleClasses} onClick={toggleActive} onKeyPress={toggleActive}>
           <span />
           <span />
           <span />

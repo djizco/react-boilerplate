@@ -34,7 +34,7 @@ export default class AddTodoContainer extends Component {
   handleClick = () => this.addTodo()
 
   addTodo = () => {
-    const text = this.state.text;
+    const { text } = this.state;
     if (text) {
       this.props.addTodo(text);
       this.setState({ text: '' });

@@ -29,19 +29,15 @@ config.module.rules = config.module.rules.concat([
   },
 ]);
 
-config.plugins.push(
-  new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify('development')
-    }
-  })
-);
+config.plugins.push(new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify('development')
+  }
+}));
 
-config.plugins.push(
-  new webpack.LoaderOptionsPlugin({
-    debug: true,
-  })
-);
+config.plugins.push(new webpack.LoaderOptionsPlugin({
+  debug: true,
+}));
 
 config.plugins.push(ExtractTextPluginConfig);
 config.plugins.push(new webpack.NamedModulesPlugin());
