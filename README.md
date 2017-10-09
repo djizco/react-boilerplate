@@ -41,12 +41,9 @@ npm run lint:fix
 
 ## Updates
 
-* Add Webpack 3
+* Update to React 16
 * Add Hot Module Reloader for JS and CSS.
-
-## Todo
-
-* React 16
+* Add Webpack 3
 
 ## Technologies
 
