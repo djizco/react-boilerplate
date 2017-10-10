@@ -17,7 +17,7 @@ export default function Navbar(props) {
             <h3 className="title is-3">React</h3>
           </Link>
 
-          <Link to="/" className="navbar-item is-hidden-desktop">
+          <Link to="/" className="navbar-item is-hidden-desktop" onClick={deactivate}>
             <span className="icon is-medium">
               <i className="fa fa-lg fa-home" />
             </span>
@@ -32,10 +32,10 @@ export default function Navbar(props) {
 
         <div className={menuClasses}>
           <div className="navbar-start">
-            <Link to="counter" className="navbar-item">
+            <Link to="counter" className="navbar-item" onClick={deactivate}>
               Counter
             </Link>
-            <Link to="todo" className="navbar-item">
+            <Link to="todo" className="navbar-item" onClick={deactivate}>
               Todo
             </Link>
           </div>
