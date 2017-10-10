@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navigation from './Navigation';
+import Navbar from './Navbar';
 
-export default class NavigationContainer extends Component {
+export default class NavbarContainer extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -19,11 +19,7 @@ export default class NavigationContainer extends Component {
     window.removeEventListener('resize', this.deactivate);
   }
 
-  toggleActive = () => {
-    if (window.innerWidth <= 768) {
-      this.setState(prevState => ({ active: !prevState.active }));
-    }
-  }
+  toggleActive = () => this.setState(prevState => ({ active: !prevState.active }))
 
   deactivate = () => this.setState({ active: false })
 
@@ -31,7 +27,7 @@ export default class NavigationContainer extends Component {
     const { active } = this.state;
 
     return (
-      <Navigation
+      <Navbar
         active={active}
         toggleActive={this.toggleActive}
         deactivate={this.deactivate} />
