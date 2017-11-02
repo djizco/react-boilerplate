@@ -1,4 +1,4 @@
-import R from 'ramda';
+import * as R from 'ramda';
 import { connect } from 'react-redux';
 import { addTodoAndIncrementId } from '../../store/actions/todos';
 import AddTodoContainer from './AddTodoContainer';

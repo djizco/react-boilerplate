@@ -1,4 +1,4 @@
-import R from 'ramda';
+import * as R from 'ramda';
 import { INCREMENT_TODO_ID } from '../actions/todos';
 
 export default function nextTodoId(state = 1, action) {
