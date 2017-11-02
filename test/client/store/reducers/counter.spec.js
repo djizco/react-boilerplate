@@ -12,22 +12,20 @@ exports.lab = lab;
 experiment('Counter Reducer:', () => {
   let state = reducer(undefined, {});
 
-  test('Is 0 by default', done => {
+  test('Is 0 by default', () => {
     expect(state).to.be.a.number();
     expect(state).to.equal(0);
-    done();
   });
 
-  test('Increment', done => {
+  test('Increment', () => {
     const action = increment();
     state = reducer(state, action);
 
     expect(state).to.be.a.number();
     expect(state).to.equal(1);
-    done();
   });
 
-  test('Decrement', done => {
+  test('Decrement', () => {
     const action = decrement();
     state = reducer(state, action);
 
@@ -36,7 +34,5 @@ experiment('Counter Reducer:', () => {
 
     state = reducer(state, action);
     expect(state).to.equal(-1);
-
-    done();
   });
 });

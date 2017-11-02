@@ -17,8 +17,7 @@ exports.lab = lab;
 const wrapper = shallow(<Button />);
 
 experiment('<Button />', () => {
-  test('renders as a <button> element', done => {
+  test('renders as a <button> element', () => {
     expect(wrapper.type()).to.equal('button');
-    done();
   });
 });

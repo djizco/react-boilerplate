@@ -13,18 +13,13 @@ experiment('The Server', () => {
   const app = express();
   app.use('/', routes);
 
-  test('serves an example endpoint', done => {
+  test('serves an example endpoint', () =>
     request(app)
       .get('/api/tags')
       .expect(200)
-      .expect(response => expect(response.body).to.include('node'))
-      .then(() => done());
-  });
+      .expect(response => expect(response.body).to.include('node')));
 
-  test('returns html on unknown endpoint', done => {
-    request(app)
-      .get('/*')
-      .expect(response => expect(response.header['content-type']).to.equal('text/html; charset=UTF-8'))
-      .then(() => done());
-  });
+  test('returns html on unknozwn endpoint', () => request(app)
+    .get('/*')
+    .expect(response => expect(response.header['content-type']).to.equal('text/html; charset=UTF-8')));
 });

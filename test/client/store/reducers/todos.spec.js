@@ -12,13 +12,12 @@ exports.lab = lab;
 experiment('Todos Reducer:', () => {
   let state = reducer(undefined, {});
 
-  test('Is an empty array by default', done => {
+  test('Is an empty array by default', () => {
     expect(state).to.be.an.array();
     expect(state).to.have.length(0);
-    done();
   });
 
-  test('Add Todo', done => {
+  test('Add Todo', () => {
     state = reducer(state, addTodo(1, 'Study for exams.'));
 
     expect(state).to.be.an.array();
@@ -39,11 +38,9 @@ experiment('Todos Reducer:', () => {
     expect(todo.createdAt).to.be.a.number();
     expect(todo.updatedAt).to.be.undefined();
     expect(todo.text).to.equal('Take out the trash.');
-
-    done();
   });
 
-  test('Toggle Complete Todo', done => {
+  test('Toggle Complete Todo', () => {
     state = reducer(state, toggleCompleteTodo(2));
     let todo = state[1];
 
@@ -59,11 +56,9 @@ experiment('Todos Reducer:', () => {
 
     expect(todo.id).to.equal(2);
     expect(todo.completed).to.equal(false);
-
-    done();
   });
 
-  test('Update Todo', done => {
+  test('Update Todo', () => {
     const action = updateTodo(2, 'Take out the trash and recycle.');
     state = reducer(state, action);
     const todo = state[1];
@@ -74,11 +69,9 @@ experiment('Todos Reducer:', () => {
     expect(todo.id).to.equal(2);
     expect(todo.updatedAt).to.be.a.number();
     expect(todo.text).to.equal('Take out the trash and recycle.');
-
-    done();
   });
 
-  test('Hide Todo', done => {
+  test('Hide Todo', () => {
     const action = hideTodo(2);
     state = reducer(state, action);
     const todo = state[1];
@@ -90,11 +83,9 @@ experiment('Todos Reducer:', () => {
 
     expect(todo.id).to.equal(2);
     expect(todo.hidden).to.equal(true);
-
-    done();
   });
 
-  test('Delete Todo', done => {
+  test('Delete Todo', () => {
     const action = deleteTodo(2);
     state = reducer(state, action);
 
@@ -102,7 +93,5 @@ experiment('Todos Reducer:', () => {
     expect(state).to.have.length(2);
     expect(state[0].id).to.equal(1);
     expect(state[1].id).to.equal(3);
-
-    done();
   });
 });
