@@ -68,6 +68,28 @@ You can now start updating files in your client to begin working on your own pro
 * Hot Module Reloading for JS and CSS makes development quick and easy.
 * CSS pre-processor setup for LESS and SASS lets you keep your styles clean and organized.
 
+## Code Structure
+
+```
+- client
+  - assets
+    - imgs
+    - icons
+  - components
+  - pages/scenes
+  - store
+    - actions
+    - reducers
+  - styles
+- server
+  - config
+  - routes
+- test
+  - client
+  - server
+- scripts
+```
+
 ## Technologies
 
 [React](https://facebook.github.io/react/) - View Library
