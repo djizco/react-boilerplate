@@ -13,13 +13,13 @@ experiment('The Server', () => {
   const app = express();
   app.use('/', routes);
 
-  test('serves an example endpoint', () =>
+  test('Serves as an example endpoint', () =>
     request(app)
       .get('/api/tags')
       .expect(200)
       .expect(response => expect(response.body).to.include('node')));
 
-  test('returns html on unknozwn endpoint', () => request(app)
+  test('Returns html on an unknown endpoint', () => request(app)
     .get('/*')
     .expect(response => expect(response.header['content-type']).to.equal('text/html; charset=UTF-8')));
 });

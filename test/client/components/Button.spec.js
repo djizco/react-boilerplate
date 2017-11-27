@@ -8,7 +8,6 @@ import Button from '../../../client/components/Button';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-
 const lab = Lab.script();
 const { experiment, test } = lab;
 
@@ -17,7 +16,7 @@ exports.lab = lab;
 const wrapper = shallow(<Button />);
 
 experiment('<Button />', () => {
-  test('renders as a <button> element', () => {
+  test('Renders as a <button> element', () => {
     expect(wrapper.type()).to.equal('button');
   });
 });
