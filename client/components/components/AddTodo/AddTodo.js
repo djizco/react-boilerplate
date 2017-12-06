@@ -9,7 +9,11 @@ export default function AddTodo({ text, updateText, handleClick }) {
         <input className="input" type="text" value={text} onChange={updateText} />
       </div>
       <div className="column is-2">
-        <Button style={{ width: '100%' }} handleClick={handleClick} label="Add" type="success" />
+        <Button
+          style={{ width: '100%' }}
+          handleClick={handleClick}
+          label="Add"
+          type="success" />
       </div>
     </div>
   );
