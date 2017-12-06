@@ -97,7 +97,7 @@ You can now start updating files in your client to begin working on your own pro
 
 Component Heirarchy:
 
-Pages > Layouts > Sections > Structures > Components > Elements
+Layouts > Pages > Sections > Structures > Components > Elements
 
 ## Technologies
 

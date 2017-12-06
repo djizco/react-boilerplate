@@ -21,11 +21,6 @@ export default class TodoContainer extends Component {
     updatedAt: undefined,
   };
 
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
   state = {
     text: this.props.text,
     edit: false,

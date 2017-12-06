@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import ConfirmDeleteTodo from '../../components/ConfirmDeleteTodo';
 
 export default function ConfirmModal(props) {
   const { confirm, closeModal, deleteTodo } = props;
@@ -14,17 +15,7 @@ export default function ConfirmModal(props) {
     <div className={modalClasses}>
       <div className="modal-background" />
       <div className="modal-content">
-        <div className="card">
-          <div className="card-content">
-            <div className="content has-text-centered">
-              Are you sure you wanted to delete this item?
-            </div>
-          </div>
-          <footer className="card-footer">
-            <a href="#" className="card-footer-item" onClick={closeModal} onKeyPress={closeModal}>Cancel</a>
-            <a href="#" className="card-footer-item" onClick={deleteTodo} onKeyPress={deleteTodo}>Delete</a>
-          </footer>
-        </div>
+        <ConfirmDeleteTodo closeModal={closeModal} deleteTodo={deleteTodo} />
       </div>
       <button className="modal-close" onClick={closeModal} />
     </div>

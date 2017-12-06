@@ -10,11 +10,6 @@ export default class RootContainer extends Component {
     history: PropTypes.object.isRequired,
   };
 
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
   state = {
     rehydrated: false,
   }

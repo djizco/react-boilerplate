@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../elements/Button';
 
-export default function AddTodo({ text, updateText, handleClick }) {
+export default function AddTodo({ text, updateText, addTodo }) {
   return (
     <div className="add-todo columns is-gapless">
       <div className="column is-10">
@@ -11,7 +11,7 @@ export default function AddTodo({ text, updateText, handleClick }) {
       <div className="column is-2">
         <Button
           style={{ width: '100%' }}
-          handleClick={handleClick}
+          handleClick={addTodo}
           label="Add"
           type="success" />
       </div>
@@ -22,5 +22,5 @@ export default function AddTodo({ text, updateText, handleClick }) {
 AddTodo.propTypes = {
   text: PropTypes.string.isRequired,
   updateText: PropTypes.func.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  addTodo: PropTypes.func.isRequired,
 };

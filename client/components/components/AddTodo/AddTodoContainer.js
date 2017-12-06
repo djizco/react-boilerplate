@@ -8,11 +8,6 @@ export default class AddTodoContainer extends Component {
     addTodo: PropTypes.func.isRequired,
   };
 
-  constructor(props) {
-    super(props);
-    this.props = props;
-  }
-
   state = {
     text: '',
   }
@@ -28,10 +23,10 @@ export default class AddTodoContainer extends Component {
   updateText = e => this.setState({ text: e.target.value })
 
   keypress = e => {
-    if (e.key === 'Enter') { this.addTodo(); }
+    if (e.key === 'Enter') {
+      this.addTodo();
+    }
   }
-
-  handleClick = () => this.addTodo()
 
   addTodo = () => {
     const { text } = this.state;
@@ -46,7 +41,7 @@ export default class AddTodoContainer extends Component {
       <AddTodo
         text={this.state.text}
         updateText={this.updateText}
-        handleClick={this.handleClick} />
+        addTodo={this.addTodo} />
     );
   }
 }
