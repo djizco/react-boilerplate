@@ -54,12 +54,6 @@ This is also a good time to go through the included libraries to add or remove f
 After this you can commit the files into a new repository and push up to your github.
 You can now start updating files in your client to begin working on your own project!
 
-## Updates
-
-* Update to React 16
-* Add Hot Module Reloader for JS and CSS.
-* Add Webpack 3
-
 ## Features
 
 * React 16
@@ -67,6 +61,12 @@ You can now start updating files in your client to begin working on your own pro
 * Babel lets you use ES6/7 features.
 * Hot Module Reloading for JS and CSS makes development quick and easy.
 * CSS pre-processor setup for LESS and SASS lets you keep your styles clean and organized.
+
+## Updates
+
+* Update to React 16
+* Add Hot Module Reloader for JS and CSS.
+* Add Webpack 3
 
 ## Code Structure
 
@@ -79,7 +79,7 @@ You can now start updating files in your client to begin working on your own pro
     - components
     - elements
     - layouts
-    - pages (scenes)
+    - pages
     - sections
     - structures
   - store
@@ -94,6 +94,10 @@ You can now start updating files in your client to begin working on your own pro
   - server
 - scripts
 ```
+
+Component Heirarchy:
+
+Pages > Layouts > Sections > Structures > Components > Elements
 
 ## Technologies
 
