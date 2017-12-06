@@ -4,7 +4,7 @@ import { expect } from 'code';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import Button from '../../../client/components/Button';
+import Button from '../../../../client/components/elements/Button';
 
 Enzyme.configure({ adapter: new Adapter() });
 

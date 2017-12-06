@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import * as R from 'ramda';
-import { increment, decrement } from '../../store/actions/counter';
-import Counter from './Counter';
+import { increment, decrement } from '../../../store/actions/counter';
+import CounterSection from './CounterSection';
 
 const mapStateToProps = R.pick(['counter']);
 
@@ -10,4 +10,4 @@ const mapDispatchToProps = dispatch => ({
   decrement: () => dispatch(decrement()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(CounterSection);

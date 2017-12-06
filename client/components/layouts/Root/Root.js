@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
-import routes from '../../routes';
+import routes from '../../../routes';
 
 export default function Root(props) {
   const { store, history, scrollToTop } = props;

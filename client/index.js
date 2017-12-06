@@ -8,7 +8,7 @@ import 'font-awesome-webpack';
 import './styles/index.scss';
 import './assets';
 
-import Root from './components/Root';
+import Root from './components/layouts/Root';
 import configureStore from './store/configureStore';
 
 const store = configureStore();

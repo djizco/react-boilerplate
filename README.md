@@ -76,7 +76,12 @@ You can now start updating files in your client to begin working on your own pro
     - imgs
     - icons
   - components
-  - pages/scenes
+    - components
+    - elements
+    - layouts
+    - pages (scenes)
+    - sections
+    - structures
   - store
     - actions
     - reducers

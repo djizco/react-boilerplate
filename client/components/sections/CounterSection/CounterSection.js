@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+import Button from '../../elements/Button';
 
-export default function Counter({ counter, increment, decrement }) {
+export default function CounterSection({ counter, increment, decrement }) {
   return (
     <div className="section counter-section app-flex">
       <h1 className="title is-1 has-text-centered">Counter:</h1>
@@ -25,7 +25,7 @@ export default function Counter({ counter, increment, decrement }) {
   );
 }
 
-Counter.propTypes = {
+CounterSection.propTypes = {
   counter: PropTypes.number.isRequired,
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
