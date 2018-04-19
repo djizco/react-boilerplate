@@ -7,6 +7,10 @@
     z-index: 1030;
   }
 
+  &.has-shadow {
+    box-shadow: 0 2px 3px $navshadow;
+  }
+
   .title {
     font-weight: 300;
   }
