@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "body-parser": "^1.18.3",
     "code": "^5.2.0",
     "css-loader": "^0.28.11",
