@@ -10,7 +10,7 @@ export default function Navbar(props) {
   const menuClasses = classNames({ 'navbar-menu': true, 'is-active': active });
 
   return (
-    <nav className="navbar has-shadow is-fixed" aria-label="main navigation">
+    <nav className="navbar has-shadow is-fixed-top" aria-label="main navigation">
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" onClick={deactivate}>

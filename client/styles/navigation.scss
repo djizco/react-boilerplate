@@ -1,16 +1,4 @@
 .navbar {
-  &.is-fixed {
-    left: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 1030;
-  }
-
-  &.has-shadow {
-    box-shadow: 0 2px 3px $navshadow;
-  }
-
   .title {
     font-weight: 300;
   }

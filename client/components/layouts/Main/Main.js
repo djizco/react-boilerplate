@@ -12,7 +12,7 @@ const theme = createMuiTheme(customTheme);
 export default function Main(props) {
   return (
     <MuiThemeProvider theme={theme}>
-      <div>
+      <div className="has-navbar-fixed-top">
         <Navbar />
         <div className="main">
           {props.children}
