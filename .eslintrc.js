@@ -6,7 +6,7 @@ module.exports = {
   "root": true,
   "extends": "airbnb",
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2018,
     "sourceType": "module",
     "allowImportExportEverywhere": false,
   },
