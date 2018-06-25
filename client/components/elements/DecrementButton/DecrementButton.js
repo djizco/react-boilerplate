@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+import Button from '_elements/Button';
 
 export default function DecrementButton({ decrement }) {
   return (

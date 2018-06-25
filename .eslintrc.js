@@ -3,6 +3,7 @@ module.exports = {
     "browser": true,
     "node": true,
   },
+  "root": true,
   "extends": "airbnb",
   "parserOptions": {
     "ecmaVersion": 6,

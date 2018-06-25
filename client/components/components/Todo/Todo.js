@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import ConfirmModal from '../../structures/ConfirmModal';
+import ConfirmModal from '_structures/ConfirmModal';
 
 export default function Todo(props) {
   const {

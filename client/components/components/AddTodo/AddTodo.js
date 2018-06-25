@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../../elements/Button';
+import Button from '_elements/Button';
 
 export default function AddTodo({ text, updateText, addTodo }) {
   return (

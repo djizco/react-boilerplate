@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as R from 'ramda';
-import { increment } from '../../../store/actions/counter';
+import { increment } from '_store/actions/counter';
 import IncrementButton from './IncrementButton';
 
 const mapStateToProps = R.pick([]);

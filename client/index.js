@@ -10,11 +10,13 @@ import './assets';
 
 import Root from './components/layouts/Root';
 import configureStore from './store/configureStore';
+import routes from './routes';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
 
+
 render(
-  <Root store={store} history={history} />,
+  <Root store={store} history={history} routes={routes} />,
   document.getElementById('app'),
 );

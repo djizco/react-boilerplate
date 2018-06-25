@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as R from 'ramda';
-import Todo from '../../components/Todo';
+import Todo from '_components/Todo';
 
 export default function TodoList({ todos }) {
   return (

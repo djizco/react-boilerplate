@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import ConfirmDeleteTodo from '../../components/ConfirmDeleteTodo';
+import ConfirmDeleteTodo from '_components/ConfirmDeleteTodo';
 
 export default function ConfirmModal(props) {
   const { confirm, closeModal, deleteTodo } = props;

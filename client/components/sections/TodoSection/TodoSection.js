@@ -1,6 +1,6 @@
 import React from 'react';
-import AddTodo from '../../components/AddTodo';
-import TodoList from '../../structures/TodoList';
+import AddTodo from '_components/AddTodo';
+import TodoList from '_structures/TodoList';
 
 export default function TodoSection() {
   return (

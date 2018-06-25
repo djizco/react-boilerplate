@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import Main from './components/layouts/Main';
-import HomePage from './components/pages/HomePage';
-import CounterPage from './components/pages/CounterPage';
-import TodoPage from './components/pages/TodoPage';
-import LostPage from './components/pages/LostPage';
+import Main from '_layouts/Main';
+import HomePage from '_pages/HomePage';
+import CounterPage from '_pages/CounterPage';
+import TodoPage from '_pages/TodoPage';
+import LostPage from '_pages/LostPage';
 
 export default (
   <Route path="/" component={Main}>
