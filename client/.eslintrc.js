@@ -31,9 +31,13 @@ module.exports = {
     }}],
 
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-closing-bracket-location": [2, { selfClosing: 'after-props', nonEmpty: 'after-props' }],
+    // "react/jsx-closing-bracket-location": [2, {
+    //   selfClosing: 'after-props',
+    //   nonEmpty: 'tag-aligned',
+    // }],
 
     // disable rules
+    "react/destructuring-assignment": 0,
     "arrow-parens": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-named-as-default": 0, // causes error with redux testing

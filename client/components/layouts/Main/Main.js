@@ -14,7 +14,9 @@ export default function Main(props) {
     <MuiThemeProvider theme={theme}>
       <div>
         <Navbar />
-        <div className="main">{props.children}</div>
+        <div className="main">
+          {props.children}
+        </div>
         <Footer />
       </div>
     </MuiThemeProvider>

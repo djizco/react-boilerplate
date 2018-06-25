@@ -17,7 +17,12 @@ export default function ConfirmModal(props) {
       <div className="modal-content">
         <ConfirmDeleteTodo closeModal={closeModal} deleteTodo={deleteTodo} />
       </div>
-      <button className="modal-close" onClick={closeModal} />
+      <button
+        type="button"
+        className="modal-close is-large"
+        aria-label="close"
+        onClick={closeModal}
+      />
     </div>
   );
 }

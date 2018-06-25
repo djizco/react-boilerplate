@@ -10,7 +10,9 @@ export default function HomeSection() {
 
   return (
     <div className="section link-section app-flex">
-      <h1 className="title is-1">React App</h1>
+      <h1 className="title is-1">
+        React App
+      </h1>
       <Button variant="raised" color="primary" style={buttonStyles} onClick={handleToCounter}>
         Counter App
         <ArrowForward />

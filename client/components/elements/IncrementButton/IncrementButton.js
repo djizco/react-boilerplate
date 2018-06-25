@@ -7,7 +7,8 @@ export default function IncrementButton({ increment }) {
     <Button
       type="success"
       handleClick={increment}
-      label="Increment" />
+      label="Increment"
+    />
   );
 }
 

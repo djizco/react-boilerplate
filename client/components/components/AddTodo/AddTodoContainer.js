@@ -30,6 +30,7 @@ export default class AddTodoContainer extends Component {
 
   addTodo = () => {
     const { text } = this.state;
+
     if (text) {
       this.props.addTodo(text);
       this.setState({ text: '' });
@@ -41,7 +42,8 @@ export default class AddTodoContainer extends Component {
       <AddTodo
         text={this.state.text}
         updateText={this.updateText}
-        addTodo={this.addTodo} />
+        addTodo={this.addTodo}
+      />
     );
   }
 }

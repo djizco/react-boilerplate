@@ -1,6 +1,6 @@
 const webpack = require('webpack');
-const config = require('./webpack.config.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config = require('./webpack.config.js');
 
 const ExtractTextPluginConfig = new ExtractTextPlugin('bundle.css');
 

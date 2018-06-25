@@ -7,7 +7,8 @@ export default function DecrementButton({ decrement }) {
     <Button
       type="danger"
       handleClick={decrement}
-      label="Decrement" />
+      label="Decrement"
+    />
   );
 }
 

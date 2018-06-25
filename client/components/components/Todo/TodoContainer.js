@@ -48,12 +48,19 @@ export default class TodoContainer extends Component {
   })
 
   toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id)
+
   updateText = e => this.setState({ text: e.target.value })
+
   editTodo = () => this.setState({ edit: true })
+
   cancelEdit = () => this.setState({ text: this.props.text, edit: false })
+
   hideTodo = () => this.props.hideTodo(this.props.id)
+
   deleteTodo = () => this.props.deleteTodo(this.props.id)
+
   openModal = () => this.setState({ confirm: true })
+
   closeModal = () => this.setState({ confirm: false })
 
   updateTodo = () => {
@@ -85,7 +92,8 @@ export default class TodoContainer extends Component {
         cancelEdit={this.cancelEdit}
         deleteTodo={this.deleteTodo}
         openModal={this.openModal}
-        closeModal={this.closeModal} />
+        closeModal={this.closeModal}
+      />
     );
   }
 }

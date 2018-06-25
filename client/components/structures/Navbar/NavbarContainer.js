@@ -25,7 +25,8 @@ export default class NavbarContainer extends Component {
       <Navbar
         active={active}
         toggleActive={this.toggleActive}
-        deactivate={this.deactivate} />
+        deactivate={this.deactivate}
+      />
     );
   }
 }

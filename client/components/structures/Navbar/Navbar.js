@@ -14,7 +14,9 @@ export default function Navbar(props) {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" onClick={deactivate}>
-            <h3 className="title is-3">React</h3>
+            <h3 className="title is-3">
+              React
+            </h3>
           </Link>
 
           <Link to="/" className="navbar-item is-hidden-desktop" onClick={deactivate}>
@@ -50,7 +52,9 @@ export default function Navbar(props) {
                     <span className="icon">
                       <i className="fa fa-twitter" />
                     </span>
-                    <span>Tweet</span>
+                    <span>
+                      Tweet
+                    </span>
                   </a>
                 </p>
                 <p className="control">
@@ -58,7 +62,9 @@ export default function Navbar(props) {
                     <span className="icon">
                       <i className="fa fa-download" />
                     </span>
-                    <span>Download</span>
+                    <span>
+                      Download
+                    </span>
                   </a>
                 </p>
               </div>

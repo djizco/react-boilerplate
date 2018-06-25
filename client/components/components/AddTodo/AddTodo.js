@@ -13,7 +13,8 @@ export default function AddTodo({ text, updateText, addTodo }) {
           style={{ width: '100%' }}
           handleClick={addTodo}
           label="Add"
-          type="success" />
+          type="success"
+        />
       </div>
     </div>
   );

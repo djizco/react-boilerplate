@@ -10,8 +10,12 @@ export default function ConfirmDeleteTodo({ closeModal, deleteTodo }) {
         </div>
       </div>
       <footer className="card-footer">
-        <a href="#" className="card-footer-item" onClick={closeModal} onKeyPress={closeModal}>Cancel</a>
-        <a href="#" className="card-footer-item" onClick={deleteTodo} onKeyPress={deleteTodo}>Delete</a>
+        <a href="#" className="card-footer-item" onClick={closeModal} onKeyPress={closeModal}>
+          Cancel
+        </a>
+        <a href="#" className="card-footer-item" onClick={deleteTodo} onKeyPress={deleteTodo}>
+          Delete
+        </a>
       </footer>
     </div>
   );

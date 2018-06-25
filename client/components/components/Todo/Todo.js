@@ -28,41 +28,50 @@ export default function Todo(props) {
         <div className="media-content">
           <div className="content">
             <p>
-              <small>created {createdMessage}</small>
+              <small>
+                {`created ${createdMessage}`}
+              </small>
             </p>
-            {edit ?
+            {edit ? (
               <textarea
                 className="textarea"
                 value={currentText}
-                onChange={updateText} />
-              :
-              <span>{text}</span>
-            }
+                onChange={updateText}
+              />
+            ) : (
+              <span>
+                {text}
+              </span>
+            )}
           </div>
 
           <nav className="level is-mobile">
             <div className="level-left">
-              {updated && <small>edited {updatedMessage}</small>}
+              {updated && (
+                <small>
+                  {`edited ${updatedMessage}`}
+                </small>
+              )}
             </div>
             <div className="level-right">
-              {edit ?
+              {edit ? (
                 <span className="icon space-right" onClick={updateTodo} onKeyPress={updateTodo}>
                   <i className="fa fa-lg fa-floppy-o" />
                 </span>
-                :
+              ) : (
                 <span className="icon space-right" onClick={editTodo} onKeyPress={editTodo}>
                   <i className="fa fa-lg fa-pencil" />
                 </span>
-              }
-              {edit ?
+              )}
+              {edit ? (
                 <span className="icon" onClick={cancelEdit} onKeyPress={cancelEdit}>
                   <i className="fa fa-lg fa-ban" />
                 </span>
-                :
+              ) : (
                 <span className="icon" onClick={openModal} onKeyPress={cancelEdit}>
                   <i className="fa fa-lg fa-trash" />
                 </span>
-              }
+              )}
             </div>
           </nav>
         </div>
@@ -70,7 +79,8 @@ export default function Todo(props) {
       <ConfirmModal
         confirm={confirm}
         closeModal={closeModal}
-        deleteTodo={deleteTodo} />
+        deleteTodo={deleteTodo}
+      />
     </li>
   );
 }

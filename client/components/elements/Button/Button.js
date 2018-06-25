@@ -46,7 +46,8 @@ export default function Button(props) {
       type="button"
       className={buttonClasses}
       onClick={handleClick}
-      disabled={disabled} >
+      disabled={disabled}
+    >
       {label}
     </button>
   );
