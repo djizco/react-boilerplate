@@ -29,12 +29,7 @@ module.exports = {
       "Property": true,
       "VariableDeclarator": true
     }}],
-
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
-    // "react/jsx-closing-bracket-location": [2, {
-    //   selfClosing: 'after-props',
-    //   nonEmpty: 'tag-aligned',
-    // }],
 
     // disable rules
     "react/destructuring-assignment": 0,
