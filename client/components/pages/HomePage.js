@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeSection from '../sections/HomeSection';
+import HomeSection from '_sections/HomeSection';
 
 export default function HomePage() {
   return (

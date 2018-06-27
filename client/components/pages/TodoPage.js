@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoSection from '../sections/TodoSection';
+import TodoSection from '_sections/TodoSection';
 
 export default function TodoPage() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterSection from '../sections/CounterSection';
+import CounterSection from '_sections/CounterSection';
 
 export default function CounterPage() {
   return (

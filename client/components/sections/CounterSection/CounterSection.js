@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IncrementButton from '../../elements/IncrementButton';
-import DecrementButton from '../../elements/DecrementButton';
+import IncrementButton from '_elements/IncrementButton';
+import DecrementButton from '_elements/DecrementButton';
 
 export default function CounterSection({ counter }) {
   return (

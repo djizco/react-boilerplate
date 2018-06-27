@@ -32,11 +32,12 @@ module.exports = {
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
 
     // disable rules
-    "react/destructuring-assignment": 0,
     "arrow-parens": 0,
+    "function-paren-newline": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-named-as-default": 0, // causes error with redux testing
     "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/label-has-for": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "no-confusing-arrow": 0,
     "no-nested-ternary": 0,
@@ -44,6 +45,7 @@ module.exports = {
     "no-shadow": 0,
     "no-underscore-dangle": 0,
     "object-curly-newline": 0,
+    "react/destructuring-assignment": 0,
     "react/forbid-prop-types": 0,
     "react/jsx-boolean-value": 0,
   },

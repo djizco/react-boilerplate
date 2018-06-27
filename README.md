@@ -100,7 +100,6 @@ Component Heirarchy:
 
 Layouts > Pages > Sections > Structures > Components > Elements
 
-
 This is somewhat based on atomic design with names that make more sense for the web.
 If you were to rename the element groups to the match atomic design it would look like this:
 
