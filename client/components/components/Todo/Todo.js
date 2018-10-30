@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import ConfirmModal from '_structures/ConfirmModal';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt, faBan, faPencilAlt, faSave } from '@fortawesome/free-solid-svg-icons';
+import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
 
 export default function Todo(props) {
   const {
@@ -10,19 +13,15 @@ export default function Todo(props) {
     openModal, closeModal,
   } = props;
 
-  const toggleIconClasses = classNames({
-    fa: true,
-    'fa-lg': true,
-    'fa-square-o': !completed,
-    'fa-check-square-o': completed,
-  });
-
   return !hidden && (
     <li className="todo box">
       <article className="media">
         <figure className="media-left">
           <span className="icon" onClick={toggleCompleteTodo} onKeyPress={toggleCompleteTodo}>
-            <i className={toggleIconClasses} />
+            {completed
+              ? <FontAwesomeIcon icon={faCheckSquare} size="lg" />
+              : <FontAwesomeIcon icon={faSquare} size="lg" />
+            }
           </span>
         </figure>
         <div className="media-content">
@@ -56,20 +55,20 @@ export default function Todo(props) {
             <div className="level-right">
               {edit ? (
                 <span className="icon space-right" onClick={updateTodo} onKeyPress={updateTodo}>
-                  <i className="fa fa-lg fa-floppy-o" />
+                  <FontAwesomeIcon icon={faSave} size="lg" />
                 </span>
               ) : (
                 <span className="icon space-right" onClick={editTodo} onKeyPress={editTodo}>
-                  <i className="fa fa-lg fa-pencil" />
+                  <FontAwesomeIcon icon={faPencilAlt} size="lg" />
                 </span>
               )}
               {edit ? (
                 <span className="icon" onClick={cancelEdit} onKeyPress={cancelEdit}>
-                  <i className="fa fa-lg fa-ban" />
+                  <FontAwesomeIcon icon={faBan} size="lg" />
                 </span>
               ) : (
                 <span className="icon" onClick={openModal} onKeyPress={cancelEdit}>
-                  <i className="fa fa-lg fa-trash" />
+                  <FontAwesomeIcon icon={faTrashAlt} size="lg" />
                 </span>
               )}
             </div>

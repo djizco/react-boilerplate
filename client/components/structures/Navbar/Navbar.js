@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 export default function Navbar(props) {
   const { active, toggleActive, deactivate } = props;
 
@@ -21,7 +25,7 @@ export default function Navbar(props) {
 
           <Link to="/" className="navbar-item is-hidden-desktop" onClick={deactivate}>
             <span className="icon is-medium">
-              <i className="fa fa-lg fa-home" />
+              <FontAwesomeIcon icon={faHome} size="lg" />
             </span>
           </Link>
 
@@ -50,7 +54,7 @@ export default function Navbar(props) {
                 <p className="control">
                   <a className="button is-info">
                     <span className="icon">
-                      <i className="fa fa-twitter" />
+                      <FontAwesomeIcon icon={faTwitter} />
                     </span>
                     <span>
                       Tweet
@@ -60,7 +64,7 @@ export default function Navbar(props) {
                 <p className="control">
                   <a className="button is-primary">
                     <span className="icon">
-                      <i className="fa fa-download" />
+                      <FontAwesomeIcon icon={faDownload} />
                     </span>
                     <span>
                       Download
