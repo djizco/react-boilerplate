@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { enableBatching } from 'redux-batched-actions';
 import { autoRehydrate } from 'redux-persist';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -19,7 +18,7 @@ const middleware = compose(
 
 export default function configureStore(preloadedState) {
   return createStore(
-    enableBatching(rootReducer),
+    rootReducer,
     preloadedState,
     middleware,
   );

@@ -1,5 +1,3 @@
-import { batchActions } from 'redux-batched-actions';
-
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_COMPLETE_TODO = 'TOGGLE_COMPLETE_TODO';
 export const UPDATE_TODO = 'UPDATE_TODO';
@@ -52,8 +50,7 @@ export function deleteTodo(id) {
 
 export const addTodoAndIncrementId = text => (dispatch, getState) => {
   const { nextTodoId } = getState();
-  dispatch(batchActions([
-    addTodo(nextTodoId, text),
-    incrementTodoId(),
-  ], 'ADD_TODO_AND_INCREMENT_ID'));
+
+  dispatch(addTodo(nextTodoId, text));
+  dispatch(incrementTodoId());
 };
