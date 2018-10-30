@@ -30,6 +30,7 @@ npm run serve
 
 ```
 npm install -g surge
+
 npm run build
 surge dist <custom-url>.surge.sh
 (You may have to create an account)
@@ -64,16 +65,10 @@ You can now start updating files in your client to begin working on your own pro
 ## Features
 
 * React 16
-* Webpack 3 conveniently bundles your code for you.
+* Webpack 4 conveniently bundles your code for you.
 * Babel lets you use ES6/7 features.
 * Hot Module Reloading for JS and CSS makes development quick and easy.
 * CSS pre-processor setup for LESS and SASS lets you keep your styles clean and organized.
-
-## Updates
-
-* Update to React 16
-* Add Hot Module Reloader for JS and CSS.
-* Add Webpack 3
 
 ## Code Structure
 
