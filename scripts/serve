@@ -1,0 +1,1 @@
+serve -s dist -p 3000

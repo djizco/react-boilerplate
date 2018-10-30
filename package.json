@@ -6,6 +6,7 @@
   "scripts": {
     "build": "./scripts/build",
     "start": "./scripts/start",
+    "serve": "./scripts/serve",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
     "test": "jest",

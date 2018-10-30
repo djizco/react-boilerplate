@@ -4,21 +4,29 @@ You can try out this project [here](http://react-boilerplate.surge.sh)
 
 ## Quick Start
 
-#### for Development
+#### Setup
 
 ```
 brew install libpng (needed for .jpg images)
 npm install
-npm run dev
+```
+
+#### for Development
+
+```
+npm run start
 ```
 
 #### for Production
 
 ```
-npm run prod
+npm install -g serve
+
+npm run build
+npm run serve
 ```
 
-#### for Deploy (using surge)
+#### for Deployment (using surge)
 
 ```
 npm install -g surge
@@ -31,9 +39,8 @@ surge dist <custom-url>.surge.sh
 #### Other Commands
 
 ```
-npm start
 npm test
-npm run build
+npm run test:watch
 npm run test:verbose
 npm run lint
 npm run lint:fix
@@ -131,6 +138,6 @@ Learn more about [atomic design](http://bradfrost.com/blog/post/atomic-web-desig
 
 [ESLint](http://eslint.org/) - Code Linter
 
-[Code](https://github.com/hapijs/code) / [Lab](https://github.com/hapijs/lab) - JS Testing Framework
+[Jest](https://jestjs.io/) - JavaScript Testing Framework
 
 [Enzyme](https://github.com/airbnb/enzyme) - React View Testing
