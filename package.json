@@ -4,7 +4,9 @@
   "description": "React Boilerplate",
   "main": "server/index.js",
   "scripts": {
-    "build": "./scripts/build",
+    "build": "./scripts/build-prod",
+    "build:dev": "./scripts/build-dev",
+    "build:prod":  "./scripts/build-prod",
     "start": "./scripts/start",
     "serve": "./scripts/serve",
     "lint": "./scripts/lint",

@@ -47,10 +47,3 @@ export function deleteTodo(id) {
     id,
   };
 }
-
-export const addTodoAndIncrementId = text => (dispatch, getState) => {
-  const { nextTodoId } = getState();
-
-  dispatch(addTodo(nextTodoId, text));
-  dispatch(incrementTodoId());
-};

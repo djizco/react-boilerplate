@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import * as R from 'ramda';
 import { decrement } from '_store/actions/counter';
+
 import DecrementButton from './DecrementButton';
 
 const mapStateToProps = R.pick([]);

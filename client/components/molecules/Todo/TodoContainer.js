@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { distanceInWordsToNow } from 'date-fns';
+
 import Todo from './Todo';
 
 export default class TodoContainer extends Component {

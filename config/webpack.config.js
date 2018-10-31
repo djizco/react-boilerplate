@@ -84,12 +84,6 @@ module.exports = {
       _styles: resolve('client/styles/'),
       _utils: resolve('client/utils/'),
       _api: resolve('client/api/'),
-      // remove below here
-      _elements: resolve('client/components/elements/'),
-      _components: resolve('client/components/components/'),
-      _structures: resolve('client/components/structures/'),
-      _sections: resolve('client/components/sections/'),
-      _layouts: resolve('client/components/layouts/'),
     },
   },
   module: {

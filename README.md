@@ -45,6 +45,8 @@ npm run test:watch
 npm run test:verbose
 npm run lint
 npm run lint:fix
+npm run build:dev
+npm run build:prod
 ```
 
 ## Setup Instructions
@@ -73,41 +75,34 @@ You can now start updating files in your client to begin working on your own pro
 ## Code Structure
 
 ```
+- config
+- scripts
 - client
   - assets
     - images
     - icons
   - components
-    - components
-    - elements
-    - layouts
+    - atoms
+    - molecules
+    - organisms
+    - templates
     - pages
-    - sections
-    - structures
+    - environment
   - store
     - actions
     - reducers
+    - thunks
+    - tests
   - styles
   - utils
-- server
-  - config
-  - routes
-- test
-  - client
-  - server
-- scripts
+
 ```
 
 Component Heirarchy:
 
-Layouts > Pages > Sections > Structures > Components > Elements
-
-This is somewhat based on atomic design with names that make more sense for the web.
-If you were to rename the element groups to the match atomic design it would look like this:
-
 Environment > Pages > Templates > Organisms > Molecules > Atoms
 
-Learn more about [atomic design](http://bradfrost.com/blog/post/atomic-web-design/).
+This is based on atomic design. Learn more about [atomic design](http://bradfrost.com/blog/post/atomic-web-design/).
 
 ## Technologies
 
@@ -130,6 +125,8 @@ Learn more about [atomic design](http://bradfrost.com/blog/post/atomic-web-desig
 [FontAwesome](http://fontawesome.io/) - Icons
 
 [Ramda](http://ramdajs.com/) - Functional Library
+
+[date-fns](https://date-fns.org/) - Date Functions Library
 
 [ESLint](http://eslint.org/) - Code Linter
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ConfirmModal from '_organisms/ConfirmModal';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faBan, faPencilAlt, faSave } from '@fortawesome/free-solid-svg-icons';
 import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
+
+import ConfirmModal from '_organisms/ConfirmModal';
 
 export default function Todo(props) {
   const {
