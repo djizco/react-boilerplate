@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import { distanceInWordsToNow } from 'date-fns';
 import Todo from './Todo';
 
 export default class TodoContainer extends Component {
@@ -8,7 +8,6 @@ export default class TodoContainer extends Component {
     id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     completed: PropTypes.bool.isRequired,
-    hidden: PropTypes.bool.isRequired,
     createdAt: PropTypes.number.isRequired,
     updatedAt: PropTypes.number,
     toggleCompleteTodo: PropTypes.func.isRequired,
@@ -35,7 +34,7 @@ export default class TodoContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ updatedMessage: moment(nextProps.updatedAt).fromNow() });
+    this.setState({ updatedMessage: this.fromNow(nextProps.updatedAt) });
   }
 
   componentWillUnmount() {
@@ -43,9 +42,11 @@ export default class TodoContainer extends Component {
   }
 
   updateMessages = () => this.setState({
-    updatedMessage: this.props.updatedAt ? moment(this.props.updatedAt).fromNow() : '',
-    createdMessage: moment(this.props.createdAt).fromNow(),
+    updatedMessage: this.props.updatedAt ? this.fromNow(this.props.updatedAt) : '',
+    createdMessage: this.fromNow(this.props.createdAt),
   })
+
+  fromNow = date => distanceInWordsToNow(date, { addSuffix: true })
 
   toggleCompleteTodo = () => this.props.toggleCompleteTodo(this.props.id)
 
@@ -71,12 +72,11 @@ export default class TodoContainer extends Component {
   }
 
   render() {
-    const { updatedAt, hidden, completed } = this.props;
+    const { updatedAt, completed } = this.props;
     const { edit, confirm, createdMessage, updatedMessage } = this.state;
 
     return (
       <Todo
-        hidden={hidden}
         completed={completed}
         confirm={confirm}
         edit={edit}

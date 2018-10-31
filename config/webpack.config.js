@@ -1,10 +1,20 @@
-const path              = require('path');
+const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const resolve = dir => path.join(__dirname, '../', dir);
+
+const env = process.env.NODE_ENV || 'development';
+const isDev = env === 'development';
+
+const WebpackDefinePluginConfig = new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify(env),
+  },
+});
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: resolve('client/index.html'),
@@ -13,8 +23,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
-  filename: '[name].[hash].css',
-  chunkFilename: '[id].[hash].css',
+  filename: isDev ? '[name].css' : '[name].[hash].css',
+  chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
 });
 
 const FaviconsWebpackPluginConfig = new FaviconsWebpackPlugin({
@@ -54,7 +64,7 @@ module.exports = {
     './client/index.js',
   ],
   output: {
-    filename: '[name].[hash].js',
+    filename: isDev ? '[name].js' : '[name].[hash].js',
     path: resolve('dist'),
     publicPath: '/',
   },
@@ -131,6 +141,7 @@ module.exports = {
     ],
   },
   plugins: [
+    WebpackDefinePluginConfig,
     HtmlWebpackPluginConfig,
     MiniCssExtractPluginConfig,
     FaviconsWebpackPluginConfig,

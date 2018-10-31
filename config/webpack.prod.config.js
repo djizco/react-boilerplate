@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const config = require('./webpack.config.js');
 
@@ -23,18 +24,22 @@ config.optimization = {
   minimizer: [
     new UglifyJsPlugin({
       uglifyOptions: {
-        compress: { drop_console: true },
+        compress: {
+          drop_console: true,
+          warnings: false,
+        },
+        output: {
+          comments: false,
+        },
       },
-      sourceMap: true,
     }),
   ],
 };
 
-config.plugins.push(new webpack.DefinePlugin({
-  'process.env': {
-    NODE_ENV: JSON.stringify('production'),
-  },
+config.plugins.push(new webpack.LoaderOptionsPlugin({
+  minimize: true,
 }));
 
+config.plugins.push(new BundleAnalyzerPlugin());
 
 module.exports = config;
