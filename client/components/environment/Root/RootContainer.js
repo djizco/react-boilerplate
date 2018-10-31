@@ -8,7 +8,6 @@ export default class RootContainer extends Component {
   static propTypes = {
     store: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
-    routes: PropTypes.object.isRequired,
   };
 
   state = {
@@ -26,12 +25,10 @@ export default class RootContainer extends Component {
 
   rehydrate = () => this.setState({ rehydrated: true })
 
-  scrollToTop = () => window.scrollTo(0, 0)
-
   render() {
-    const { store, history, routes } = this.props;
+    const { store, history } = this.props;
     return this.state.rehydrated && (
-      <Root store={store} history={history} routes={routes} scrollToTop={this.scrollToTop} />
+      <Root store={store} history={history} />
     );
   }
 }
