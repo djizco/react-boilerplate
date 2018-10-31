@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import * as R from 'ramda';
+import R from '_utils/ramda';
 
 import CounterSection from './CounterSection';
 

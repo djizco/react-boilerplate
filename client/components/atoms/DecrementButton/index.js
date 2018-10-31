@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import * as R from 'ramda';
+import R from '_utils/ramda';
 import { decrement } from '_store/actions/counter';
 
 import DecrementButton from './DecrementButton';
