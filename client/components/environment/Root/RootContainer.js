@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import { persistStore } from 'redux-persist';
+import { hot } from 'react-hot-loader';
+
 import Root from './Root';
 
-export default class RootContainer extends Component {
+class RootContainer extends Component {
   static propTypes = {
     store: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
@@ -32,3 +33,5 @@ export default class RootContainer extends Component {
     );
   }
 }
+
+export default hot(module)(RootContainer);
