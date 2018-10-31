@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import Root from '_layouts/Root';
+import Root from '_environment/Root';
+
 import routes from './routes';
 import store from './store';
 
