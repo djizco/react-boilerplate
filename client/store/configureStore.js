@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { routerMiddleware } from 'connected-react-router';
 import { autoRehydrate } from 'redux-persist';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import createRootReducer from './reducers';
 
 export default function configureStore(history, initialState = {}) {
   const middlewares = [routerMiddleware(history), thunk];
@@ -19,7 +19,7 @@ export default function configureStore(history, initialState = {}) {
   );
 
   return createStore(
-    connectRouter(history)(rootReducer),
+    createRootReducer(history),
     initialState,
     middleware,
   );
