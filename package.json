@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-react",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "React Boilerplate",
   "main": "server/index.js",
   "scripts": {
