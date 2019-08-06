@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const resolve = dir => path.join(__dirname, '../', dir);
 
@@ -48,8 +48,8 @@ const FaviconsWebpackPluginConfig = new FaviconsWebpackPlugin({
   },
 });
 
-const CleanWebpackPluginConfig =  new CleanWebpackPlugin(['dist'], {
-  root: resolve('.'),
+const CleanWebpackPluginConfig =  new CleanWebpackPlugin({
+  verbose: true,
 });
 
 module.exports = {

@@ -26,7 +26,6 @@ config.optimization = {
       uglifyOptions: {
         compress: {
           drop_console: true,
-          warnings: false,
         },
         output: {
           comments: false,
