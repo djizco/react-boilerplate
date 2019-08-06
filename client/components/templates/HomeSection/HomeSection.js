@@ -5,20 +5,18 @@ import { Button } from '@material-ui/core';
 import { ArrowForward } from '@material-ui/icons';
 
 export default function HomeSection(props) {
-  const { pushToCounter, pushToTodo } = props;
-
-  const buttonStyles = { margin: '10px' };
+  const { classes, pushToCounter, pushToTodo } = props;
 
   return (
     <div className="section link-section app-flex">
       <h1 className="title is-1">
         React App
       </h1>
-      <Button variant="contained" color="primary" style={buttonStyles} onClick={pushToCounter}>
+      <Button className={classes.button} variant="contained" color="primary" onClick={pushToCounter}>
         Counter App
         <ArrowForward />
       </Button>
-      <Button variant="contained" color="primary" style={buttonStyles} onClick={pushToTodo}>
+      <Button className={classes.button} variant="contained" color="primary" onClick={pushToTodo}>
         Todo App
         <ArrowForward />
       </Button>
@@ -27,6 +25,9 @@ export default function HomeSection(props) {
 }
 
 HomeSection.propTypes = {
+  classes: PropTypes.shape({
+    button: PropTypes.string.isRequired,
+  }).isRequired,
   pushToCounter: PropTypes.func.isRequired,
   pushToTodo: PropTypes.func.isRequired,
 };
