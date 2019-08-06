@@ -17,4 +17,10 @@ config.module.rules = config.module.rules.concat([
   },
 ]);
 
+config.optimization = {
+  splitChunks: {
+    chunks: 'all',
+  },
+};
+
 module.exports = config;

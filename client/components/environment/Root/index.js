@@ -1,5 +1,5 @@
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 
 import RootContainer from './RootContainer';
 
-export default hot(module)(RootContainer);
+export default hot(RootContainer);

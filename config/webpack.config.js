@@ -61,6 +61,7 @@ module.exports = {
   entry: [
     './client/styles/index.scss',
     './client/assets/index.js',
+    './node_modules/react-hot-loader/patch.js',
     './client/index.js',
   ],
   output: {
@@ -70,6 +71,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      'react-dom': '@hot-loader/react-dom',
       _atoms: resolve('client/components/atoms/'),
       _molecules: resolve('client/components/molecules/'),
       _organisms: resolve('client/components/organisms/'),
