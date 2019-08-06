@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -15,6 +15,10 @@ import LostPage from '_pages/LostPage';
 const theme = createMuiTheme(customTheme);
 
 export default function Main() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <MuiThemeProvider theme={theme}>
       <div className="has-navbar-fixed-top">

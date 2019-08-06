@@ -78,6 +78,7 @@ module.exports = {
       _templates: resolve('client/components/templates/'),
       _pages: resolve('client/components/pages/'),
       _environment: resolve('client/components/environment/'),
+      _hooks: resolve('client/hooks/'),
       _store: resolve('client/store/'),
       _actions: resolve('client/store/actions/'),
       _thunks: resolve('client/store/thunks/'),

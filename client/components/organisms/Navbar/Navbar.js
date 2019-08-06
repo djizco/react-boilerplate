@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -7,8 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faHome } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-export default function Navbar(props) {
-  const { active, toggleActive, deactivate } = props;
+export default function Navbar() {
+  const [active, setActive] = useState(false);
+
+  const toggleActive = () => setActive(!active);
+  const deactivate = () => setActive(false);
+
+  useEffect(() => {
+    window.addEventListener('resize', deactivate);
+    return () => window.removeEventListener('resize', this.deactivate);
+  }, []);
 
   const toggleClasses = classNames({ 'navbar-burger': true, 'is-active': active });
   const menuClasses = classNames({ 'navbar-menu': true, 'is-active': active });
@@ -22,20 +29,17 @@ export default function Navbar(props) {
               React
             </h3>
           </Link>
-
           <Link to="/" className="navbar-item is-hidden-desktop" onClick={deactivate}>
             <span className="icon is-medium">
               <FontAwesomeIcon icon={faHome} size="lg" />
             </span>
           </Link>
-
           <div className={toggleClasses} onClick={toggleActive} onKeyPress={toggleActive}>
             <span />
             <span />
             <span />
           </div>
         </div>
-
         <div className={menuClasses}>
           <div className="navbar-start">
             <Link to="counter" className="navbar-item" onClick={deactivate}>
@@ -45,9 +49,7 @@ export default function Navbar(props) {
               Todo
             </Link>
           </div>
-
           <hr className="is-hidden-desktop" />
-
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="field is-grouped">
@@ -74,16 +76,8 @@ export default function Navbar(props) {
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </nav>
   );
 }
-
-Navbar.propTypes = {
-  active: PropTypes.bool.isRequired,
-  toggleActive: PropTypes.func.isRequired,
-  deactivate: PropTypes.func.isRequired,
-};

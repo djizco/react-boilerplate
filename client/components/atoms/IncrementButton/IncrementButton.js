@@ -1,18 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 
+import { increment } from '_store/actions/counter';
 import Button from '_atoms/Button';
 
-export default function IncrementButton({ increment }) {
+export default function IncrementButton() {
+  const dispatch = useDispatch();
+
+  const handleIncrement = () => dispatch(increment());
+
   return (
     <Button
       type="success"
-      handleClick={increment}
+      handleClick={handleIncrement}
       label="Increment"
     />
   );
 }
-
-IncrementButton.propTypes = {
-  increment: PropTypes.func.isRequired,
-};

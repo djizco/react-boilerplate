@@ -6,6 +6,7 @@ import ConfirmDeleteTodo from '_organisms/ConfirmDeleteTodo';
 
 export default function ConfirmModal(props) {
   const { confirm, closeModal, deleteTodo } = props;
+
   const modalClasses = classNames({
     modal: true,
     'confirm-modal': true,
