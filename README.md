@@ -7,7 +7,7 @@ You can try out this project [here](http://react-boilerplate.surge.sh)
 #### Setup
 
 ```bash
-brew install libpng (needed for .jpg images)
+brew install libpng #needed for .jpg images)
 npm install
 ```
 
@@ -32,7 +32,7 @@ npm run serve
 npm install -g surge
 
 npm run build
-surge dist <custom-url>.surge.sh
+surge dist custom-url.surge.sh
 (You may have to create an account)
 
 ```
