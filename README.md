@@ -6,20 +6,20 @@ You can try out this project [here](http://react-boilerplate.surge.sh)
 
 #### Setup
 
-```
+```bash
 brew install libpng (needed for .jpg images)
 npm install
 ```
 
 #### for Development
 
-```
+```bash
 npm run start
 ```
 
 #### for Production
 
-```
+```bash
 npm install -g serve
 
 npm run build
@@ -28,7 +28,7 @@ npm run serve
 
 #### for Deployment (using surge)
 
-```
+```bash
 npm install -g surge
 
 npm run build
@@ -39,7 +39,7 @@ surge dist <custom-url>.surge.sh
 
 #### Other Commands
 
-```
+```bash
 npm test
 npm run test:watch
 npm run test:verbose
@@ -88,6 +88,7 @@ You can now start updating files in your client to begin working on your own pro
     - templates
     - pages
     - environment
+  - hooks
   - store
     - actions
     - reducers

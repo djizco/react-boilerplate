@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -14,10 +15,10 @@ import LostPage from '_pages/LostPage';
 
 const theme = createMuiTheme(customTheme);
 
-export default function Main() {
+export default function Main({ location }) {
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, [location.pathname]);
 
   return (
     <MuiThemeProvider theme={theme}>
@@ -36,3 +37,9 @@ export default function Main() {
     </MuiThemeProvider>
   );
 }
+
+Main.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
+};
