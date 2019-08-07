@@ -10,6 +10,7 @@ import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { toggleCompleteTodo, updateTodo, deleteTodo } from '_store/actions/todos';
 import ConfirmModal from '_organisms/ConfirmModal';
 
+const fromNow = date => distanceInWordsToNow(date, { addSuffix: true });
 
 export default function Todo({ id, createdAt, updatedAt, completed, text }) {
   const dispatch = useDispatch();
@@ -19,8 +20,6 @@ export default function Todo({ id, createdAt, updatedAt, completed, text }) {
   const [confirm, setConfirm] = useState(false);
   const [updatedMessage, setUpdatedMessage] = useState('');
   const [createdMessage, setCreatedMessage] = useState('');
-
-  const fromNow = date => distanceInWordsToNow(date, { addSuffix: true });
 
   const updateMessages = () => {
     setUpdatedMessage(updatedAt ? fromNow(updatedAt) : '');

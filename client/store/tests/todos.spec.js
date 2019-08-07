@@ -1,4 +1,4 @@
-import { addTodo, toggleCompleteTodo, updateTodo, hideTodo, deleteTodo } from '../actions/todos';
+import { addTodo, toggleCompleteTodo, updateTodo, deleteTodo } from '../actions/todos';
 import reducer from '../reducers/todos';
 
 describe('Todos Reducer:', () => {
@@ -27,7 +27,6 @@ describe('Todos Reducer:', () => {
     expect(todo).toEqual(expect.any(Object));
     expect(todo.id).toEqual(2);
     expect(todo.completed).toEqual(false);
-    expect(todo.hidden).toEqual(false);
     expect(todo.createdAt).toEqual(expect.any(Number));
     expect(todo.updatedAt).toBeUndefined();
     expect(todo.text).toEqual('Take out the trash.');
@@ -60,18 +59,6 @@ describe('Todos Reducer:', () => {
     expect(todo.id).toEqual(2);
     expect(todo.updatedAt).toEqual(expect.any(Number));
     expect(todo.text).toEqual('Take out the trash and recycle.');
-  });
-
-  test('Hide Todo', () => {
-    const action = hideTodo(2);
-    state = reducer(state, action);
-    const todo = state[1];
-
-    expect(state).toHaveLength(3);
-    expect(state[0].id).toEqual(1);
-    expect(state[1].id).toEqual(2);
-    expect(todo.id).toEqual(2);
-    expect(todo.hidden).toEqual(true);
   });
 
   test('Delete Todo', () => {
