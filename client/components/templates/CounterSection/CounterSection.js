@@ -1,10 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import R from '_utils/ramda';
 
 import IncrementButton from '_atoms/IncrementButton';
 import DecrementButton from '_atoms/DecrementButton';
 
-export default function CounterSection({ counter }) {
+export default function CounterSection() {
+  const { counter } = useSelector(R.pick(['counter']));
+
   return (
     <div className="section counter-section app-flex">
       <h1 className="title is-1 has-text-centered">
@@ -24,7 +27,3 @@ export default function CounterSection({ counter }) {
     </div>
   );
 }
-
-CounterSection.propTypes = {
-  counter: PropTypes.number.isRequired,
-};
