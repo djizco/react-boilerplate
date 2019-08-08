@@ -7,7 +7,7 @@ You can try out this project [here](http://react-boilerplate.surge.sh)
 #### Setup
 
 ```bash
-brew install libpng #needed for .jpg images)
+brew install libpng #needed for .jpg images
 npm install
 ```
 
