@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-react",
+  "name": "react-boilerplate",
   "version": "0.4.3",
   "description": "React Boilerplate",
   "main": "server/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/djizco/boilerplate-react.git"
+    "url": "git+https://github.com/djizco/react-boilerplate.git"
   },
   "author": {
     "name": "Rico Rojas",
@@ -26,7 +26,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/djizco/boilerplate-react/issues"
+    "url": "https://github.com/djizco/react-boilerplate/issues"
   },
   "keywords": [
     "react",
@@ -40,7 +40,7 @@
     "jest",
     "enzyme"
   ],
-  "homepage": "https://github.com/djizco/boilerplate-react#readme",
+  "homepage": "https://github.com/djizco/react-boilerplate#readme",
   "engines": {
     "node": ">=10.0.0"
   },
