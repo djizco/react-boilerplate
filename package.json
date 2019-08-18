@@ -11,10 +11,10 @@
     "serve": "./scripts/serve",
     "lint": "./scripts/lint",
     "lint:fix": "./scripts/lint-fix",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch",
-    "test:verbose": "jest --verbose"
+    "test": "jest --config=./config/jest.config.js",
+    "test:coverage": "jest --config=./config/jest.config.js --coverage",
+    "test:watch": "jest --config=./config/jest.config.js --watch",
+    "test:verbose": "jest --config=./config/jest.config.js --verbose"
   },
   "repository": {
     "type": "git",
@@ -44,48 +44,6 @@
   "homepage": "https://github.com/djizco/react-boilerplate#readme",
   "engines": {
     "node": ">=10.0.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "client/**/*.{js,jsx}"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "moduleNameMapper": {
-      "^_atoms(.*)$": "<rootDir>/client/components/atoms/$1",
-      "^_molecules(.*)$": "<rootDir>/client/components/molecules/$1",
-      "^_organisms(.*)$": "<rootDir>/client/components/organisms/$1",
-      "^_templates(.*)$": "<rootDir>/client/components/templates/$1",
-      "^_pages(.*)$": "<rootDir>/client/components/pages/$1",
-      "^_environment(.*)$": "<rootDir>/client/components/environment/$1",
-      "^_hooks(.*)$": "<rootDir>/client/hooks/$1",
-      "^_store(.*)$": "<rootDir>/client/store/$1",
-      "^_actions(.*)$": "<rootDir>/client/store/actions/$1",
-      "^_thunks(.*)$": "<rootDir>/client/store/thunks/$1",
-      "^_reducers(.*)$": "<rootDir>/client/store/reducers/$1",
-      "^_assets(.*)$": "<rootDir>/client/assets/$1",
-      "^_styles(.*)$": "<rootDir>/client/styles/$1",
-      "^_utils(.*)$": "<rootDir>/client/utils/$1",
-      "^_api(.*)$": "<rootDir>/client/api/$1"
-    },
-    "setupFiles": [
-      "<rootDir>/config/jest-setup.js",
-      "<rootDir>/config/enzyme-setup.js"
-    ],
-    "testEnvironment": "jest-environment-jsdom-global",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/assetsTransformer.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ]
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
