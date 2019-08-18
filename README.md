@@ -117,7 +117,7 @@ This is based on atomic design. Learn more about [atomic design](http://bradfros
 
 [Redux-Persist](https://github.com/rt2zz/redux-persist) - Persistent State
 
-[Webpack](https://webpack.github.io/) - Code Packager for React
+[Webpack](https://webpack.github.io/) - Module Bundler
 
 [Express](http://expressjs.com/) - Node Framework
 
@@ -133,6 +133,6 @@ This is based on atomic design. Learn more about [atomic design](http://bradfros
 
 [ESLint](http://eslint.org/) - Code Linter
 
-[Jest](https://jestjs.io/) - JavaScript Testing Framework
+[Jest](https://jestjs.io/) - Testing Framework
 
-[Enzyme](https://github.com/airbnb/enzyme) - React View Testing
+[Enzyme](https://airbnb.io/enzyme/) - React View Testing
