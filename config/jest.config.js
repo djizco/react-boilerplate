@@ -22,7 +22,10 @@ module.exports = {
     '^_api(.*)$': '<rootDir>/client/api/$1',
   },
   rootDir: path.join(__dirname, '..'),
-  setupFiles: ['<rootDir>/config/jest.setup.js', '<rootDir>/config/enzyme.setup.js'],
+  setupFiles: [
+    '<rootDir>/config/jest.setup.js',
+    '<rootDir>/config/enzyme.setup.js',
+  ],
   testEnvironment: 'jest-environment-jsdom-global',
   testMatch: [path.join(__dirname, '../**/?(*.)+(spec|test).[tj]s?(x)')],
   testURL: 'http://localhost',
