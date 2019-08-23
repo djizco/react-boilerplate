@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { distanceInWordsToNow } from 'date-fns';
+import { formatDistanceToNow } from 'date-fns';
 import { useDispatch } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +10,7 @@ import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
 import { toggleCompleteTodo, updateTodo, deleteTodo } from '_store/actions/todos';
 import ConfirmModal from '_organisms/ConfirmModal';
 
-const fromNow = date => distanceInWordsToNow(date, { addSuffix: true });
+const fromNow = date => formatDistanceToNow(date, { addSuffix: true });
 
 export default function Todo({ id, createdAt, updatedAt, completed, text }) {
   const dispatch = useDispatch();
