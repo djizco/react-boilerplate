@@ -48,7 +48,7 @@ const FaviconsWebpackPluginConfig = new FaviconsWebpackPlugin({
   },
 });
 
-const CleanWebpackPluginConfig =  new CleanWebpackPlugin({
+const CleanWebpackPluginConfig = new CleanWebpackPlugin({
   verbose: true,
 });
 

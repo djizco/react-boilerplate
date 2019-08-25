@@ -65,11 +65,12 @@ You can now start updating files in your client to begin working on your own pro
 
 ## Features
 
-* React 16
-* Webpack 4 conveniently bundles your code for you.
+* Webpack conveniently bundles your code for you.
 * Babel lets you use ES6/7 features.
 * Hot Module Reloading for JS and CSS makes development quick and easy.
 * CSS pre-processor setup for LESS and SASS lets you keep your styles clean and organized.
+* ESLint helps you maintain a high level of code quality.
+* Jest and Enzyme give you a robust testing frame work to make sure your code works.
 
 ## Code Structure
 
