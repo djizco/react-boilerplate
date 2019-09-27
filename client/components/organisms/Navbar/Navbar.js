@@ -14,7 +14,7 @@ export default function Navbar() {
 
   useEffect(() => {
     window.addEventListener('resize', deactivate);
-    return () => window.removeEventListener('resize', this.deactivate);
+    return () => window.removeEventListener('resize', deactivate);
   }, []);
 
   const toggleClasses = classNames({ 'navbar-burger': true, 'is-active': active });
