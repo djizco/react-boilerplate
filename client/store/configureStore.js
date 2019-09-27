@@ -1,9 +1,17 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
-import { autoRehydrate } from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import createRootReducer from './reducers';
+
+const persistConfig = {
+  whitelist: ['counter', 'todos', 'nextTodoId'],
+  key: 'root',
+  storage,
+};
+
 
 export default function configureStore(history, initialState = {}) {
   const middlewares = [routerMiddleware(history), thunk];
@@ -13,14 +21,17 @@ export default function configureStore(history, initialState = {}) {
     middlewares.push(logger);
   }
 
-  const middleware = compose(
+  const rootReducer = createRootReducer(history);
+
+  const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+  const store = createStore(
+    persistedReducer,
+    initialState,
     applyMiddleware(...middlewares),
-    autoRehydrate(),
   );
 
-  return createStore(
-    createRootReducer(history),
-    initialState,
-    middleware,
-  );
+  const persistor = persistStore(store);
+
+  return { store, persistor };
 }

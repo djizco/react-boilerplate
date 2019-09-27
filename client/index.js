@@ -10,6 +10,6 @@ import store from '_client/store';
 import Root from '_environment/Root';
 
 render(
-  <Root history={history} store={store} />,
+  <Root history={history} store={store.store} persistor={store.persistor} />,
   document.getElementById('app'),
 );
