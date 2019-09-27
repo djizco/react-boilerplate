@@ -1,15 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createBrowserHistory } from 'history';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import Root from '_environment/Root';
-import configureStore from '_store/configureStore';
+import history from '_client/history';
+import store from '_client/store';
 
-const history = createBrowserHistory();
-const store = configureStore(history);
+import Root from '_environment/Root';
 
 render(
   <Root history={history} store={store} />,

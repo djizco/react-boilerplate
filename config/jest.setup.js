@@ -1,1 +1,1 @@
-// Jest Setup Here
+window.scrollTo = () => {};
