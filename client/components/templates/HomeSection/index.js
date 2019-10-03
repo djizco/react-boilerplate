@@ -7,8 +7,8 @@ import HomeSection from './HomeSection';
 import styles from './styles';
 
 const mapDispatchToProps = dispatch => ({
-  pushToCounter: () => dispatch(push('counter')),
-  pushToTodo: () => dispatch(push('todo')),
+  pushToCounter: () => dispatch(push('/counter')),
+  pushToTodo: () => dispatch(push('/todo')),
 });
 
 export default connect(null, mapDispatchToProps)(withStyles(styles)(HomeSection));

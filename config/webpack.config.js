@@ -10,18 +10,17 @@ const resolve = dir => path.join(__dirname, '../', dir);
 const env = process.env.NODE_ENV || 'development';
 const isDev = env === 'development';
 
+const CreateHtmlWebpackPluginConfig = (filename) => new HtmlWebpackPlugin({
+  template: resolve('client/index.html'),
+  inject: 'body',
+  filename,
+});
+
 const WebpackDefinePluginConfig = new webpack.DefinePlugin({
   'process.env': {
     NODE_ENV: JSON.stringify(env),
   },
 });
-
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: resolve('client/index.html'),
-  filename: 'index.html',
-  inject: 'body',
-});
-
 const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
   filename: isDev ? '[name].css' : '[name].[hash].css',
   chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
@@ -140,8 +139,10 @@ module.exports = {
     ],
   },
   plugins: [
+    CreateHtmlWebpackPluginConfig('index.html'),
+    CreateHtmlWebpackPluginConfig('200.html'),
+    CreateHtmlWebpackPluginConfig('404.html'),
     WebpackDefinePluginConfig,
-    HtmlWebpackPluginConfig,
     MiniCssExtractPluginConfig,
     FaviconsWebpackPluginConfig,
     CleanWebpackPluginConfig,

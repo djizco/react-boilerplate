@@ -42,10 +42,10 @@ export default function Navbar() {
         </div>
         <div className={menuClasses}>
           <div className="navbar-start">
-            <Link to="counter" className="navbar-item" onClick={deactivate}>
+            <Link to="/counter" className="navbar-item" onClick={deactivate}>
               Counter
             </Link>
-            <Link to="todo" className="navbar-item" onClick={deactivate}>
+            <Link to="/todo" className="navbar-item" onClick={deactivate}>
               Todo
             </Link>
           </div>
