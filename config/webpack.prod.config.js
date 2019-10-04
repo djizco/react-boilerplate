@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = require('./webpack.config.js');
 
@@ -39,6 +40,12 @@ config.plugins.push(new webpack.LoaderOptionsPlugin({
   minimize: true,
 }));
 
-config.plugins.push(new BundleAnalyzerPlugin());
+config.plugins.push(new BundleAnalyzerPlugin({
+  analyzerMode: 'static',
+}));
+
+config.plugins.push(new CleanWebpackPlugin({
+  verbose: true,
+}));
 
 module.exports = config;
