@@ -13,7 +13,7 @@ npm install
 #### for Development
 
 ```bash
-npm run start
+npm start
 ```
 
 #### for Production
@@ -31,8 +31,8 @@ npm run serve
 npm install -g surge
 
 npm run build
-surge dist custom-url.surge.sh
-(You may have to create an account)
+npm run deploy
+# You may have to create an account
 
 ```
 
@@ -42,10 +42,9 @@ surge dist custom-url.surge.sh
 npm test
 npm run test:watch
 npm run test:verbose
+npm run test:coverage
 npm run lint
 npm run lint:fix
-npm run build:dev
-npm run build:prod
 ```
 
 ## Setup Instructions
@@ -53,7 +52,7 @@ npm run build:prod
 To setup your own project, you will need to copy the contents of this project into a new repo.
 You will need to update the content in these files to names of your project and yourself:
 
-* package.json: name, version, description, repository, author, bugs, homepage,
+* package.json: name, version, description, repository, author, bugs, homepage
 * LICENSE: (update to your preferred license)
 * client/index.html: description and title
 * this README.md
@@ -116,8 +115,6 @@ This is based on atomic design. Learn more about [atomic design](http://bradfros
 [Redux-Persist](https://github.com/rt2zz/redux-persist) - Persistent State
 
 [Webpack](https://webpack.github.io/) - Module Bundler
-
-[Express](http://expressjs.com/) - Node Framework
 
 [Bulma](http://bulma.io/) - CSS Framework
 

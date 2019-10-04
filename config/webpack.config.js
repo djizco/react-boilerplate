@@ -21,6 +21,7 @@ const WebpackDefinePluginConfig = new webpack.DefinePlugin({
     NODE_ENV: JSON.stringify(env),
   },
 });
+
 const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
   filename: isDev ? '[name].css' : '[name].[hash].css',
   chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
