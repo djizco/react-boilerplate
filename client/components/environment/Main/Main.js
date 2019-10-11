@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-import customTheme from '_styles/theme';
+import customTheme from '_styles/js/theme';
 
 import Navbar from '_organisms/Navbar';
 import Footer from '_organisms/Footer';

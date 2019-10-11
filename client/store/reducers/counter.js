@@ -1,4 +1,4 @@
-import R from '_utils/ramda';
+import * as R from 'ramda';
 import { INCREMENT, DECREMENT } from '../actions/counter';
 
 export default function counter(state = 0, action) {

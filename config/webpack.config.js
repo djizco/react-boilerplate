@@ -55,7 +55,7 @@ module.exports = {
     port: 8080,
   },
   entry: [
-    './client/styles/index.scss',
+    './client/styles/scss/index.scss',
     './client/assets/index.js',
     './node_modules/react-hot-loader/patch.js',
     './client/index.js',

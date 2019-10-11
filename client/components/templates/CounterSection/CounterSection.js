@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import R from '_utils/ramda';
+import * as R from 'ramda';
 
 import IncrementButton from '_atoms/IncrementButton';
 import DecrementButton from '_atoms/DecrementButton';
