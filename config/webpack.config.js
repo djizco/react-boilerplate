@@ -94,6 +94,18 @@ module.exports = {
         include: [resolve('client')],
       },
       {
+        test: /\.css$/,
+        use: [isDev ? 'css-hot-loader' : 'style-loader', MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: [isDev ? 'css-hot-loader' : 'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.less$/,
+        use: [isDev ? 'css-hot-loader' : 'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+      },
+      {
         test: /\.(jpe?g|png|gif)$/i,
         use: [
           {
