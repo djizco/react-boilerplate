@@ -2,6 +2,11 @@
 
 You can try out this project [here](http://react-boilerplate.surge.sh)
 
+## Requirements
+
+* Operating System: MacOS or Linux
+* [Node.js](https://nodejs.org/) (I recommend installing with [NVM](https://github.com/nvm-sh/nvm))
+
 ## Quick Start
 
 #### Setup
