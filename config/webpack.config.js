@@ -2,11 +2,18 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const resolve = dir => path.join(__dirname, '../', dir);
 
 const env = process.env.NODE_ENV || 'development';
 const isDev = env === 'development';
+
+const WebpackDefinePluginConfig = new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify(env),
+  },
+});
 
 const CreateHtmlWebpackPluginConfig = ({ filename }) => new HtmlWebpackPlugin({
   template: resolve('client/index.html'),
@@ -15,15 +22,14 @@ const CreateHtmlWebpackPluginConfig = ({ filename }) => new HtmlWebpackPlugin({
   filename,
 });
 
-const WebpackDefinePluginConfig = new webpack.DefinePlugin({
-  'process.env': {
-    NODE_ENV: JSON.stringify(env),
-  },
-});
-
 const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
   filename: isDev ? '[name].css' : '[name].[hash].css',
   chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
+});
+
+const CleanWebpackPluginConfig = new CleanWebpackPlugin({
+  verbose: true,
+  cleanStaleWebpackAssets: false,
 });
 
 module.exports = {
@@ -32,6 +38,7 @@ module.exports = {
     historyApiFallback: true,
     inline: true,
     port: 8080,
+    open: true,
   },
   devtool: 'source-map',
   entry: [
@@ -86,7 +93,7 @@ module.exports = {
         use: [isDev ? 'css-hot-loader' : 'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
       },
       {
-        test: /\.(jpe?g|png|gif)$/i,
+        test: /\.(jpe?g|png|gif)$/,
         use: [
           {
             loader: 'file-loader',
@@ -132,6 +139,7 @@ module.exports = {
     CreateHtmlWebpackPluginConfig({ filename: '404.html' }),
     WebpackDefinePluginConfig,
     MiniCssExtractPluginConfig,
+    CleanWebpackPluginConfig,
   ],
   performance: {
     hints: false,
