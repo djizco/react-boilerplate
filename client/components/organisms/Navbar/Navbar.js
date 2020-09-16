@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faHome } from '@fortawesome/free-solid-svg-icons';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
+import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 
 export default function Navbar() {
   const [active, setActive] = useState(false);

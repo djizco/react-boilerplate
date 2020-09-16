@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const resolve = dir => path.join(__dirname, '../', dir);
@@ -9,8 +8,9 @@ const resolve = dir => path.join(__dirname, '../', dir);
 const env = process.env.NODE_ENV || 'development';
 const isDev = env === 'development';
 
-const CreateHtmlWebpackPluginConfig = (filename) => new HtmlWebpackPlugin({
+const CreateHtmlWebpackPluginConfig = ({ filename }) => new HtmlWebpackPlugin({
   template: resolve('client/index.html'),
+  favicon: resolve('client/assets/icons/favicon.ico'),
   inject: 'body',
   filename,
 });
@@ -24,27 +24,6 @@ const WebpackDefinePluginConfig = new webpack.DefinePlugin({
 const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
   filename: isDev ? '[name].css' : '[name].[hash].css',
   chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
-});
-
-const FaviconsWebpackPluginConfig = new FaviconsWebpackPlugin({
-  logo: resolve('client/assets/icons/favicon.ico'),
-  prefix: 'icons/',
-  emitStats: false,
-  statsFilename: 'faviconstats.json',
-  persistentCache: false,
-  inject: true,
-  icons: {
-    android: false,
-    appleIcon: false,
-    appleStartup: false,
-    coast: false,
-    favicons: true,
-    firefox: false,
-    opengraph: false,
-    twitter: false,
-    yandex: false,
-    windows: false,
-  },
 });
 
 module.exports = {
@@ -148,12 +127,11 @@ module.exports = {
     ],
   },
   plugins: [
-    CreateHtmlWebpackPluginConfig('index.html'),
-    CreateHtmlWebpackPluginConfig('200.html'),
-    CreateHtmlWebpackPluginConfig('404.html'),
+    CreateHtmlWebpackPluginConfig({ filename: 'index.html' }),
+    CreateHtmlWebpackPluginConfig({ filename: '200.html' }),
+    CreateHtmlWebpackPluginConfig({ filename: '404.html' }),
     WebpackDefinePluginConfig,
     MiniCssExtractPluginConfig,
-    FaviconsWebpackPluginConfig,
   ],
   performance: {
     hints: false,
