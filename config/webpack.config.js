@@ -54,6 +54,7 @@ module.exports = {
     inline: true,
     port: 8080,
   },
+  devtool: 'source-map',
   entry: [
     './client/styles/scss/index.scss',
     './client/assets/index.js',

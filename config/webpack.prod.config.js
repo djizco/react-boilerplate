@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -7,8 +7,8 @@ const config = require('./webpack.config.js');
 
 config.optimization = {
   minimizer: [
-    new UglifyJsPlugin({
-      uglifyOptions: {
+    new TerserPlugin({
+      terserOptions: {
         compress: {
           drop_console: true,
         },
@@ -16,6 +16,7 @@ config.optimization = {
           comments: false,
         },
       },
+      sourceMap: true,
     }),
   ],
 };
