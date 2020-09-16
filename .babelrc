@@ -4,5 +4,10 @@
     "@babel/plugin-proposal-class-properties",
     "react-hot-loader/babel",
     ["ramda", { "useES": true }]
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["ramda"]
+    }
+  }
 }
