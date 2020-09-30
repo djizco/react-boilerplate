@@ -4,7 +4,7 @@ module.exports = {
     'import/resolver': {
       webpack: {
         config: './config/webpack.config.js',
-      }
+      },
     },
   },
   extends: 'airbnb',
