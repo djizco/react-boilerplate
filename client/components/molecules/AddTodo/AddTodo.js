@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import Columns from 'react-bulma-companion/lib/Columns';
+import Column from 'react-bulma-companion/lib/Column';
+import Button from 'react-bulma-companion/lib/Button';
+import Input from 'react-bulma-companion/lib/Input';
+
 import useKeyPress from '_hooks/useKeyPress';
 import { addTodoAndIncrementId } from '_store/thunks/todos';
-import Button from '_atoms/Button';
 
 export default function AddTodo() {
   const dispatch = useDispatch();
@@ -21,18 +25,15 @@ export default function AddTodo() {
   useKeyPress(handleAddTodo, 'Enter');
 
   return (
-    <div className="add-todo columns is-gapless">
-      <div className="column is-10">
-        <input className="input" type="text" value={text} onChange={updateText} />
-      </div>
-      <div className="column is-2">
-        <Button
-          style={{ width: '100%' }}
-          handleClick={handleAddTodo}
-          label="Add"
-          type="success"
-        />
-      </div>
-    </div>
+    <Columns className="add-todo" gapless>
+      <Column size="10">
+        <Input value={text} onChange={updateText} />
+      </Column>
+      <Column size="2">
+        <Button onClick={handleAddTodo} color="success" fullwidth>
+          Add
+        </Button>
+      </Column>
+    </Columns>
   );
 }

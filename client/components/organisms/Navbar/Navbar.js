@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames';
+
+import Navbar from 'react-bulma-companion/lib/Navbar';
+import Container from 'react-bulma-companion/lib/Container';
+import Title from 'react-bulma-companion/lib/Title';
+import Icon from 'react-bulma-companion/lib/Icon';
+import Field from 'react-bulma-companion/lib/Field';
+import Control from 'react-bulma-companion/lib/Control';
+import Button from 'react-bulma-companion/lib/Button';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 
-export default function Navbar() {
+export default function NavbarComponent() {
   const [active, setActive] = useState(false);
 
   const toggleActive = () => setActive(!active);
@@ -18,67 +25,60 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', deactivate);
   }, []);
 
-  const toggleClasses = classNames({ 'navbar-burger': true, 'is-active': active });
-  const menuClasses = classNames({ 'navbar-menu': true, 'is-active': active });
-
   return (
-    <nav className="navbar has-shadow is-fixed-top" aria-label="main navigation">
-      <div className="container">
-        <div className="navbar-brand">
+    <Navbar fixed="top" shadow aria-label="main navigation">
+      <Container>
+        <Navbar.Brand>
           <Link to="/" className="navbar-item" onClick={deactivate}>
-            <h3 className="title is-3">
+            <Title size="3">
               React
-            </h3>
+            </Title>
           </Link>
           <Link to="/" className="navbar-item is-hidden-desktop" onClick={deactivate}>
-            <span className="icon is-medium">
+            <Icon size="medium">
               <FontAwesomeIcon icon={faHome} size="lg" />
-            </span>
+            </Icon>
           </Link>
-          <div className={toggleClasses} onClick={toggleActive} onKeyPress={toggleActive}>
-            <span />
-            <span />
-            <span />
-          </div>
-        </div>
-        <div className={menuClasses}>
-          <div className="navbar-start">
+          <Navbar.Burger active={active} onClick={toggleActive} onKeyPress={toggleActive} />
+        </Navbar.Brand>
+        <Navbar.Menu active={active}>
+          <Navbar.Start>
             <Link to="/counter" className="navbar-item" onClick={deactivate}>
               Counter
             </Link>
             <Link to="/todo" className="navbar-item" onClick={deactivate}>
               Todo
             </Link>
-          </div>
+          </Navbar.Start>
           <hr className="is-hidden-desktop" />
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="field is-grouped">
-                <p className="control">
-                  <a className="button is-info">
-                    <span className="icon">
+          <Navbar.End>
+            <Navbar.Item>
+              <Field grouped>
+                <Control>
+                  <Button color="info" link>
+                    <Icon>
                       <FontAwesomeIcon icon={faTwitter} />
-                    </span>
+                    </Icon>
                     <span>
                       Tweet
                     </span>
-                  </a>
-                </p>
-                <p className="control">
-                  <a className="button is-primary">
-                    <span className="icon">
+                  </Button>
+                </Control>
+                <Control>
+                  <Button color="primary" link>
+                    <Icon>
                       <FontAwesomeIcon icon={faDownload} />
-                    </span>
+                    </Icon>
                     <span>
                       Download
                     </span>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+                  </Button>
+                </Control>
+              </Field>
+            </Navbar.Item>
+          </Navbar.End>
+        </Navbar.Menu>
+      </Container>
+    </Navbar>
   );
 }

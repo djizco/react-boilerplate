@@ -2,6 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import R from 'ramda';
 
+import Columns from 'react-bulma-companion/lib/Columns';
+import Column from 'react-bulma-companion/lib/Column';
+import Section from 'react-bulma-companion/lib/Section';
+import Title from 'react-bulma-companion/lib/Title';
+
 import IncrementButton from '_atoms/IncrementButton';
 import DecrementButton from '_atoms/DecrementButton';
 
@@ -9,21 +14,21 @@ export default function CounterSection() {
   const { counter } = useSelector(R.pick(['counter']));
 
   return (
-    <div className="section counter-section app-flex">
-      <h1 className="title is-1 has-text-centered">
+    <Section className="counter-section app-flex">
+      <Title className="has-text-centered" size="1">
         Counter:
-      </h1>
+      </Title>
       <div className="counter">
         {counter}
       </div>
-      <div className="columns">
-        <div className="column is-6 text-center">
+      <Columns>
+        <Column size="6">
           <IncrementButton />
-        </div>
-        <div className="column is-6 text-center">
+        </Column>
+        <Column size="6">
           <DecrementButton />
-        </div>
-      </div>
-    </div>
+        </Column>
+      </Columns>
+    </Section>
   );
 }

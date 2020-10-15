@@ -11,6 +11,12 @@ import { faSave } from '@fortawesome/free-solid-svg-icons/faSave';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
 import { faCheckSquare } from '@fortawesome/free-regular-svg-icons/faCheckSquare';
 
+import Media from 'react-bulma-companion/lib/Media';
+import Content from 'react-bulma-companion/lib/Content';
+import Icon from 'react-bulma-companion/lib/Icon';
+import Textarea from 'react-bulma-companion/lib/Textarea';
+import Level from 'react-bulma-companion/lib/Level';
+
 import { toggleCompleteTodo, updateTodo, deleteTodo } from '_store/actions/todos';
 import ConfirmModal from '_organisms/ConfirmModal';
 
@@ -59,65 +65,60 @@ export default function Todo({ id, createdAt, updatedAt, completed, text }) {
 
   return (
     <li className="todo box">
-      <article className="media">
-        <figure className="media-left">
-          <span className="icon" onClick={handleToggleCompleteTodo} onKeyPress={handleToggleCompleteTodo}>
+      <Media>
+        <Media.Left>
+          <Icon onClick={handleToggleCompleteTodo} onKeyPress={handleToggleCompleteTodo}>
             {completed
               ? <FontAwesomeIcon icon={faCheckSquare} size="lg" />
               : <FontAwesomeIcon icon={faSquare} size="lg" />}
-          </span>
-        </figure>
-        <div className="media-content">
-          <div className="content">
+          </Icon>
+        </Media.Left>
+        <Media.Content>
+          <Content>
             <p>
               <small>
                 {`created ${createdMessage}`}
               </small>
             </p>
             {edit ? (
-              <textarea
-                className="textarea"
-                value={currentText}
-                onChange={updateText}
-              />
+              <Textarea value={currentText} onChange={updateText} />
             ) : (
               <span>
                 {text}
               </span>
             )}
-          </div>
-
-          <nav className="level is-mobile">
-            <div className="level-left">
+          </Content>
+          <Level mobile>
+            <Level.Left>
               {!!updatedAt && (
                 <small>
                   {`edited ${updatedMessage}`}
                 </small>
               )}
-            </div>
-            <div className="level-right">
+            </Level.Left>
+            <Level.Right>
               {edit ? (
-                <span className="icon space-right" onClick={handleUpdateTodo} onKeyPress={handleUpdateTodo}>
+                <Icon className="space-right" onClick={handleUpdateTodo} onKeyPress={handleUpdateTodo}>
                   <FontAwesomeIcon icon={faSave} size="lg" />
-                </span>
+                </Icon>
               ) : (
-                <span className="icon space-right" onClick={editTodo} onKeyPress={editTodo}>
+                <Icon className="space-right" onClick={editTodo} onKeyPress={editTodo}>
                   <FontAwesomeIcon icon={faPencilAlt} size="lg" />
-                </span>
+                </Icon>
               )}
               {edit ? (
-                <span className="icon" onClick={cancelEdit} onKeyPress={cancelEdit}>
+                <Icon onClick={cancelEdit} onKeyPress={cancelEdit}>
                   <FontAwesomeIcon icon={faBan} size="lg" />
-                </span>
+                </Icon>
               ) : (
-                <span className="icon" onClick={openModal} onKeyPress={cancelEdit}>
+                <Icon onClick={openModal} onKeyPress={cancelEdit}>
                   <FontAwesomeIcon icon={faTrashAlt} size="lg" />
-                </span>
+                </Icon>
               )}
-            </div>
-          </nav>
-        </div>
-      </article>
+            </Level.Right>
+          </Level>
+        </Media.Content>
+      </Media>
       <ConfirmModal
         confirm={confirm}
         closeModal={closeModal}
