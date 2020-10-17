@@ -123,7 +123,9 @@ This is based on atomic design. Learn more about [atomic design](http://bradfros
 
 [Bulma](http://bulma.io/) - CSS Framework
 
-[Material-UI](http://material-ui.com/) - React Element Library
+[React Bulma Companion](https://github.com/djizco/react-bulma-companion) - Bulma Component Library
+
+[Material-UI](http://material-ui.com/) - React Component Library
 
 [FontAwesome](http://fontawesome.io/) - Icons
 
