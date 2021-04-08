@@ -22,11 +22,6 @@ const CreateHtmlWebpackPluginConfig = ({ filename }) => new HtmlWebpackPlugin({
   filename,
 });
 
-const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
-  filename: isDev ? '[name].css' : '[name].[hash].css',
-  chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
-});
-
 const CleanWebpackPluginConfig = new CleanWebpackPlugin({
   verbose: true,
   cleanStaleWebpackAssets: false,
@@ -34,18 +29,18 @@ const CleanWebpackPluginConfig = new CleanWebpackPlugin({
 
 module.exports = {
   devServer: {
-    contentBase: './dist',
+    contentBase: resolve('dist'),
     historyApiFallback: true,
+    hot: true,
     inline: true,
     port: 8080,
     open: true,
   },
   devtool: 'source-map',
   entry: [
-    './client/styles/scss/index.scss',
-    './client/assets/index.js',
-    './node_modules/react-hot-loader/patch.js',
-    './client/index.js',
+    resolve('client/styles/scss/index.scss'),
+    resolve('client/assets/index.js'),
+    resolve('client/index.js'),
   ],
   output: {
     filename: isDev ? '[name].js' : '[name].[hash].js',
@@ -54,7 +49,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'react-dom': '@hot-loader/react-dom',
       _client: resolve('client'),
       _assets: resolve('client/assets/'),
       _styles: resolve('client/styles/'),
@@ -82,15 +76,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [isDev ? 'css-hot-loader' : 'style-loader', MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.scss$/,
-        use: [isDev ? 'css-hot-loader' : 'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.less$/,
-        use: [isDev ? 'css-hot-loader' : 'style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
+        use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
       },
       {
         test: /\.(jpe?g|png|gif)$/,
@@ -138,7 +132,6 @@ module.exports = {
     CreateHtmlWebpackPluginConfig({ filename: '200.html' }),
     CreateHtmlWebpackPluginConfig({ filename: '404.html' }),
     WebpackDefinePluginConfig,
-    MiniCssExtractPluginConfig,
     CleanWebpackPluginConfig,
   ],
   performance: {

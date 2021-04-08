@@ -1,1 +1,5 @@
-NODE_ENV=production webpack --mode=production --progress --config ./config/webpack.prod.config.js
+export NODE_ENV=production
+
+webpack --mode=production --progress --config ./config/webpack.prd.config.js
+
+unset NODE_ENV

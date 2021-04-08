@@ -13,7 +13,7 @@ export default function HomeSection(props) {
   return (
     <Section className="link-section app-flex">
       <Title size="1">
-        React App
+        React App!
       </Title>
       <Button className={classes.button} variant="contained" color="primary" onClick={pushToCounter}>
         Counter App
