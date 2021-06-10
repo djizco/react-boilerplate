@@ -27,7 +27,7 @@ module.exports = {
     '<rootDir>/config/jest.setup.js',
     '<rootDir>/config/enzyme.setup.js',
   ],
-  testEnvironment: 'enzyme',
+  testEnvironment: 'jest-environment-jsdom-global',
   testMatch: [path.join(__dirname, '../**/?(*.)+(spec|test).[tj]s?(x)')],
   testURL: 'http://localhost',
   transform: {
