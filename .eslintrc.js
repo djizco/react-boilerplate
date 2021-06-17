@@ -23,7 +23,6 @@ module.exports = {
   rules: {
     // enable rules
     'react/jsx-key': 2,
-    'react-hooks/rules-of-hooks': 2,
 
     // override default options for rules from base configurations
     'eqeqeq': [2, 'smart'],
