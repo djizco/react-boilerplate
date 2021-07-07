@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 
 import customTheme from '_styles/js/theme';
 
@@ -13,7 +13,7 @@ import CounterPage from '_pages/CounterPage';
 import TodoPage from '_pages/TodoPage';
 import LostPage from '_pages/LostPage';
 
-const theme = createMuiTheme(customTheme);
+const theme = createTheme(customTheme);
 
 export default function Main({ location }) {
   useEffect(() => {

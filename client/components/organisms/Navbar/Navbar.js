@@ -29,33 +29,33 @@ export default function NavbarComponent() {
     <Navbar fixed="top" shadow aria-label="main navigation">
       <Container>
         <Navbar.Brand>
-          <Link to="/" className="navbar-item" onClick={deactivate}>
+          <Navbar.Item onClick={deactivate} to="/" component={Link}>
             <Title size="3">
               React
             </Title>
-          </Link>
-          <Link to="/" className="navbar-item is-hidden-desktop" onClick={deactivate}>
+          </Navbar.Item>
+          <Navbar.Item to="/" className="is-hidden-desktop" onClick={deactivate} component={Link}>
             <Icon size="medium">
               <FontAwesomeIcon icon={faHome} size="lg" />
             </Icon>
-          </Link>
+          </Navbar.Item>
           <Navbar.Burger active={active} onClick={toggleActive} onKeyPress={toggleActive} />
         </Navbar.Brand>
         <Navbar.Menu active={active}>
           <Navbar.Start>
-            <Link to="/counter" className="navbar-item" onClick={deactivate}>
+            <Navbar.Item to="/counter" onClick={deactivate} component={Link}>
               Counter
-            </Link>
-            <Link to="/todo" className="navbar-item" onClick={deactivate}>
+            </Navbar.Item>
+            <Navbar.Item to="/todo" onClick={deactivate} component={Link}>
               Todo
-            </Link>
+            </Navbar.Item>
           </Navbar.Start>
           <hr className="is-hidden-desktop" />
           <Navbar.End>
             <Navbar.Item>
               <Field grouped>
                 <Control>
-                  <Button color="info" link>
+                  <Button color="info" component="a">
                     <Icon>
                       <FontAwesomeIcon icon={faTwitter} />
                     </Icon>
@@ -65,7 +65,7 @@ export default function NavbarComponent() {
                   </Button>
                 </Control>
                 <Control>
-                  <Button color="primary" link>
+                  <Button color="primary" component="a">
                     <Icon>
                       <FontAwesomeIcon icon={faDownload} />
                     </Icon>
