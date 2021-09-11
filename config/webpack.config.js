@@ -29,10 +29,8 @@ const CleanWebpackPluginConfig = new CleanWebpackPlugin({
 
 module.exports = {
   devServer: {
-    contentBase: resolve('dist'),
     historyApiFallback: true,
     hot: true,
-    inline: true,
     port: 8080,
     open: true,
   },
