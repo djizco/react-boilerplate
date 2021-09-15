@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const resolve = dir => path.join(__dirname, '../', dir);
 
@@ -22,17 +21,15 @@ const CreateHtmlWebpackPluginConfig = ({ filename }) => new HtmlWebpackPlugin({
   filename,
 });
 
-const CleanWebpackPluginConfig = new CleanWebpackPlugin({
-  verbose: true,
-  cleanStaleWebpackAssets: false,
-});
-
 module.exports = {
   devServer: {
+    static: {
+      directory: resolve('dist'),
+    },
     historyApiFallback: true,
     hot: true,
-    port: 8080,
     open: true,
+    port: 8080,
   },
   devtool: 'source-map',
   entry: [
@@ -41,9 +38,10 @@ module.exports = {
     resolve('client/index.js'),
   ],
   output: {
-    filename: isDev ? '[name].js' : '[name].[hash].js',
+    filename: isDev ? '[name].js' : '[name].[fullhash].js',
     path: resolve('dist'),
     publicPath: '/',
+    clean: true,
   },
   resolve: {
     alias: {
@@ -86,42 +84,24 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[ext]',
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              optipng: { optimizationLevel: 7 },
-              pngquant: { quality: [0.75, 0.90], speed: 3 },
-              mozjpeg: { progressive: true },
-              gifsicle: { interlaced: false },
-            },
-          },
-        ],
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader',
-        options: {
-          name: 'fonts/[name].[ext]',
-          limit: 8192,
-          mimetype: 'application/font-woff',
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]',
         },
       },
       {
-        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader',
-        options: { name: 'fonts/[name].[ext]' },
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'icons/[name][ext]',
+        },
       },
       {
-        test: /\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader',
-        options: { name: 'icons/[name].[ext]' },
+        test: /\.(woff(2)|ttf|eot|otf)?(\?v=\d+\.\d+\.\d+)?$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
+        },
       },
     ],
   },
@@ -130,7 +110,6 @@ module.exports = {
     CreateHtmlWebpackPluginConfig({ filename: '200.html' }),
     CreateHtmlWebpackPluginConfig({ filename: '404.html' }),
     WebpackDefinePluginConfig,
-    CleanWebpackPluginConfig,
   ],
   performance: {
     hints: false,
