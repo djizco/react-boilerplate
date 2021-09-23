@@ -13,10 +13,10 @@ export default function ConfirmDeleteTodo({ closeModal, deleteTodo }) {
         </Content>
       </Card.Content>
       <Card.Footer>
-        <Card.FooterItem onClick={closeModal} onKeyPress={closeModal} link>
+        <Card.FooterItem onClick={closeModal} onKeyPress={closeModal} component="a">
           Cancel
         </Card.FooterItem>
-        <Card.FooterItem onClick={deleteTodo} onKeyPress={deleteTodo} link>
+        <Card.FooterItem onClick={deleteTodo} onKeyPress={deleteTodo} component="a">
           Delete
         </Card.FooterItem>
       </Card.Footer>

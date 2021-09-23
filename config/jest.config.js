@@ -25,7 +25,6 @@ module.exports = {
   rootDir: path.join(__dirname, '..'),
   setupFiles: [
     '<rootDir>/config/jest.setup.js',
-    '<rootDir>/config/enzyme.setup.js',
   ],
   testEnvironment: 'jsdom',
   testMatch: [path.join(__dirname, '../**/?(*.)+(spec|test).[tj]s?(x)')],

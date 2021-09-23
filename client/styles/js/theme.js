@@ -1,3 +1,13 @@
-const customTheme = {};
+import { createTheme } from '@mui/material/styles';
 
-export default customTheme;
+const theme = createTheme({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: 'contained',
+      },
+    },
+  },
+});
+
+export default theme;
