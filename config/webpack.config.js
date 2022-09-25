@@ -54,7 +54,6 @@ module.exports = {
       _atoms: resolve('client/components/atoms/'),
       _molecules: resolve('client/components/molecules/'),
       _organisms: resolve('client/components/organisms/'),
-      _templates: resolve('client/components/templates/'),
       _pages: resolve('client/components/pages/'),
       _environment: resolve('client/components/environment/'),
       _store: resolve('client/store/'),

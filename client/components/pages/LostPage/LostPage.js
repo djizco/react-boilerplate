@@ -1,11 +1,19 @@
 import React from 'react';
 
-import LostSection from '_templates/LostSection';
+import Section from 'react-bulma-companion/lib/Section';
+import Title from 'react-bulma-companion/lib/Title';
 
 export default function LostPage() {
   return (
     <div className="lost-page">
-      <LostSection />
+      <Section className="is-full-page">
+        <Title className="app-title" size="1">
+          404
+        </Title>
+        <p>
+          The page you requested does not exist.
+        </p>
+      </Section>
     </div>
   );
 }

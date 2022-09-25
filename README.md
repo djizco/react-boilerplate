@@ -89,7 +89,6 @@ You can now start updating files in your client to begin working on your own pro
     - atoms
     - molecules
     - organisms
-    - templates
     - pages
     - environment
   - hooks

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
+import { HistoryRouter as Router } from 'redux-first-history/rr6';
 import { persistStore } from 'redux-persist';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
@@ -20,20 +20,18 @@ export default function Root({ history, store }) {
   };
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'test') {
-      persistStore(store, reduxPersistOptions, rehydrate);
-    }
+    persistStore(store, reduxPersistOptions, rehydrate);
   }, []);
 
   return rehydrated && (
     <Provider store={store}>
-      <ConnectedRouter history={history}>
+      <Router history={history}>
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
             <Main />
           </ThemeProvider>
         </StyledEngineProvider>
-      </ConnectedRouter>
+      </Router>
     </Provider>
   );
 }

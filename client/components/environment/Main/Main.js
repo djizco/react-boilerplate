@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router';
+import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from '_organisms/Navbar';
 import Footer from '_organisms/Footer';
@@ -10,21 +10,23 @@ import CounterPage from '_pages/CounterPage';
 import TodoPage from '_pages/TodoPage';
 import LostPage from '_pages/LostPage';
 
-export default function Main({ location }) {
+export default function Main() {
+  const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <div className="has-navbar-fixed-top">
       <Navbar />
       <div className="main">
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/counter" component={CounterPage} />
-          <Route path="/todo" component={TodoPage} />
-          <Route path="*" component={LostPage} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route path="/counter" element={<CounterPage />} />
+          <Route path="/todo" element={<TodoPage />} />
+          <Route path="*" element={<LostPage />} />
+        </Routes>
       </div>
       <Footer />
     </div>

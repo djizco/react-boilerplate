@@ -5,6 +5,7 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
+    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^_client(.*)$': '<rootDir>/client/$1',
     '^_assets(.*)$': '<rootDir>/client/assets/$1',
     '^_styles(.*)$': '<rootDir>/client/styles/$1',
@@ -14,7 +15,6 @@ module.exports = {
     '^_atoms(.*)$': '<rootDir>/client/components/atoms/$1',
     '^_molecules(.*)$': '<rootDir>/client/components/molecules/$1',
     '^_organisms(.*)$': '<rootDir>/client/components/organisms/$1',
-    '^_templates(.*)$': '<rootDir>/client/components/templates/$1',
     '^_pages(.*)$': '<rootDir>/client/components/pages/$1',
     '^_environment(.*)$': '<rootDir>/client/components/environment/$1',
     '^_store(.*)$': '<rootDir>/client/store/$1',
@@ -28,7 +28,6 @@ module.exports = {
   ],
   testEnvironment: 'jsdom',
   testMatch: [path.join(__dirname, '../**/?(*.)+(spec|test).[tj]s?(x)')],
-  testURL: 'http://localhost',
   transform: {
     '^.+\\.[t|j]sx?$': 'babel-jest',
     // eslint-disable-next-line

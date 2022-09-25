@@ -30,7 +30,7 @@ module.exports = {
     // override default options for rules from base configurations
     'eqeqeq': [2, 'smart'],
     'max-len': [2, { 'code': 120, 'tabWidth': 2, 'ignoreUrls': true }],
-    'newline-per-chained-call': [2, {'ignoreChainWithDepth': 4}],
+    'newline-per-chained-call': [2, { 'ignoreChainWithDepth': 4 }],
     'no-cond-assign': [2, 'except-parens'],
     'no-multi-spaces': [2, {'exceptions': {
       'ImportDeclaration': true,
@@ -42,6 +42,7 @@ module.exports = {
 
     // disable rules
     'arrow-parens': 0,
+    'default-param-last': 0,
     'function-paren-newline': 0,
     'implicit-arrow-linebreak': 0,
     'import/no-cycle': 0,

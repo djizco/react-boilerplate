@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import history from '_client/history';
-import store from '_client/store';
+import { store, history } from '_store';
 
 import Root from './Root';
 
