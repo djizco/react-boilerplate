@@ -4,12 +4,13 @@ import { formatDistanceToNow } from 'date-fns';
 import { useDispatch } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt';
+
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons/faTrashCan';
 import { faBan } from '@fortawesome/free-solid-svg-icons/faBan';
-import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt';
-import { faSave } from '@fortawesome/free-solid-svg-icons/faSave';
+import { faPencil } from '@fortawesome/free-solid-svg-icons/faPencil';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons/faFloppyDisk';
 import { faSquare } from '@fortawesome/free-regular-svg-icons/faSquare';
-import { faCheckSquare } from '@fortawesome/free-regular-svg-icons/faCheckSquare';
+import { faSquareCheck } from '@fortawesome/free-regular-svg-icons/faSquareCheck';
 
 import Media from 'react-bulma-companion/lib/Media';
 import Content from 'react-bulma-companion/lib/Content';
@@ -69,7 +70,7 @@ export default function Todo({ id, createdAt, updatedAt, completed, text }) {
         <Media.Left>
           <Icon onClick={handleToggleCompleteTodo} onKeyPress={handleToggleCompleteTodo}>
             {completed
-              ? <FontAwesomeIcon icon={faCheckSquare} size="lg" />
+              ? <FontAwesomeIcon icon={faSquareCheck} size="lg" />
               : <FontAwesomeIcon icon={faSquare} size="lg" />}
           </Icon>
         </Media.Left>
@@ -99,11 +100,11 @@ export default function Todo({ id, createdAt, updatedAt, completed, text }) {
             <Level.Right>
               {edit ? (
                 <Icon className="space-right" onClick={handleUpdateTodo} onKeyPress={handleUpdateTodo}>
-                  <FontAwesomeIcon icon={faSave} size="lg" />
+                  <FontAwesomeIcon icon={faFloppyDisk} size="lg" />
                 </Icon>
               ) : (
                 <Icon className="space-right" onClick={editTodo} onKeyPress={editTodo}>
-                  <FontAwesomeIcon icon={faPencilAlt} size="lg" />
+                  <FontAwesomeIcon icon={faPencil} size="lg" />
                 </Icon>
               )}
               {edit ? (
@@ -112,7 +113,7 @@ export default function Todo({ id, createdAt, updatedAt, completed, text }) {
                 </Icon>
               ) : (
                 <Icon onClick={openModal} onKeyPress={cancelEdit}>
-                  <FontAwesomeIcon icon={faTrashAlt} size="lg" />
+                  <FontAwesomeIcon icon={faTrashCan} size="lg" />
                 </Icon>
               )}
             </Level.Right>
