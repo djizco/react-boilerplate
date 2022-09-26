@@ -5,7 +5,6 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx'],
   moduleDirectories: ['node_modules'],
   moduleNameMapper: {
-    '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
     '^_client(.*)$': '<rootDir>/client/$1',
     '^_assets(.*)$': '<rootDir>/client/assets/$1',
     '^_styles(.*)$': '<rootDir>/client/styles/$1',

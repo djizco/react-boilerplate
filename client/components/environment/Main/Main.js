@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from '_organisms/Navbar';
@@ -32,9 +31,3 @@ export default function Main() {
     </div>
   );
 }
-
-Main.propTypes = {
-  location: PropTypes.shape({
-    pathname: PropTypes.string,
-  }).isRequired,
-};
