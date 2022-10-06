@@ -22,7 +22,7 @@ export default function AddTodo() {
     }
   };
 
-  useKeyPress(handleAddTodo, 'Enter');
+  useKeyPress('Enter', handleAddTodo);
 
   return (
     <Columns className="add-todo" gapless>

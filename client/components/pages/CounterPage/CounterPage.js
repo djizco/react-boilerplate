@@ -7,8 +7,8 @@ import Column from 'react-bulma-companion/lib/Column';
 import Section from 'react-bulma-companion/lib/Section';
 import Title from 'react-bulma-companion/lib/Title';
 
-import IncrementButton from '_atoms/IncrementButton';
-import DecrementButton from '_atoms/DecrementButton';
+import IncrementButton from '_components/atoms/IncrementButton';
+import DecrementButton from '_components/atoms/DecrementButton';
 
 export default function CounterPage() {
   const { counter } = useSelector(R.pick(['counter']));

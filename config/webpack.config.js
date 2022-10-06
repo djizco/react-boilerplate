@@ -46,20 +46,11 @@ module.exports = {
   resolve: {
     alias: {
       _client: resolve('client'),
-      _assets: resolve('client/assets/'),
-      _styles: resolve('client/styles/'),
-      _utils: resolve('client/utils/'),
-      _api: resolve('client/api/'),
-      _hooks: resolve('client/hooks/'),
-      _atoms: resolve('client/components/atoms/'),
-      _molecules: resolve('client/components/molecules/'),
-      _organisms: resolve('client/components/organisms/'),
-      _pages: resolve('client/components/pages/'),
-      _environment: resolve('client/components/environment/'),
+      _components: resolve('client/components/'),
       _store: resolve('client/store/'),
-      _actions: resolve('client/store/actions/'),
-      _reducers: resolve('client/store/reducers/'),
-      _thunks: resolve('client/store/thunks/'),
+      _utils: resolve('client/utils/'),
+      _hooks: resolve('client/hooks/'),
+      _api: resolve('client/api/'),
     },
   },
   module: {
@@ -70,8 +61,24 @@ module.exports = {
         include: [resolve('client')],
       },
       {
+        test: /\.module.css$/,
+        use: [
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[folder]-[local]--[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         use: [isDev ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
+        exclude: /\.module\.css$/,
       },
       {
         test: /\.scss$/,

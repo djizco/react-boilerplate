@@ -71,10 +71,9 @@ You can now start updating files in your client to begin working on your own pro
 
 * Webpack conveniently bundles your code for you.
 * Babel lets you use ES6/7 features.
-* Hot Module Reloading for JS and CSS makes development quick and easy.
 * CSS pre-processor setup for LESS and SASS lets you keep your styles clean and organized.
 * ESLint helps you maintain a high level of code quality.
-* Jest and Enzyme give you a robust testing frame work to make sure your code works.
+* Jest gives you a robust testing frame work to make sure your code works.
 
 ## Code Structure
 
@@ -104,7 +103,7 @@ You can now start updating files in your client to begin working on your own pro
 
 Component Heirarchy:
 
-Environment > Pages > Templates > Organisms > Molecules > Atoms
+Environment > Pages > Organisms > Molecules > Atoms
 
 This is based on atomic design. Learn more about [atomic design](http://bradfrost.com/blog/post/atomic-web-design/).
 

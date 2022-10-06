@@ -1,5 +1,5 @@
 import R from 'ramda';
-import { INCREMENT, DECREMENT } from '../actions/counter';
+import { INCREMENT, DECREMENT } from '_store/actions/counter';
 
 export default function counter(state = 0, action) {
   switch (action.type) {

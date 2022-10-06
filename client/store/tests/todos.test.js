@@ -1,5 +1,5 @@
-import { addTodo, toggleCompleteTodo, updateTodo, deleteTodo } from '../actions/todos';
-import reducer from '../reducers/todos';
+import { addTodo, toggleCompleteTodo, updateTodo, deleteTodo } from '_store/actions/todos';
+import reducer from '_store/reducers/todos';
 
 describe('Todos Reducer:', () => {
   let state = reducer(undefined, {});

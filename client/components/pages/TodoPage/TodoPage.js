@@ -1,7 +1,7 @@
 import React from 'react';
 
-import AddTodo from '_molecules/AddTodo';
-import TodoList from '_organisms/TodoList';
+import AddTodo from '_components/molecules/AddTodo';
+import TodoList from '_components/organisms/TodoList';
 
 import Section from 'react-bulma-companion/lib/Section';
 import Columns from 'react-bulma-companion/lib/Columns';

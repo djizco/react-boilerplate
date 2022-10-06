@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { push } from 'redux-first-history';
-import { withStyles } from '@mui/styles';
+import { withStyles } from 'tss-react/mui';
 
 import HomePage from './HomePage';
 
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
   pushToTodo: () => dispatch(push('/todo')),
 });
 
-export default connect(null, mapDispatchToProps)(withStyles(styles)(HomePage));
+export default connect(null, mapDispatchToProps)(withStyles(HomePage, styles));

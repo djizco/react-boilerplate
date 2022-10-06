@@ -19,7 +19,7 @@ import Textarea from 'react-bulma-companion/lib/Textarea';
 import Level from 'react-bulma-companion/lib/Level';
 
 import { toggleCompleteTodo, updateTodo, deleteTodo } from '_store/actions/todos';
-import ConfirmModal from '_organisms/ConfirmModal';
+import ConfirmModal from '_components/organisms/ConfirmModal';
 
 const fromNow = date => formatDistanceToNow(date, { addSuffix: true });
 
@@ -32,17 +32,17 @@ export default function Todo({ id, createdAt, updatedAt, completed, text }) {
   const [updatedMessage, setUpdatedMessage] = useState('');
   const [createdMessage, setCreatedMessage] = useState('');
 
-  const updateMessages = () => {
-    setUpdatedMessage(updatedAt ? fromNow(updatedAt) : '');
-    setCreatedMessage(fromNow(createdAt));
-  };
-
   useEffect(() => {
+    const updateMessages = () => {
+      setUpdatedMessage(updatedAt ? fromNow(updatedAt) : '');
+      setCreatedMessage(fromNow(createdAt));
+    };
+
     updateMessages();
     const interval = window.setInterval(updateMessages, 1000);
 
     return () => clearInterval(interval);
-  }, [updatedAt]);
+  }, [updatedAt, createdAt]);
 
   const openModal = () => setConfirm(true);
   const closeModal = () => setConfirm(false);

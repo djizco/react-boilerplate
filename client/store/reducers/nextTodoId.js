@@ -1,5 +1,5 @@
 import R from 'ramda';
-import { INCREMENT_TODO_ID } from '../actions/todos';
+import { INCREMENT_TODO_ID } from '_store/actions/todos';
 
 export default function nextTodoId(state = 1, action) {
   switch (action.type) {
