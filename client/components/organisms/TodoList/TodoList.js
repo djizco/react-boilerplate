@@ -9,7 +9,7 @@ export default function TodoList() {
 
   return (
     <ul className="todo-list">
-      {R.map(todo => <Todo key={todo.id} {...todo} />, R.reverse(todos))}
+      {R.map(todo => <Todo key={todo.id} {...todo} />, R.reverse(todos.list))}
     </ul>
   );
 }
