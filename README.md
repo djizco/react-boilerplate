@@ -85,9 +85,6 @@ You can now start updating files in your client to begin working on your own pro
     - images
     - icons
   - components
-    - atoms
-    - molecules
-    - organisms
     - pages
     - environment
   - hooks
@@ -101,12 +98,6 @@ You can now start updating files in your client to begin working on your own pro
 
 ```
 
-Component Heirarchy:
-
-Environment > Pages > Organisms > Molecules > Atoms
-
-This is based on atomic design. Learn more about [atomic design](http://bradfrost.com/blog/post/atomic-web-design/).
-
 ## Technologies
 
 [React](https://facebook.github.io/react/) - View Library
@@ -119,11 +110,11 @@ This is based on atomic design. Learn more about [atomic design](http://bradfros
 
 [Webpack](https://webpack.github.io/) - Module Bundler
 
+[Material-UI](http://material-ui.com/) - React Component Library
+
 [Bulma](http://bulma.io/) - CSS Framework
 
 [React Bulma Companion](https://github.com/djizco/react-bulma-companion) - Bulma Component Library
-
-[Material-UI](http://material-ui.com/) - React Component Library
 
 [FontAwesome](http://fontawesome.io/) - Icons
 

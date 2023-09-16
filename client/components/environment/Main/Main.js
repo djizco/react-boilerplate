@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import Navbar from '_components/organisms/Navbar';
-import Footer from '_components/organisms/Footer';
+import Navbar from '_components/layouts/Navbar';
+import Footer from '_components/layouts/Footer';
 
 import HomePage from '_components/pages/HomePage';
 import CounterPage from '_components/pages/CounterPage';

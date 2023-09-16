@@ -1,12 +1,12 @@
 import React from 'react';
 
-import AddTodo from '_components/molecules/AddTodo';
-import TodoList from '_components/organisms/TodoList';
-
 import Section from 'react-bulma-companion/lib/Section';
 import Columns from 'react-bulma-companion/lib/Columns';
 import Column from 'react-bulma-companion/lib/Column';
 import Title from 'react-bulma-companion/lib/Title';
+
+import AddTodo from './AddTodo';
+import TodoList from './TodoList';
 
 export default function TodoPage() {
   return (

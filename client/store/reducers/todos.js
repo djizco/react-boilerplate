@@ -28,7 +28,7 @@ export function todo(state = { completed: false }, action) {
 }
 
 export default function todos(state = { nextTodoId: 1, list: [] }, action) {
-  const index = R.findIndex(R.propEq('id', action.id), state.list);
+  const index = R.findIndex(R.propEq(action.id, 'id'), state.list);
 
   switch (action.type) {
     case INCREMENT_TODO_ID:
