@@ -1,4 +1,4 @@
-import { addTodo, toggleCompleteTodo, updateTodo, deleteTodo } from '_store/actions/todos';
+import { addTodo, deleteTodo, toggleCompleteTodo, updateTodo } from '_store/actions/todos';
 import reducer from '_store/reducers/todos';
 
 describe('Todos Reducer:', () => {

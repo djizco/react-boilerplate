@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
-import Navbar from 'react-bulma-companion/lib/Navbar';
-import Container from 'react-bulma-companion/lib/Container';
-import Title from 'react-bulma-companion/lib/Title';
-import Icon from 'react-bulma-companion/lib/Icon';
-import Field from 'react-bulma-companion/lib/Field';
-import Control from 'react-bulma-companion/lib/Control';
-import Button from 'react-bulma-companion/lib/Button';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
 import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload';
 import { faHome } from '@fortawesome/free-solid-svg-icons/faHome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import Button from 'react-bulma-companion/lib/Button';
+import Container from 'react-bulma-companion/lib/Container';
+import Control from 'react-bulma-companion/lib/Control';
+import Field from 'react-bulma-companion/lib/Field';
+import Icon from 'react-bulma-companion/lib/Icon';
+import Navbar from 'react-bulma-companion/lib/Navbar';
+import Title from 'react-bulma-companion/lib/Title';
 
 export default function NavbarComponent() {
   const [active, setActive] = useState(false);

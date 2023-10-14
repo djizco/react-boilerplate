@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
 
-import Navbar from '_components/layouts/Navbar';
+import { Route, Routes, useLocation } from 'react-router-dom';
+
 import Footer from '_components/layouts/Footer';
-
-import HomePage from '_components/pages/HomePage';
+import Navbar from '_components/layouts/Navbar';
 import CounterPage from '_components/pages/CounterPage';
-import TodoPage from '_components/pages/TodoPage';
+import HomePage from '_components/pages/HomePage';
 import LostPage from '_components/pages/LostPage';
+import TodoPage from '_components/pages/TodoPage';
 
 export default function Main() {
   const { pathname } = useLocation();

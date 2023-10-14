@@ -1,7 +1,6 @@
 import { withStyles } from 'tss-react/mui';
 
-import styles from './styles';
-
 import LostPage from './LostPage';
+import styles from './styles';
 
 export default withStyles(LostPage, styles);

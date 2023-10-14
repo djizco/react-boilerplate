@@ -14,6 +14,33 @@ module.exports = {
   rules: {
     // enable rules
     'react/jsx-key': 2,
+    'import/order': [2, {
+      'pathGroups': [
+        { pattern: 'react', group: 'builtin', position: 'before' },
+        { pattern: '@mui/**', group: 'external', position: 'after' },
+        { pattern: '@fortawesome/**', group: 'external', position: 'after' },
+        { pattern: 'react-bulma-companion/**', group: 'external', position: 'after' },
+        { pattern: '_client/**', group: 'internal', position: 'after' },
+        { pattern: '_components/**', group: 'internal', position: 'after' },
+        { pattern: '_store/**', group: 'internal', position: 'after' },
+        { pattern: '_styles/**', group: 'internal', position: 'after' },
+        { pattern: '_hooks/**', group: 'internal', position: 'after' },
+        { pattern: '_utils/**', group: 'internal', position: 'after' },
+      ],
+      'pathGroupsExcludedImportTypes': ['react'],
+      'alphabetize': {
+        order: 'asc',
+        caseInsensitive: true,
+      },
+      'newlines-between': 'always',
+      'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+    }],
+    'sort-imports': [2, {
+      ignoreCase: true,
+      ignoreDeclarationSort: true,
+      ignoreMemberSort: false,
+      allowSeparatedGroups: true,
+    }],
 
     // override defaults
     'eqeqeq': [2, 'smart'],

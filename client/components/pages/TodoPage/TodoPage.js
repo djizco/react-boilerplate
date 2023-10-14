@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Section from 'react-bulma-companion/lib/Section';
-import Columns from 'react-bulma-companion/lib/Columns';
 import Column from 'react-bulma-companion/lib/Column';
+import Columns from 'react-bulma-companion/lib/Columns';
+import Section from 'react-bulma-companion/lib/Section';
 import Title from 'react-bulma-companion/lib/Title';
 
 import AddTodo from './AddTodo';

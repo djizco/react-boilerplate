@@ -1,13 +1,14 @@
 import React from 'react';
+
 import { useSelector } from 'react-redux';
 
-import Columns from 'react-bulma-companion/lib/Columns';
 import Column from 'react-bulma-companion/lib/Column';
+import Columns from 'react-bulma-companion/lib/Columns';
 import Section from 'react-bulma-companion/lib/Section';
 import Title from 'react-bulma-companion/lib/Title';
 
-import IncrementButton from './IncrementButton';
 import DecrementButton from './DecrementButton';
+import IncrementButton from './IncrementButton';
 
 export default function CounterPage() {
   const counter = useSelector(state => state.counter);

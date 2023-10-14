@@ -1,8 +1,9 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 
-import { Button } from '@mui/material';
 import { ArrowForward } from '@mui/icons-material';
+import { Button } from '@mui/material';
 
 import Section from 'react-bulma-companion/lib/Section';
 import Title from 'react-bulma-companion/lib/Title';
