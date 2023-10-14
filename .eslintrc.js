@@ -14,6 +14,10 @@ module.exports = {
   rules: {
     // enable rules
     'react/jsx-key': 2,
+    'object-curly-newline': [2, {
+      ObjectExpression: { minProperties: 4, multiline: true, consistent: true },
+      ObjectPattern: { minProperties: 4, multiline: true, consistent: true },
+    }],
     'import/order': [2, {
       'pathGroups': [
         { pattern: 'react', group: 'builtin', position: 'before' },
@@ -47,11 +51,13 @@ module.exports = {
     'max-len': [2, { code: 120, tabWidth: 2, ignoreUrls: true }],
     'newline-per-chained-call': [2, { ignoreChainWithDepth: 4 }],
     'no-cond-assign': [2, 'except-parens'],
-    'no-multi-spaces': [2, { exceptions: {
-      ImportDeclaration: true,
-      Property: true,
-      VariableDeclarator: true,
-    } }],
+    'no-multi-spaces': [2, {
+      exceptions: {
+        ImportDeclaration: true,
+        Property: true,
+        VariableDeclarator: true,
+      },
+    }],
     'quote-props': [2, 'consistent-as-needed'],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx'] }],
     'react/jsx-fragments': [2, 'element'],
@@ -74,7 +80,6 @@ module.exports = {
     'no-plusplus': 0,
     'no-shadow': 0,
     'no-underscore-dangle': 0,
-    'object-curly-newline': 0,
     'react/destructuring-assignment': 0,
     'react/forbid-prop-types': 0,
     'react/jsx-boolean-value': 0,
